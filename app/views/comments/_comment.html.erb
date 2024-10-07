@@ -1,0 +1,13 @@
+<p>
+    <b>Commenter:</b>
+    <%= comment.commenter %>
+</p>
+
+<p>
+    <b>Comment:</b>
+    <%= comment.body %>
+</p>
+
+<p>
+    <%= link_to 'Destroy Comment', [comment.post, comment], data: { turbo_stream: false, turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+</p>
