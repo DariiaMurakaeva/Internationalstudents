@@ -12,16 +12,6 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id %>
-  </div>
-
-  <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
@@ -34,6 +24,11 @@
   <div>
     <%= form.label :tags, style: "display: block" %>
     <%= form.text_field :tags %>
+  </div>
+
+  <div>
+  <%= form.label :discussion_image, style: "display: block" %>
+  <%= form.file_field :discussion_image %>
   </div>
 
   <div>

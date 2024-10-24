@@ -13,4 +13,5 @@
 <%= render @discussion.comments %>
 
 <h2>Add a comment:</h2>
+<%= @discussion.comments.to_json %>
 <%= render "comments/form" %>

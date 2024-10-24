@@ -19,6 +19,8 @@
 <%= render "comments/form" %>
 
 <h2>Comments</h2>
+<%= @post.comments.to_json %>
 <%= render @post.comments %>
+
 
 

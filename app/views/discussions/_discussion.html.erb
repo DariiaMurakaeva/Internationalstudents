@@ -1,11 +1,9 @@
 <div id="<%= dom_id discussion %>">
-  <p>
-    <strong>Name:</strong>
-    <%= discussion.name %>
-  </p>
 
+  <%= image_tag discussion.discussion_image.url, width: 600 %>
+  
   <p>
-    <strong>User:</strong>
+    <strong>Author:</strong>
     <%= discussion.user_id %>
   </p>
 

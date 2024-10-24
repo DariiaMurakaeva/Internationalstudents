@@ -1,4 +1,5 @@
 class DiscussionsController < ApplicationController
+  # before_action :authenticate_user!
   before_action :set_discussion, only: %i[ show edit update destroy ]
 
   # GET /discussions or /discussions.json
@@ -65,6 +66,6 @@ class DiscussionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def discussion_params
-      params.require(:discussion).permit(:name, :user_id, :title, :content, :tags)
+      params.require(:discussion).permit(:user_id, :title, :content, :tags, :discussion_image)
     end
 end
