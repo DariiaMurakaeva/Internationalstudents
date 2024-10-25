@@ -9,6 +9,11 @@ Rails.application.routes.draw do
     resources :comments  
   end  
 
+  namespace :admin do
+    resources :posts, only: [:index]
+    resources :discussions, only: [:index]
+  end
+
   get "up" => "rails/health#show", as: :rails_health_check  
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker  
   get "manifest" => "rails/pwa#manifest"  

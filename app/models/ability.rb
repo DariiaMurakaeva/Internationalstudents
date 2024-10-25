@@ -15,8 +15,8 @@ class Ability
     can :manage, Discussion, user: user
     can :manage, Comment, user: user
 
-    # return unless user.admin?  # additional permissions for administrators
-    # can :read, Post
+    return unless user.admin?  # additional permissions for administrators
+    can :manage, :all
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
