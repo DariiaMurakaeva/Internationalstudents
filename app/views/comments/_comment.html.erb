@@ -8,6 +8,8 @@
     <%= comment.body %>
 </p>
 
-<p>
-    <%= link_to 'Destroy Comment', [comment.commentable, comment], data: { turbo_stream: false, turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-</p>
+<% if current_user && current_user.admin? %> 
+    <p>
+        <%= link_to 'Destroy Comment', [:admin, comment.commentable, comment], data: { turbo_stream: false, turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    </p>
+<% end %>

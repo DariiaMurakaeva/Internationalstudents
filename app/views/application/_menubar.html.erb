@@ -1,13 +1,8 @@
 <nav class="S_MenuBar">
     <%= link_to "Главная", root_url %>
 
-    <% if user_signed_in? && current_user.admin? %>
-        <%= link_to "Статьи", admin_posts_url %>
-        <%= link_to "Обсуждения", admin_discussions_url %>
-    <% else %>
         <%= link_to "Статьи", posts_url %>
         <%= link_to "Обсуждения", discussions_url %>
-    <% end %>
 
     <div>
     <% if user_signed_in? %>

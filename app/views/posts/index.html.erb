@@ -4,10 +4,12 @@
 
 <h1>Posts</h1>
 
+<% if current_user && current_user.admin? %> 
+  <%= link_to "New post", new_admin_post_path %>
+<% end %>
+
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= render post %>
+    <%= render collection: @posts, partial: "posts/post" %>
   <% end %>
 </div>
-
-<%= link_to "New post", new_post_path %>

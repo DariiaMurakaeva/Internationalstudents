@@ -2,6 +2,9 @@
 
   <%= image_tag discussion.discussion_image.url, width: 600 %>
   
+  <h2>
+    <%= link_to discussion.title, discussion_path(discussion) %>
+  </h2>
   <p>
     <strong>Author:</strong>
     <%= discussion.user_id %>

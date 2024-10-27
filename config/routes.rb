@@ -1,17 +1,22 @@
 Rails.application.routes.draw do  
   devise_for :users
 
+  resources :posts do
+    resources :comments
+  end
+
   resources :discussions do
     resources :comments
-  end 
-
-  resources :posts do  
-    resources :comments  
-  end  
+  end
 
   namespace :admin do
-    resources :posts, only: [:index]
-    resources :discussions, only: [:index]
+    resources :discussions, except: [:index, :show] do
+      resources :comments
+    end 
+  
+    resources :posts, except: [:index, :show] do  
+      resources :comments
+    end  
   end
 
   get "up" => "rails/health#show", as: :rails_health_check  

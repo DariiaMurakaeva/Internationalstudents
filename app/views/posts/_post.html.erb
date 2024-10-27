@@ -2,7 +2,7 @@
   <%= image_tag post.post_image.url, width: 600 %>
 
   <h2>
-    <%= link_to post.title, post %>
+    <%= link_to post.title, post_path(post) %>
   </h2>
 
   <p>
