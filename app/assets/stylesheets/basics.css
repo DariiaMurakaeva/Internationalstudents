@@ -1,0 +1,18 @@
+body {
+  font-family: 'Inter';
+  background-color: var(--purple);
+}
+h1 {
+  font-size: 85px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -5px;
+}
+.text-logo {
+  font-family: 'Cakra';
+  font-size: 302px;
+  font-weight: normal;
+  font-style: normal;
+  color: var(--white);
+}

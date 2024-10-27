@@ -1,0 +1,10 @@
+<%= form_with(model: Subscription.build) do |form| %>
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

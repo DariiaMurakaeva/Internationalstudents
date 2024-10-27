@@ -30,6 +30,7 @@
 !/storage/.keep
 /tmp/storage/*
 !/tmp/storage/.keep
+.DS_Store
 
 # Ignore assets.
 /node_modules/

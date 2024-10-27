@@ -2,7 +2,7 @@
 
 <% content_for :title, "Discussions" %>
 
-<h1>Discussions</h1>
+<h1>Обсуждения</h1>
 
 <% if current_user && current_user.admin? %> 
   <%= link_to "New discussion", new_admin_discussion_path %>

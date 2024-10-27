@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :subscriptions, only: [:create]
+
   namespace :admin do
     resources :discussions, except: [:index, :show] do
       resources :comments
