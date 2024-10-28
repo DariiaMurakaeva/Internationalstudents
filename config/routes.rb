@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   
     resources :posts, except: [:index, :show] do  
       resources :comments
-    end  
+    end
+    resources :subscriptions  
+    
   end
 
   get "up" => "rails/health#show", as: :rails_health_check  

@@ -1,10 +1,16 @@
 <nav class="S_MenuBar">
-    <%= link_to "Главная", root_url %>
-
-        <%= link_to "Статьи", posts_url %>
-        <%= link_to "Обсуждения", discussions_url %>
-
     <div>
+        <%= link_to "главная", root_url %>
+        <%= link_to "статьи", posts_url %>
+        <%= link_to "обсуждения", discussions_url %>
+        <%= link_to "о нас", home_about_url %>
+
+        <% if user_signed_in? && current_user.admin? %>
+            <%= link_to "Подписки", admin_subscriptions_url %>
+        <% end %>
+    </div>
+
+    <div class="userlogin">
     <% if user_signed_in? %>
         <%= link_to current_user.email, edit_user_registration_path %>
         <%= link_to "Выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>

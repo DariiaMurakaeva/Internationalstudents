@@ -9,6 +9,7 @@ class Ability
     can :read, Post
     can :read, Discussion
     can :read, Comment
+    can :create, Subscription
 
     return unless user.present?  # additional permissions for logged in users (they can read their own posts)
     # can :manage, Post, user: user
