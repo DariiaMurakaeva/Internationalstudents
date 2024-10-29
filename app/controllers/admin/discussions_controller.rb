@@ -40,7 +40,7 @@ class Admin::DiscussionsController < ApplicationController
     @discussion.destroy!
 
     respond_to do |format|
-      format.html { redirect_to admin_discussions_path, status: :see_other, notice: "Discussion was successfully destroyed." }
+      format.html { redirect_to discussions_path, status: :see_other, notice: "Discussion was successfully destroyed." }
       format.json { head :no_content }
     end
   end

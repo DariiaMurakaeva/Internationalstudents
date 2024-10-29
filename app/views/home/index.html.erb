@@ -1,6 +1,16 @@
 <div class="menu-bar"></div>
 <h1 class="text-logo">hey!Buddy</h1>
 <div class="mark"></div>
+<div class="chat_bubble">
+  <img class="px_icon_size_small" src="/assets/pixel_chat.svg" alt="" />
+  <div class="bubble_text">
+    <p class="desript_font">Марк Мрамба, Танзания</p>
+    <p>
+      О мой бог, как тут холодно, <br />
+      в моей стране даже кофт нет!
+    </p>
+  </div>
+</div>
 <div class="description_follow">
   <p class="whitetext">
     Медиа-сервис, помогающий иностранным студентам адаптироваться к жизни
@@ -11,27 +21,58 @@
 
 <div class="folder">
   <div class="folder_container">
-    <img class="px_icon_size" src="/assets/pixel_chel.svg" alt="" />
+    <img class="px_icon_size_big" src="/assets/pixel_chel.svg" alt="" />
     <h1>МЕДИА-СЕРВИС ДЛЯ ИНОСТРАННЫХ СТУДЕНТОВ</h1>
     <p>
       Готовящихся к обучению или уже обучающихся <br />
       в Вышке, а также для их бадди — волонтеров, которые <br />
-      помогают им с адаптацией к жизни и учёбе в России.
+      помогают им с адаптацией к жизни и учёбе в России
     </p>
   </div>
   <div class="mini_folder1">
-    <p>заселение</p>
+    <p class="text_folder">заселение</p>
   </div>
   <div class="mini_folder2">
-    <p>документы</p>
+    <p class="text_folder">документы</p>
   </div>
   <div class="mini_folder3">
-    <p>культура</p>
+    <p class="text_folder">культура</p>
   </div>
   <div class="mini_folder4">
-    <p>обучение</p>
+    <p class="text_folder">обучение</p>
   </div>
 </div>
 
-# форма
-<div id="new_subscription"><%= render 'subscriptions/form' %></div>
+<div class="text_container">
+  <h1 class="whitetext textleft">УЗНАВАЙ БОЛЬШЕ <br />ОБ УЧЕБЕ</h1>
+  <p class="whitetext">
+    Вас ждут полезные статьи для бадди<br />
+    и иностранных студентов. Мы подготовили<br />
+    информацию для комфортной жизни в России,<br />
+    включая сбор документов и учебные вопросы
+  </p>
+</div>
+<div class="mailbox"></div>
+<div class="emission"></div>
+<div class="note1 bubble_text">
+  <p class="desript_font">#жизньвроссии</p>
+  <p>Где купить сим-карту?</p>
+</div>
+<div class="note2 bubble_text">
+  <p class="desript_font">#жилье</p>
+  <p>Что нужно знать перед заселением в общежитие?</p>
+</div>
+<div class="note3 bubble_text">
+  <p class="desript_font">#учебныйпроцесс</p>
+  <p>Адаптационная встреча: <br />что это?</p>
+</div>
+<div class="note4 bubble_text">
+  <p class="desript_font">#документы</p>
+  <p>Как и где пройти медицинский осмотр?</p>
+</div>
+
+<div class="mail folder" id="position">
+  <h1>БУДЬ В КУРСЕ ЗАПУСКА ПРОЕКТА</h1>
+  <p>Подписывайся на рассылку, чтобы не пропустить все самое интересное!</p>
+  <div id="new_subscription"><%= render 'subscriptions/form' %></div>
+</div>

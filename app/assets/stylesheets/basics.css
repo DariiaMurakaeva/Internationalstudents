@@ -1,42 +1,28 @@
 html {
-  font-size: 14px;
-}
-
-@media screen and (min-width: 320px) {
-  html {
-    font-size: calc(14px + 6 * ((100vw - 320px) / 680));
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  html {
-    font-size: 20px;
-  }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   font-family: 'Inter';
-  background-color: var(--purple);
   box-sizing: border-box;
+  background-color: var(--purple);
   width: 100%;
   height: max-content;
-  /* border: 24px solid transparent; */
 }
 
-/* body::before {
-  content: '';
-  background-image: url(/assets/RU_заглушка.png);
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: -2800px;
-  right: 0;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  z-index: -1;
-  opacity: 0.3;
-} */
+p {
+  font-size: 1.3vw;
+  line-height: 120%;
+}
+
+.text_folder {
+  font-size: 1.8vw;
+}
+.purple_bg {
+  background-color: var(--purple);
+}
+
 .whitetext {
   color: var(--white);
 }
@@ -46,8 +32,11 @@ h1 {
   font-weight: 700;
   font-style: normal;
   /* line-height: 1.5; */
-  letter-spacing: -5px;
+  letter-spacing: -0.3vw;
   text-align: center;
+}
+.textleft {
+  text-align: left;
 }
 
 .text-logo {
@@ -64,14 +53,24 @@ h1 {
 
 .S_MenuBar {
   display: flex;
-  width: 50vw;
-  height: 32px;
-  margin-left: 24px;
-  margin-top: 30px;
+  width: 96vw;
+  height: 2vw;
+  margin-left: 1.5vw;
+  margin-top: 1.9vw;
   align-items: center;
   flex-direction: row;
-  gap: 32px;
-  justify-content: space-around;
+  justify-content: space-between;
+  font-size: 1.3vw;
+}
+
+.menu {
+  display: flex;
+  gap: 1.8vw;
+}
+
+.userlogin {
+  display: flex;
+  gap: 1.2vw;
 }
 
 a {
@@ -84,7 +83,6 @@ a:visited {
   text-decoration: none;
   color: var(--white);
 }
-
 .mark {
   margin: 0 auto;
   margin-top: -8vw;
@@ -96,23 +94,61 @@ a:visited {
   z-index: -99;
   position: relative;
 }
+.chat_bubble:hover {
+  opacity: 1;
+}
+
+.chat_bubble {
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--white);
+  border-radius: 100px 100px 100px 0px;
+  position: absolute;
+  margin-top: -40vw;
+  margin-left: 64vw;
+  border: 1px solid var(--gray);
+  display: flex;
+  flex-direction: row;
+  gap: 1.5vw;
+  align-items: center;
+  padding: 1.3vw 2.5vw 1.3vw 1.7vw;
+  transition-duration: 0.1s;
+  opacity: 0;
+}
+
+.bubble_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6vw;
+  font-weight: 500;
+  font-size: 1.3vw;
+}
+.desript_font {
+  font-size: 0.9vw;
+  opacity: 0.6;
+}
+.px_chat {
+  width: fit-content;
+  height: 7.3vw;
+}
 
 .description_follow {
-  margin-left: 24px;
+  margin-left: 1.5vw;
   margin-top: -27vw;
-  margin-bottom: 40px;
+  margin-bottom: 2.6px;
   position: relative;
-  width: 26vw;
-  height: 11vw;
+  width: 22vw;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1vw;
+  gap: 1.5vw;
   justify-content: center;
 }
 button {
   width: 19vw;
-  height: 4vw;
+  height: 5vw;
   color: var(--white);
   background-color: var(--black);
   border: 1px solid #363535;
@@ -120,16 +156,17 @@ button {
   box-sizing: border-box;
   cursor: pointer;
   font-family: 'Inter';
-  font-size: 1.5vw;
+  font-size: 1.7vw;
   font-weight: 500;
-  padding: 0.75vw 1.2vw;
+  padding-left: 1.3vw;
   text-decoration: none;
   transition-duration: 0.3s;
   background-image: url(/assets/pixel_arrow_right.svg);
   background-repeat: no-repeat;
-  background-position: 220px 3px;
-  background-size: 40px;
+  background-position: 14.5vw 0.6vw;
+  background-size: 3.5vw;
   vertical-align: middle;
+  text-align: left;
 }
 
 button:hover {
@@ -138,7 +175,7 @@ button:hover {
   border: 1px solid var(--gray);
   background-image: url(/assets/pixel_arrow_right_black.svg);
   background-repeat: no-repeat;
-  background-position: 0px 0px;
+  background-position: 14.5vw 0.6vw;
   vertical-align: middle;
 }
 
@@ -165,18 +202,21 @@ button:hover {
   justify-content: center;
   margin: 0 auto;
   text-align: center;
-  gap: 24px;
+  gap: 1.3vw;
   align-items: center;
 }
-.px_icon_size {
+.px_icon_size_big {
   width: 8vw;
   height: 7vw;
+}
+.px_icon_size_small {
+  width: 3.5vw;
+  height: 3.5vw;
 }
 
 .mini_folder1 {
   width: 15vw;
   height: 6.7vw;
-  font-size: 1.9vw;
   background-image: url(/assets/purple_folder.svg);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -187,13 +227,12 @@ button:hover {
   padding-top: 0.6vw;
   color: var(--white);
   margin: 80vw 78vw 115vw;
-  transform: rotate(9deg);
+  transform: rotate(9deg) scale(0.9);
 }
 
 .mini_folder2 {
   width: 15vw;
   height: 6.7vw;
-  font-size: 1.8vw;
   background-image: url(/assets/orange_folder.svg);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -203,12 +242,13 @@ button:hover {
   justify-content: center;
   padding-top: 0.5vw;
   color: var(--white);
+  margin: 80vw 7vw 115vw;
+  transform: rotate(348deg) scale(0.9);
 }
 
 .mini_folder3 {
   width: 15vw;
   height: 6.7vw;
-  font-size: 1.8vw;
   background-image: url(/assets/blue_folder.svg);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -218,12 +258,14 @@ button:hover {
   justify-content: center;
   padding-top: 0.5vw;
   color: var(--white);
+  margin: 150vw 7vw 115vw;
+  transform: rotate(8deg) scale(0.9);
+  color: var(--black);
 }
 
 .mini_folder4 {
   width: 15vw;
   height: 6.7vw;
-  font-size: 1.8vw;
   background-image: url(/assets/green_folder.svg);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -233,4 +275,127 @@ button:hover {
   justify-content: center;
   padding-top: 0.5vw;
   color: var(--white);
+  margin: 150vw 78vw 115vw;
+  transform: rotate(348deg) scale(0.9);
+  color: var(--black);
+}
+.mailbox {
+  margin: 0 auto;
+  margin-top: 5vw;
+  width: 35vw;
+  height: 52vw;
+  background-image: url(/assets/mailbox.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  z-index: -99;
+  position: relative;
+}
+
+.text_container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+  margin-top: 2vw;
+  gap: 15vw;
+}
+
+.note1 {
+  width: 22vw;
+  height: 8vw;
+  background-image: url(/assets/note_left.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: -46vw 70vw 80vw;
+  transform: rotate(351deg);
+  flex-direction: column;
+  padding-left: 5vw;
+}
+
+.note2 {
+  width: 22vw;
+  height: 8vw;
+  background-image: url(/assets/note.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: -30vw 70vw 80vw;
+  transform: rotate(4deg);
+  flex-direction: column;
+  padding-left: 5vw;
+}
+
+.note3 {
+  width: 22vw;
+  height: 8vw;
+  background-image: url(/assets/note.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: -46vw 3vw 80vw;
+  transform: rotate(4deg);
+  flex-direction: column;
+  padding-left: 5vw;
+}
+
+.note4 {
+  width: 22vw;
+  height: 8vw;
+  background-image: url(/assets/note_left.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: -30vw 3vw 80vw;
+  transform: rotate(356deg);
+  flex-direction: column;
+  padding-left: 5vw;
+}
+.emission {
+  background-color: var(--white);
+  opacity: 0.01;
+  width: 47vw;
+  height: 47vw;
+  position: absolute;
+  filter: blur(1.5rem);
+  border-radius: 100%;
+  top: 135vw;
+  left: 27vw;
+}
+#discussions {
+  position: relative;
+  margin-left: 24.5vw;
+}
+#position {
+  z-index: 5;
+  margin-top: -10vw;
+  position: relative;
+}
+input[type='email'] {
+  width: 26vw;
+  height: 4.3vw;
+  margin: 0;
+  border: none;
+  background-color: var(--lightgray);
+  -webkit-border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 1.3vw;
+  font-family: 'Inter';
+}
+label {
+  font-family: inherit;
+  font-size: inherit;
 }
