@@ -7,6 +7,10 @@ def seed
 	create_discussions(20)
 	create_posts(20)
 	create_comments(2..8)
+
+	3.times do
+		create_comment_replies
+	end
 end
 
 def reset_db
@@ -105,6 +109,19 @@ def create_comments(quantity)
 				user: user
 				)
 			puts "Comment with id #{comment.id} for discussion with id #{comment.commentable.id} just created"
+		end
+	end
+end
+
+def create_comment_replies
+	Comment.all.each do |comment|
+		if rand(1..3) == 1
+			comment_reply = comment.replies.create!(
+				parent_comment_id: comment, 
+				user: User.all.sample,
+				body: create_sentence
+				)
+			puts "Comment reply with id #{comment_reply.id} for discussion with id #{comment.id} just created"
 		end
 	end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_27_191006) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_03_064845) do
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
     t.text "body"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_27_191006) do
     t.datetime "updated_at", null: false
     t.integer "commentable_id"
     t.string "commentable_type"
+    t.integer "parent_comment_id"
   end
 
   create_table "discussions", force: :cascade do |t|
@@ -38,6 +39,18 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_27_191006) do
     t.datetime "updated_at", null: false
     t.string "tags"
     t.string "post_image"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.date "date_of_birth"
+    t.string "faculty"
+    t.string "country"
+    t.string "languages"
+    t.string "program_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "subscriptions", force: :cascade do |t|

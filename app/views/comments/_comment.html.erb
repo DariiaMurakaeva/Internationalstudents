@@ -1,15 +1,23 @@
-<p>
+
+<% comment_level = nested_level(comment) %>
+
+<div class="comment <%= 'reply' if comment.parent_comment_id != nil && comment_level < 4 %>">
+    <p> 
     <b>Commenter:</b>
     <%= comment.user_id %>
-</p>
+    </p>
 
-<p>
+    <p> 
     <b>Comment:</b>
     <%= comment.body %>
-</p>
-
-<% if current_user && current_user.admin? %> 
-    <p>
-        <%= link_to 'Destroy Comment', [:admin, comment.commentable, comment], data: { turbo_stream: false, turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     </p>
-<% end %>
+
+    <% if current_user && current_user.admin? %> 
+        <p>
+            <%= link_to 'Destroy Comment', [:admin, comment.commentable, comment], data: { turbo_stream: false, turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </p>
+    <% end %>
+
+    <%= render 'admin/comments/form', commentable: comment.commentable, parent_comment_id: comment.id %>
+    <%= render comment.replies, commentable: comment.commentable %>
+</div>

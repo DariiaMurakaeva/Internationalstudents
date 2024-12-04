@@ -17,10 +17,10 @@
 
 
 <h2>Add a comment:</h2>
-<%= render "admin/comments/form", commentable: @post %>
+<%= render "admin/comments/form", commentable: @post, parent_comment_id: nil %>
 
 <h2>Comments</h2>
-<%= render @post.comments %>
+<%= render @post.comments.not_replies, commentable: @post %>
 
 
 
