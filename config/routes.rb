@@ -11,9 +11,17 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments
+
+    member do
+      get "bookmark"
+    end
   end
 
   resources :discussions do
+    member do
+      get "bookmark"
+    end
+
     resources :comments
   end
 

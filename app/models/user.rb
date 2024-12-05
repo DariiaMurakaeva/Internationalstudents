@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :discussions
   has_many :comments
   has_one :profile
+  has_many :bookmarks
 
   after_create :create_profile
 

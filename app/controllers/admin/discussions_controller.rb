@@ -45,6 +45,20 @@ class Admin::DiscussionsController < ApplicationController
     end
   end
 
+  def bookmark 
+
+    bookmarks = @discussion.bookmarks.where(user_id: current_user.id)
+
+    if bookmarks.count > 0
+        bookmarks.destroy_all
+    else
+        @discussion.bookmarks.create(user_id: current_user.id)
+    end
+
+    redirect_to @discussion
+
+  end
+
   private
     def set_discussion
       @discussion = Discussion.find(params[:id])

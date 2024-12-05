@@ -1,3 +1,22 @@
+<%
+  set_meta_tags(
+    title: @post.title,
+    description: @post.content,
+    keywords: "статьи, документы, учёба, иностранные студенты, культура, быт"
+  )
+%>
+
+<%= @post.bookmarks.count %>
+
+<%
+  bookmarks_count = @post.bookmarks.count
+  bookmark_text = "Save to bookmarks (#{bookmarks_count})"
+
+  if current_user && @post.bookmarks.where(user_id: current_user.id).count > 0
+    bookmark_text = "Delete from bookmarks (#{bookmarks_count})"
+  end
+%>
+
 <%= render 'posts/post', post: @post %>
 
 <p>
@@ -11,6 +30,7 @@
     <%= button_to "Destroy this post", [:admin, @post], method: :delete %>
   <% end %>
 
+  <%= link_to bookmark_text, bookmark_post_path(@post) %>
   <%= link_to "Back to posts", posts_path %>
 
 </div>

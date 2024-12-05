@@ -15,6 +15,8 @@ class Ability
     # can :manage, Post, user: user
     can :manage, Discussion, user: user
     can :manage, Comment, user: user
+    can :bookmark, Post
+    can :bookmark, Discussion 
 
     return unless user.admin?  # additional permissions for administrators
     can :manage, :all

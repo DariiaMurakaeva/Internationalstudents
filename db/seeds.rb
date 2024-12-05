@@ -117,7 +117,8 @@ def create_comment_replies
 	Comment.all.each do |comment|
 		if rand(1..3) == 1
 			comment_reply = comment.replies.create!(
-				parent_comment_id: comment, 
+				parent_comment_id: comment.id,
+				commentable: comment.commentable, 
 				user: User.all.sample,
 				body: create_sentence
 				)

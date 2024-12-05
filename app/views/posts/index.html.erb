@@ -1,6 +1,13 @@
+<%
+  set_meta_tags(
+    title: "Статьи",
+    description: "В статьях собрана самая актуальная информация обо всем, что может понадобится вам для жизни и учёбы в России.",
+    keywords: "статьи, документы, учёба, иностранные студенты, культура, быт"
+  )
+%>
+
 <% content_for :title, "Posts" %>
 
-<h1>Статьи</h1>
 
 <% if current_user && current_user.admin? %> 
   <%= link_to "New post", new_admin_post_path %>
