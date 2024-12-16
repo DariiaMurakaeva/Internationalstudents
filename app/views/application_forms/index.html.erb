@@ -1,0 +1,48 @@
+<% if current_user.buddy? %>
+    <h2>My Students</h2>
+    <% @application_forms.where(buddy_id: current_user.id).each do |form| %>
+        <div id="my_students">
+            <%= render "application_forms/application", application_form: form %>
+            <p><strong>Status:</strong> Assigned to you as buddy.</p>
+        </div>
+    <% end %>
+
+    <h2>Available Applications</h2>
+    <% @application_forms.where(buddy_id: nil).each do |form| %>
+        <div id="posts">
+            <%= render "application_forms/application", application_form: form %>
+        <%= button_to "Take Student", take_student_application_form_path(form), method: :patch %>
+        </div>
+    <% end %>
+<% end %>
+
+<% if current_user.international_student? %>
+    <% form = @application_forms.find { |form| form.student_id == current_user.id } %>
+    <% if form %>
+        <p>
+        <strong>Status:</strong>
+            <% if form.buddy_id.nil? %>
+                Заявка отправлена! Твой бадди свяжется с тобой, как только сможет.
+            <% else %>
+                Поздравляем! Теперь <%= form.buddy.profile.name %> — твой бадди!
+            <% end %>
+        </p>
+    <% else %>
+        <p>You have not submitted an application yet.</p>
+        <%= render "form", application_form: @application_form %>
+    <% end %>
+<% end %>
+
+<% if current_user.admin? %>
+    <% @application_forms.each do |form| %>
+        <p>
+            <strong>Student Name:</strong> <%= form.student.name %><br>
+            <strong>Buddy Assigned:</strong>
+            <% if form.buddy_id.nil? %>
+                Not yet assigned
+            <% else %>
+                <%= form.buddy.name %>
+            <% end %>
+        </p>
+    <% end %>
+<% end %>

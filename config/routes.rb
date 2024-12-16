@@ -1,4 +1,5 @@
 Rails.application.routes.draw do  
+  get "bookmarks/toggle"
   resources :profiles
   namespace :api, format: 'json' do
     namespace :v1 do
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
   resources :posts do
     resources :comments
@@ -25,9 +26,19 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :application_forms do
+    member do
+      patch :take_student
+    end
+  end
+
+  get 'my_students', to: 'application_forms#my_students', as: 'my_students'
+
+
   resources :subscriptions, only: [:create]
 
   namespace :admin do
+    resources :users
     resources :discussions, except: [:index, :show] do
       resources :comments
     end 

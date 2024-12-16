@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  about: MyText
+  date_of_arrival: 2024-12-12
+  time_of_arrival: 2024-12-12 22:01:54
+  place_of_arrival: MyString
+  place_of_residence: MyString
+  note: MyText
+
+two:
+  user: two
+  about: MyText
+  date_of_arrival: 2024-12-12
+  time_of_arrival: 2024-12-12 22:01:54
+  place_of_arrival: MyString
+  place_of_residence: MyString
+  note: MyText

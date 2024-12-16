@@ -21,8 +21,49 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  
+
+  <%= f.fields_for :profile do |profile_form| %>
+
+    <div class="field">
+    <%= profile_form.label :name, "Введи своё полное имя" %><br />
+    <%= profile_form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= profile_form.label :date_of_birth, "Укажи дату рождения" %><br />
+    <%= profile_form.date_select :date_of_birth, start_year: 1900, end_year: Time.current.year %>
+  </div>
+
+  <div class="field">
+    <%= profile_form.label :gender %><br>
+    <%= profile_form.radio_button :gender, 'М' %> Male
+    <%= profile_form.radio_button :gender, 'Ж' %> Female
+  </div>
+
+  <div class="field">
+      <%= profile_form.label :country, "Укажи страну гражданства" %><br />
+      <%= profile_form.text_field :country %>
+  </div>
+  
+    <div class="field">
+      <%= profile_form.label :faculty, "Укажи факультет" %><br />
+      <%= profile_form.select :faculty, ["Факультет математики", "Факультет экономических наук", "Московский институт электроники и математики им. А.Н. Тихонова", "Факультет компьютерных наук", "Высшая школа бизнеса", "Высшая школа юриспруденции и администрирования", "Факультет гуманитарных наук", "Факультет социальных наук", "Факультет креативных индустрий", "Факультет мировой экономики и мировой политики", "Факультет физики", "Международный институт экономики и финансов", "Факультет городского и регионального развития", "Факультет химии", "Факультет биологии и биотехнологии", "Факультет географии и геоинформационных технологий", "Школа иностранных языков", "Институт статистических исследований и экономики знаний", "Банковский институт", "Школа инноватики и предпринимательства"], prompt: "Выбери факультет" %>
+    </div>
+
+    <div class="field">
+      <%= profile_form.label :languages, "Укажи языки, на которых ты говоришь" %><br />
+      <%= profile_form.text_field :languages %>
+    </div>
+
+    <div class="field">
+      <%= profile_form.label :program_type, "Укажи тип программы" %><br />
+      <%= profile_form.select :program_type, ["Студент полной степени обучения", "Студент по обмену", "Студент программы подготовки"], prompt: "Выбери тип программы" %>
+    </div>
+  <% end %>
+
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Зарегистрироваться" %>
   </div>
 <% end %>
 

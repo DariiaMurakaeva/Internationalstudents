@@ -1,0 +1,7 @@
+<h2>My Students</h2>
+<% @my_students.each do |form| %>
+    <div>
+        <%= render "application_forms/application", application_form: form %>
+        <p><strong>Status:</strong> Assigned to you as buddy.</p>
+    </div>
+<% end %>

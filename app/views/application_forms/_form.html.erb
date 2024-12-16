@@ -1,0 +1,47 @@
+<%= form_with model: application_form, data: {turbo: false} do |form| %>
+    <% if application_form.errors.any? %>
+        <div style="color: red">
+            <h2><%= pluralize(application_form.errors.count, "error") %> prohibited this form from being saved:</h2>
+
+            <ul>
+                <% application_form.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div>
+        <%= form.label :about, "Расскажи о себе: чем ты увлекаешься, что тебе нравится?" %>
+        <%= form.text_area :about %>
+    </div>
+
+    <div>
+        <%= form.label :date_of_arrival, "Укажи дату своего прибытия в Россию" %>
+        <%= form.date_field :date_of_arrival %>
+    </div>
+
+    <div>
+        <%= form.label :time_of_arrival, "Укажи время своего прибытия в Россию" %>
+        <%= form.time_field :time_of_arrival %>
+    </div>
+
+    <div>
+        <%= form.label :place_of_arrival, "В какой вокзал/аэропорт ты приезжаешь?" %>
+        <%= form.select :place_of_arrival, ['Аэропорт Шереметьево', 'Аэропорт Домодедово', 'Аэропорт Внуково', 'Казанский вокзал', 'Ленинградский вокзал', 'Курский вокзал', 'Киевский вокзал', 'Савёловский вокзал', 'Ярославский вокзал', 'Белорусский вокзал', 'Павелецкий вокзал', 'Рижский вокзал', 'Восточный вокзал'], class: "form-select" %>
+    </div>
+
+    <div>
+        <%= form.label :place_of_residence, "Где ты планируешь жить?" %>
+        <%= form.select :place_of_residence, ['Общежитие №1', 'Общежитие №2', 'Общежитие №3', 'Общежитие №4', 'Общежитие №5', 'Общежитие №6', 'Общежитие №7', 'Общежитие №8', 'Общежитие №9', 'Общежитие №10', 'Другое'], class: "form-select" %>
+    </div>
+
+    <div>
+        <%= form.label :note, "Если у тебя есть какая-то дополнительная информация для бадди, можешь поделиться ей здесь." %>
+        <%= form.text_area :note %>
+    </div>
+
+    <div>
+        <%= form.submit "Отправить заявку" %>
+    </div>
+<% end %>

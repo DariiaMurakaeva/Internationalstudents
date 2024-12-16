@@ -6,7 +6,7 @@ def seed
 	create_users(10)
 	create_discussions(20)
 	create_posts(20)
-	create_comments(2..8)
+	create_comments(20)
 
 	3.times do
 		create_comment_replies
@@ -36,34 +36,110 @@ def upload_random_image(record, attachment_field)
 end
 
 def create_users(quantity)
-	i = 0
 
-	quantity.times do
-		user_data = {
-			email: "user_#{i}@email.com",
-			password: 'testtest'
-		}
+	first_names = ["John", "Jane", "Alex", "Emily", "Michael", "Jiho", "Chan", "Chris", "Mark", "Sophia", "Nilufer", "Aydana", "Yeji", "Paulina", "Felix", "Miguel"]
+	surnames = ["Yildiz", "Johnson", "Williams", "Brown", "Kim", "Kang", "Ali", "Zhang", "Martinez", "Hernandez", "Abdusattorov", "Lee", "Miyawaki", "Acar", "Abay", "Wang"]
+	faculties = ["Факультет математики", "Факультет экономических наук", "Московский институт электроники и математики им. А.Н. Тихонова", "Факультет компьютерных наук", "Высшая школа бизнеса", "Высшая школа юриспруденции и администрирования", "Факультет гуманитарных наук", "Факультет социальных наук", "Факультет креативных индустрий", "Факультет мировой экономики и мировой политики", "Факультет физики", "Международный институт экономики и финансов", "Факультет городского и регионального развития", "Факультет химии", "Факультет биологии и биотехнологии", "Факультет географии и геоинформационных технологий", "Школа иностранных языков", "Институт статистических исследований и экономики знаний", "Банковский институт", "Школа инноватики и предпринимательства"]
+	program_types = ["Студент полной степени обучения", "Студент по обмену", "Студент программы подготовки"]
 
-		if i == 0 
-			user_data[:admin] = true
-		end 	
+	admin = User.create!(email: 'admin@edu.hse.ru', password: 'password', admin: true, user_role: 'admin')
+	puts "Admin created with email: #{admin.email}"
 
-		user = User.create!(user_data)
-		puts "User created with id #{user.id}"
+	10.times do |i|
+		begin
+			student_name = "#{first_names.sample} #{surnames.sample}"
+			student = User.create!(
+				email: "student_#{i}@edu.hse.ru",
+				password: 'password',
+				user_role: 'international_student'
+			)
+			student_profile = Profile.create!(
+				user: student,
+				name: student_name,
+				date_of_birth: Date.new(rand(1989..2005), rand(1..12), rand(1..28)),
+				gender: ['М', 'Ж'].sample,
+				country: ["Russia", "USA", "China", "India", "Germany", "France", "Japan"].sample,
+				faculty: faculties.sample,
+				languages: ["English", "Russian", "Chinese", "French", "Spanish"].sample(2).join(", "),
+				program_type: program_types.sample
+			)
+			puts "International student created with email: #{student.email}"
 
-		i += 1
+			create_application_forms(student) if student.persisted?
+
+			buddy_name = "#{first_names.sample} #{surnames.sample}"
+			buddy = User.create!(
+				email: "buddy_#{i}@edu.hse.ru",
+				password: 'password',
+				user_role: 'buddy'
+			)
+			buddy_profile = Profile.create!(
+				user: buddy,
+				name: buddy_name,
+				date_of_birth: Date.new(rand(1989..2005), rand(1..12), rand(1..28)),
+				gender: ['М', 'Ж'].sample,
+				country: ["Russia", "USA", "China", "India", "Germany", "France", "Japan"].sample,
+				faculty: faculties.sample,
+				languages: ["English", "Russian", "Chinese", "French", "Spanish"].sample(2).join(", "),
+				program_type: "Студент полной степени обучения"
+			)
+			puts "Buddy created with email: #{buddy.email}"
+		rescue ActiveRecord::RecordInvalid => e
+			puts "Error creating record for #{student_name || buddy_name}: #{e.message}"
+			puts "Validation errors: #{e.record.errors.inspect}"
+			e.record.errors.each do |field, messages|
+				if messages.present? # Check if messages is not nil or empty
+					puts "#{field}: #{messages.join(', ')}"
+				else
+					puts "#{field}: No error message available"
+				end
+			end
+		end
 	end
 end
 
+def create_application_forms(user)
+
+	puts "User exists: #{User.exists?(id: user.id)}, User ID: #{user.id}"
+
+	arrival_places = [
+    'Аэропорт Шереметьево', 'Аэропорт Домодедово', 'Аэропорт Внуково', 
+    'Казанский вокзал', 'Ленинградский вокзал', 'Курский вокзал', 
+    'Киевский вокзал', 'Савёловский вокзал', 'Ярославский вокзал', 
+    'Белорусский вокзал', 'Павелецкий вокзал', 'Рижский вокзал', 'Восточный вокзал'
+	]
+
+	residence_places = [
+    'Общежитие №1', 'Общежитие №2', 'Общежитие №3', 'Общежитие №4', 
+    'Общежитие №5', 'Общежитие №6', 'Общежитие №7', 'Общежитие №8', 
+    'Общежитие №9', 'Общежитие №10', 'Другое'
+	]
+
+	application_form_data = {
+		student_id: user.id,
+		about: create_sentence,
+		date_of_arrival: Date.today + rand(1..30).days,
+		time_of_arrival: Time.now + rand(1..10).hours,
+		place_of_arrival: arrival_places.sample,
+		place_of_residence: residence_places.sample,
+		note: [create_sentence, nil].sample
+	}
+
+	application_form = ApplicationForm.create!(application_form_data)
+	puts "Application form created for user_id #{user.id} with id #{application_form.id}"
+end
 
 def create_posts(quantity)
+
+	tags = ['быт', 'учёба', 'культура', 'документы']
+
 	quantity.times do
 		user = User.all.sample
 		post = Post.create(
 			title: create_sentence, 
 			content: create_sentence,
-			tags: "tag#{rand(1..5)}",
-			user: user
+			user: user,
+			tags: [tags.sample]
 			)
 		post_image = upload_random_image(post, :post_image)
 		post.post_image = post_image
@@ -73,13 +149,16 @@ def create_posts(quantity)
 end
 
 def create_discussions(quantity)
+
+	tags = ['быт', 'учёба', 'культура', 'документы']
+
 	quantity.times do
 		user = User.all.sample
 		discussion = Discussion.create(
 			title: create_sentence, 
 			content: create_sentence,
-			tags: "tag#{rand(1..5)}",
-			user: user
+			user: user,
+			tags: [tags.sample]
 			)
 		discussion_image = upload_random_image(discussion, :discussion_image)
 		discussion.discussion_image = discussion_image
@@ -90,7 +169,7 @@ end
 
 def create_comments(quantity)
 	Post.all.each do |post|
-		quantity.to_a.sample.times do
+		rand(1..quantity).times do
 			user = User.all.sample
 			comment = Comment.create(
 				commentable: post, 
@@ -101,7 +180,7 @@ def create_comments(quantity)
 			end
 	end
 	Discussion.all.each do |discussion|
-		quantity.to_a.sample.times do
+		rand(1..quantity).times do
 			user = User.all.sample
 			comment = Comment.create(
 				commentable: discussion,

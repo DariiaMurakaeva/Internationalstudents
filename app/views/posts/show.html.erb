@@ -19,10 +19,9 @@
 
 <%= render 'posts/post', post: @post %>
 
-<p>
-  <strong>tags:</strong>
-  <%= @post.tags %>
-</p>
+<div>
+  <p> Tags: <%= @post.tag_list %> </p>
+</div>
 
 <div>
   <% if current_user && current_user.admin? %>

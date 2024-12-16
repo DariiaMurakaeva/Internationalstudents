@@ -12,14 +12,20 @@ class Ability
     can :create, Subscription
 
     return unless user.present?  # additional permissions for logged in users (they can read their own posts)
-    # can :manage, Post, user: user
+    can :read, Post
     can :manage, Discussion, user: user
     can :manage, Comment, user: user
     can :bookmark, Post
     can :bookmark, Discussion 
 
-    return unless user.admin?  # additional permissions for administrators
-    can :manage, :all
+    if user.user_role == 'international_student'
+      can :create, ApplicationForm
+      can :read, ApplicationForm, user: user
+    elsif user.user_role == 'buddy'      
+      can :read, ApplicationForm
+    elsif user.user_role == 'admin'
+      can :manage, :all
+    end
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

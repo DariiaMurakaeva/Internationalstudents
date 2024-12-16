@@ -7,4 +7,5 @@ class Discussion < ApplicationRecord
     has_many :bookmarks, as: :bookmarkable
 
     mount_uploader :discussion_image, PostImageUploader
+    
 end

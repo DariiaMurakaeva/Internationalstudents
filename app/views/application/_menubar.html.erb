@@ -5,18 +5,25 @@
         <%= link_to "обсуждения", discussions_url %>
         <%= link_to "о нас", home_about_url %>
 
-        <% if user_signed_in? && current_user.admin? %>
-            <%= link_to "подписки", admin_subscriptions_url %>
+        <% if user_signed_in? %>
+            <% if current_user.user_role == 'international_student' %>
+                <%= link_to "заявка на бадди", application_forms_url %>
+            <% elsif current_user.user_role == 'buddy' %>
+                <%= link_to "анкеты студентов", application_forms_url %>
+            <% elsif current_user.admin? %>
+                <%= link_to "Подписки", admin_subscriptions_url %>
+                <%= link_to "Управление пользователями", admin_users_url %>
+            <% end %>
         <% end %>
     </div>
 
     <div class="userlogin">
-    <% if user_signed_in? %>
-        <%= link_to current_user.email, edit_user_registration_path %>
-        <%= link_to "выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>
-    <% else %>
-        <%= link_to "войти", new_user_session_path %>
-        <%= link_to "зарегистрироваться", new_user_registration_path %>
-    <% end %>
+        <% if user_signed_in? %>
+            <%= link_to current_user.email, edit_user_registration_path %>
+            <%= link_to "выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>
+        <% else %>
+            <%= link_to "войти", new_user_session_path %>
+            <%= link_to "зарегистрироваться", new_user_registration_path %>
+        <% end %>
     </div>
 </nav>

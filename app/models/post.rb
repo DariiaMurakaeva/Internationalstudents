@@ -7,4 +7,5 @@ class Post < ApplicationRecord
     has_many :bookmarks, as: :bookmarkable
 
     mount_uploader :post_image, PostImageUploader
+
 end

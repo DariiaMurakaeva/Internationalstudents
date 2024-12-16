@@ -1,0 +1,10 @@
+ru:
+  hello: 'Всем привет!'
+
+  errors:
+    messages:
+      not_saved: 'адрес email должен заканчиваться на @edu.hse.ru'
+      blank: 'не может быть пустым'
+      invalid: 'недопустимый'
+      confirmation: 'не совпадает'
+      accepted: 'должен быть принят'
