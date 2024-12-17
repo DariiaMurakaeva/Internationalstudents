@@ -32,9 +32,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'my_students', to: 'application_forms#my_students', as: 'my_students'
-
-
   resources :subscriptions, only: [:create]
 
   namespace :admin do

@@ -6,8 +6,7 @@ class ApplicationFormsController < ApplicationController
         if current_user.admin?
             @application_forms = ApplicationForm.includes(:student, :buddy)
         elsif current_user.buddy?
-            @my_students = ApplicationForm.where(buddy_id: current_user.id)
-            @application_forms = ApplicationForm.where(buddy_id: nil)
+            @application_forms = ApplicationForm.all
         elsif current_user.international_student?
             # @application_forms = [current_user.application_form_as_student]
             @application_forms = current_user.application_form_as_student ? [current_user.application_form_as_student] : []
@@ -37,7 +36,7 @@ class ApplicationFormsController < ApplicationController
     def take_student
         application_form = ApplicationForm.find(params[:id])
         application_form.update(buddy_id: current_user.id)
-        redirect_to my_students_path, notice: 'Теперь вы — бадди для этого студента'
+        redirect_to application_forms_path, notice: 'Теперь вы — бадди для этого студента'
     end
 
     private

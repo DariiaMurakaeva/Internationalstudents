@@ -1,18 +1,30 @@
 <% if current_user.buddy? %>
-    <h2>My Students</h2>
-    <% @application_forms.where(buddy_id: current_user.id).each do |form| %>
+    <h2>Мои студенты</h2>
+    <% my_students = @application_forms.where(buddy_id: current_user.id) %>
+    <% if my_students.any? %>
         <div id="my_students">
-            <%= render "application_forms/application", application_form: form %>
-            <p><strong>Status:</strong> Assigned to you as buddy.</p>
+            <% my_students.each do |form| %>
+                <div class="application-card">
+                    <%= render "application_forms/application", application_form: form %>
+                    <p><strong>Status:</strong> Assigned to you as buddy.</p>
+                </div>
+            <% end %>
         </div>
+    <% else %>
+        <p>Ты пока не выбрал никого из иностранных студентов</p>
     <% end %>
-
-    <h2>Available Applications</h2>
-    <% @application_forms.where(buddy_id: nil).each do |form| %>
-        <div id="posts">
-            <%= render "application_forms/application", application_form: form %>
-        <%= button_to "Take Student", take_student_application_form_path(form), method: :patch %>
+    <h2>Свободные анкеты</h2>
+    <% available_applications = @application_forms.where(buddy_id: nil) %>
+    <% if available_applications.any? %>
+        <div id="available_applications">
+            <% available_applications.each do |form| %>
+                <div class="application-card">
+                    <%= render "application_forms/application", application_form: form %>
+                </div>
+            <% end %>
         </div>
+    <% else %>
+        <p>Пока что свободных анкет нет. Но они скоро появятся!</p>
     <% end %>
 <% end %>
 
