@@ -17,3 +17,9 @@
 .reply {
   margin-left: 8vw;
   }
+
+  .menu_icon {
+    width: 2.4vw; 
+    height: 2.4vw;
+    vertical-align: middle;
+}

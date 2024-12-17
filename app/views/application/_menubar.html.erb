@@ -19,8 +19,16 @@
 
     <div class="userlogin">
         <% if user_signed_in? %>
-            <%= link_to current_user.email, edit_user_registration_path %>
-            <%= link_to "выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>
+            <!-- Пока просто иконка -->
+            <%= image_tag "Q_SearchIcon.svg", alt: "Search", class: "menu_icon" %>
+
+            <!-- Пока просто иконка -->
+            <!-- Static Notifications Icon -->
+            <%= image_tag "Q_NotificationsIcon.svg", alt: "Notifications", class: "menu_icon" %>
+
+            <%= link_to profile_path(current_user.profile) do %>
+                <%= image_tag "Q_ProfileIcon.svg", alt: "Profile", class: "menu_icon" %>
+            <% end %>
         <% else %>
             <%= link_to "войти", new_user_session_path %>
             <%= link_to "зарегистрироваться", new_user_registration_path %>
