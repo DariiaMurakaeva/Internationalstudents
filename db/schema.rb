@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_16_175912) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_21_100740) do
   create_table "application_forms", force: :cascade do |t|
     t.text "about"
     t.date "date_of_arrival"
@@ -47,10 +47,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_16_175912) do
     t.integer "user_id"
     t.string "title"
     t.text "content"
-    t.string "tags"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "discussion_image"
     t.string "tag"
   end
 
@@ -60,7 +58,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_16_175912) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "tags"
     t.string "post_image"
     t.string "tag"
   end

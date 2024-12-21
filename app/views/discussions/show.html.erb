@@ -6,17 +6,6 @@
   )
 %>
 
-<%= @discussion.bookmarks.count %>
-
-<%
-  bookmarks_count = @discussion.bookmarks.count
-  bookmark_text = "Save to bookmarks (#{bookmarks_count})"
-
-  if current_user && @discussion.bookmarks.where(user_id: current_user.id).count > 0
-    bookmark_text = "Delete from bookmarks (#{bookmarks_count})"
-  end
-%>
-
 <%= render @discussion %>
 
 <div>
@@ -28,10 +17,6 @@
     <%= button_to "Destroy this discussion", discussion_path(@discussion), method: :delete %>
   <% end %>
 
-  <%= link_to bookmark_text, bookmark_discussion_path(@discussion) %>
-  <%= link_to "Back to discussions", discussions_path %>
-
-  
 </div>
 
 <h2>Add a comment:</h2>

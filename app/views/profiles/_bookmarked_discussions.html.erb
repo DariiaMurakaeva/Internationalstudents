@@ -1,0 +1,9 @@
+<% if @bookmarked_discussions.any? %>
+    <ul>
+        <% @bookmarked_discussions.each do |discussion| %>
+            <li><%= link_to discussion.title, discussion_path(discussion) %></li>
+        <% end %>
+    </ul>
+<% else %>
+    <p>Ты еще не сохранял обсуждения</p>
+<% end %>

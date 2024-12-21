@@ -10,8 +10,11 @@
 
 <h1>Обсуждения</h1>
 
-<% if current_user && current_user.admin? %> 
-  <%= link_to "New discussion", new_admin_discussion_path %>
+<% if current_user %> 
+  <div id="new-discussion-form">
+    <h2>Create a New Discussion</h2>
+    <%= render "form", discussion: @discussion %>
+  </div>
 <% end %>
 
 <div id="discussions">

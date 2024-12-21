@@ -3,8 +3,109 @@
 <%= render @profile %>
 
 <div>
-  <%= link_to "Edit this profile", edit_profile_path(@profile) %> |
-  <%= link_to "Back to profiles", profiles_path %>
+  <%= link_to "Редактировать профиль", edit_profile_path(@profile) %> 
+
+  <% if user_signed_in? %>
+  <%= link_to "выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>
+  <% end %>
 
   <%= button_to "Destroy this profile", @profile, method: :delete %>
 </div>
+
+<!-- International Student -->
+<% if current_user.international_student? %>
+  <div class="profile_content">
+        <div class="toggle-container">
+        <label>
+          <input type="radio" name="content-type" value="created" id="toggle-created">
+          Моё
+        </label>
+        <label>
+          <input type="radio" name="content-type" value="saved" id="toggle-saved" checked>
+          Избранное
+        </label>
+
+        <label>
+          <input type="radio" name="content-category" value="posts" id="toggle-posts">
+          Статьи
+        </label>
+        <label>
+          <input type="radio" name="content-category" value="discussions" id="toggle-discussions" checked>
+          Обсуждения
+        </label>
+      </div>
+    <div id="content-section" data-controller="profile-content" data-is-admin="<%= current_user.admin? %>" data-profile-id="<%= @profile.id %>">
+
+    </div>
+  </div>
+<% end %>
+
+
+<!-- Buddy -->
+<% if current_user.buddy? %>
+  <div class="profile_content">
+      <div class="toggle-container">
+      <label>
+        <input type="radio" name="content-type" value="created" id="toggle-created">
+        Моё
+      </label>
+      <label>
+        <input type="radio" name="content-type" value="saved" id="toggle-saved" checked>
+        Избранное
+      </label>
+
+      <label>
+        <input type="radio" name="content-category" value="posts" id="toggle-posts">
+        Статьи
+      </label>
+      <label>
+        <input type="radio" name="content-category" value="discussions" id="toggle-discussions" checked>
+        Обсуждения
+      </label>
+    </div>
+    <div id="content-section" data-controller="profile-content" data-is-admin="<%= current_user.admin? %>" data-profile-id="<%= @profile.id %>">
+
+    </div>
+  </div>
+
+  <h2>Мои студенты</h2>
+  <% if @my_students.any? %>
+    <div id="my_students">
+      <% @my_students.each do |form| %>
+        <div class="application-card">
+          <%= render "application_forms/application", application_form: form %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>Ты пока не выбрал никого из иностранных студентов</p>
+  <% end %>
+<% end %>
+
+<!-- Admin Section -->
+<% if current_user.admin? %>
+  <div class="profile_content">
+    <div class="toggle-container">
+        <label>
+          <input type="radio" name="content-type" value="created" id="toggle-created">
+          Моё
+        </label>
+        <label>
+          <input type="radio" name="content-type" value="saved" id="toggle-saved" checked>
+          Избранное
+        </label>
+
+        <label>
+          <input type="radio" name="content-category" value="posts" id="toggle-posts">
+          Статьи
+        </label>
+        <label>
+          <input type="radio" name="content-category" value="discussions" id="toggle-discussions" checked>
+          Обсуждения
+        </label>
+      </div>
+    <div id="content-section" data-controller="profile-content" data-is-admin="<%= current_user.admin? %>" data-profile-id="<%= @profile.id %>">
+
+    </div>
+<% end %>
+

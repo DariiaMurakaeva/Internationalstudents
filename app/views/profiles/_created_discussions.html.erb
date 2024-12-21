@@ -1,0 +1,3 @@
+<% @created_discussions.each do |discussion| %>
+    <p><%= link_to discussion.title, discussion_path(discussion) %></p>
+<% end %>

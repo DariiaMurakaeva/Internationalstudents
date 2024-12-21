@@ -23,3 +23,8 @@
     height: 2.4vw;
     vertical-align: middle;
 }
+
+.comment_count {
+  display: flex;
+  flex-direction: row;
+}

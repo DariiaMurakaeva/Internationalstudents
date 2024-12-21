@@ -1,10 +1,12 @@
 class DiscussionsController < ApplicationController
-    # before_action :authenticate_user!
+    before_action :authenticate_user!
     load_and_authorize_resource
+    before_action :set_discussion, only: %i[ show edit update destroy bookmark]
 
     # GET /discussions or /discussions.json
     def index
-        @discussions = Discussion.all
+        @discussion = Discussion.new
+        @discussions = Discussion.order(created_at: :desc)
     end
 
     # GET /discussions/1 or /discussions/1.json
@@ -54,8 +56,7 @@ class DiscussionsController < ApplicationController
         end
     end
     
-    def bookmark 
-
+    def bookmark
         bookmarks = @discussion.bookmarks.where(user_id: current_user.id)
     
         if bookmarks.count > 0
@@ -64,8 +65,7 @@ class DiscussionsController < ApplicationController
             @discussion.bookmarks.create(user_id: current_user.id)
         end
     
-        redirect_to @discussion
-    
+        redirect_back fallback_location: discussion_path(@discussion)
     end
 
     private
@@ -74,6 +74,6 @@ class DiscussionsController < ApplicationController
         end
     
         def discussion_params
-            params.require(:discussion).permit(:user_id, :title, :content, :tags, :discussion_image, :tag_list)
+            params.require(:discussion).permit(:user_id, :title, :content, :tag)
         end
 end

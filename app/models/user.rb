@@ -16,6 +16,8 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
 
   has_many :bookmarks
+  has_many :bookmarked_posts, through: :bookmarks, source: :bookmarkable, source_type: 'Post'
+  has_many :bookmarked_discussions, through: :bookmarks, source: :bookmarkable, source_type: 'Discussion'
   
   has_one :application_form_as_student, class_name: 'ApplicationForm', foreign_key: 'student_id'
   has_many :application_forms_as_buddy, class_name: 'ApplicationForm', foreign_key: 'buddy_id'

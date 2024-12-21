@@ -1,7 +1,6 @@
 <%= form_with model: Comment.new, url: polymorphic_path([:admin, commentable, Comment.new]) do |form| %>
 
     <div class="field">
-        <%= form.label :body %><br />
         <%= form.text_area :body %>
     </div>
 

@@ -8,6 +8,19 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1 or /profiles/1.json
   def show
+    @user = current_user
+    if @user.international_student?
+      @created_discussions = @user.discussions
+      @saved_posts = @user.bookmarked_posts
+      @saved_discussions = @user.bookmarked_discussions
+    elsif @user.buddy?
+      @saved_posts = @user.bookmarked_posts
+      @saved_discussions = @user.bookmarked_discussions
+      @my_students = ApplicationForm.where(buddy_id: current_user.id)
+    elsif @user.admin?
+      @all_posts = Post.all
+      @all_discussions = Discussion.all
+    end
   end
 
   # GET /profiles/new
@@ -55,6 +68,34 @@ class ProfilesController < ApplicationController
       format.html { redirect_to profiles_path, status: :see_other, notice: "Profile was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+
+  def content
+    user = current_user
+    content_type = params[:content_type]
+    category = params[:category]
+
+    if content_type == "created"
+      @content = case category
+        when "posts"
+          user.admin? ? Post.all : []
+        when "discussions"
+          user.discussions
+        end
+    else # saved content
+      @content = case category
+        when "posts"
+          user.bookmarked_posts
+        when "discussions"
+          user.bookmarked_discussions
+        end
+    end
+
+    Rails.logger.debug "Content type: #{content_type}, Category: #{category}"
+    Rails.logger.debug "Content: #{@content.inspect}"
+
+    render json: { html: render_to_string(partial: "#{content_type}_#{category}", locals: { content: @content }) }
   end
 
   private

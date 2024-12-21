@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-    # before_action :authenticate_user!
+    before_action :authenticate_user!
     load_and_authorize_resource
-    before_action :set_post, only: %i[ show edit update destroy ]
+    before_action :set_post, only: %i[ show edit update destroy bookmark]
 
     def index
         @posts = Post.all
@@ -64,8 +64,7 @@ class PostsController < ApplicationController
             @post.bookmarks.create(user_id: current_user.id)
         end
     
-        redirect_to @post
-    
+        redirect_back fallback_location: post_path(@post)
     end
 
 
@@ -75,6 +74,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-        params.require(:post).permit(:user_id, :title, :content, :tags, :post_image, :tag_list)
+        params.require(:post).permit( :title, :content, :tags, :post_image, :tag_list)
     end
 end

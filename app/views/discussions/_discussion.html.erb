@@ -1,28 +1,43 @@
 <div id="<%= dom_id discussion %>">
-
-  <%= image_tag discussion.discussion_image.url, width: 600 %>
   
   <h2>
     <%= link_to discussion.title, discussion_path(discussion) %>
   </h2>
-  <p>
-    <strong>Author:</strong>
-    <%= discussion.user_id %>
-  </p>
 
   <p>
-    <strong>Title:</strong>
+    <%= discussion.user.profile&.name %>
+  </p>
+
+  <h3>
     <%= discussion.title %>
-  </p>
+  </h3>
 
   <p>
-    <strong>Content:</strong>
     <%= discussion.content %>
   </p>
 
   <p>
-    <strong>Tags:</strong>
-    <%= discussion.tags %>
+    <%= discussion.tag %>
   </p>
+
+  <div class="comment_count">
+    <%= image_tag "Icon_comment.svg", class: "comment-icon" %>
+    <p><%= discussion.comments.count %></p>
+  </div>
+
+  <% if current_user %>
+    <div class="bookmark_block">
+      <% 
+        is_bookmarked = discussion.bookmarks.where(user_id: current_user.id).exists?
+        bookmark_icon = is_bookmarked ? "Icon_BookmarkActive.svg" : "Icon_BookmarkDefault.svg"
+        bookmark_alt_text = is_bookmarked ? "Remove bookmark" : "Save to bookmarks"
+      %>
+
+      <%= link_to bookmark_discussion_path(discussion), method: :post, remote: true do %>
+        <%= image_tag bookmark_icon, alt: bookmark_alt_text, class: "bookmark-icon" %>
+        <span><%= discussion.bookmarks.count %></span>
+      <% end %>
+    </div>
+  <% end %>
 
 </div>

@@ -1,14 +1,10 @@
-
 <% comment_level = nested_level(comment) %>
 
 <div class="comment <%= 'reply' if comment.parent_comment_id != nil && comment_level < 4 %>">
-    <p> 
-    <b>Commenter:</b>
-    <%= comment.user_id %>
-    </p>
+
+    <%= comment.user.profile&.name %>
 
     <p> 
-    <b>Comment:</b>
     <%= comment.body %>
     </p>
 
