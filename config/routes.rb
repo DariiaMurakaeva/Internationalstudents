@@ -1,10 +1,14 @@
 Rails.application.routes.draw do  
   get "bookmarks/toggle"
   resources :profiles
+  
   namespace :api, format: 'json' do
     namespace :v1 do
+      post 'register', to: 'registrations#create'
       resources :posts, only: [:index, :show]
+      resources :profiles, only: [:index, :show, :update]
       resources :discussions, only: [:index, :show]
+      resources :application_forms, only: [:index]
     end
   end
 
