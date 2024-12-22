@@ -1,0 +1,13 @@
+<% content_for :title, "New discussion" %>
+
+<h1>New discussion</h1>
+
+<%= turbo_frame_tag "new_discussion" do %>
+    <%= render "form", discussion: @discussion %>
+<% end %>
+
+<br>
+
+<div>
+    <%= link_to "Back to discussions", discussions_path %>
+</div>

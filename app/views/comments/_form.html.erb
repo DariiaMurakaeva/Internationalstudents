@@ -1,0 +1,14 @@
+<%= form_with model: Comment.new, url: polymorphic_path([commentable, Comment.new]) do |form| %>
+
+    <div class="field">
+        <%= form.text_area :body %>
+    </div>
+
+    <% if parent_comment_id.present? %>
+        <%= form.hidden_field :parent_comment_id, value: parent_comment_id %>
+    <% end %>
+
+    <div class="actions">
+        <%= form.submit "Reply" %>
+    </div>
+<% end %>

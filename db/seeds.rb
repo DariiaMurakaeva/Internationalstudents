@@ -148,9 +148,12 @@ def create_posts(quantity)
 
 	quantity.times do
 		user = User.all.sample
+		title = headlines.sample
+		content = all_info[title]
+		description_content = content.length > 50 ? "#{content[0...50]}..." : content
 		post = Post.create(
 			title: headlines.sample, 
-			content: create_sentence,
+			content: description_content,
 			user: user,
 			tag: tags.sample
 			)
@@ -163,13 +166,29 @@ end
 
 def create_discussions(quantity)
 
+	all_info = {
+		"Кто идёт на адаптационную встречу?" => ["28 августа будет адаптационная встреча, кто-нибудь значет, что там будет?", "УЧЁБА"],
+		"Музей русского импрессионизма — топ!!" => ["Сегодня сходили туда на выставку, нам очень понравилось!! Всем рекомендую", "КУЛЬТУРА"],
+		"Как оформить справку в бассейн?" => ["Кто-нибудь ходил в бассейн ВШЭ? Я знаю, что туда нужна справка, как её можно получить?", "ДОКУМЕНТЫ"],
+		"Где погулять в Москве?" => ["Хочется погулять по нестандартным туристическим маршрутам, может кто-то что-то подскажет", "КУЛЬТУРА"],
+		"Какими приложениями такси вы пользуетесь?" => ["Скоро приезжаю в Россию, какое приложение для вызова такси стоит скачать?", "БЫТ"],
+		"Есть ли у кого-то опыт перевода в другую группу?" => ["Хочу перевестись, кому нужно писать по этому поводу? Вообще возможно ли это?", "УЧЁБА"],
+		"Альтернативное размещение" => ["Есть ли кто-то, кто живёт не в общежитии Вышки? Хочу кое-что спросить", "ДОКУМЕНТЫ"],
+		"В каком банке вы открывали карту?" => ["Только приехала в Москву, надо открыть карту, а я не знаю, какую выбрать. Поделитесь опытом", "БЫТ"],
+		"Халяль кухня в Москве" => ["Поделитесь местами с хорошей халяль едой в Москве, пожалуйста", "БЫТ"]
+	}
+
+	headlines = all_info.keys
 	tags = ['быт', 'учёба', 'культура', 'документы']
 
 	quantity.times do
 		user = User.all.sample
+		title = headlines.sample
+		content = all_info[title]
+		description_content = content.length > 50 ? "#{content[0...50]}..." : content
 		discussion = Discussion.create(
-			title: create_sentence, 
-			content: create_sentence,
+			title: headlines.sample, 
+			content: description_content,
 			user: user,
 			tag: tags.sample
 			)

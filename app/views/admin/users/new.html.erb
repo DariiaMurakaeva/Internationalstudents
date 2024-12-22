@@ -1,0 +1,42 @@
+<h1>Create New User</h1>
+
+<%= form_with model: @user, url: admin_users_path, local: true do |f| %>
+    <div>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+    </div>
+
+    <div>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+    </div>
+
+    <div>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+    </div>
+
+    <div>
+        <%= f.label :user_role %>
+        <%= f.select :user_role, User.roles.keys %>
+    </div>
+
+    <h2>Profile</h2>
+
+    <%= f.fields_for :profile do |profile_form| %>
+        <div>
+            <%= profile_form.label :name %>
+            <%= profile_form.text_field :name %>
+        </div>
+
+        <div>
+            <%= profile_form.label :date_of_birth %>
+            <%= profile_form.date_field :date_of_birth %>
+        </div>
+
+<% end %>
+
+    <div>
+        <%= f.submit "Создать профиль", class: "btn btn-primary" %>
+    </div>
+<% end %>

@@ -1,0 +1,54 @@
+<h1>Edit User Profile</h1>
+
+<%= form_with(model: @user, url: admin_user_path(@user), local: true) do |form| %>
+    <div>
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+    </div>
+
+    <div>
+        <%= form.label :user_role %>
+        <%= form.select :user_role, ['admin', 'international_student', 'buddy'], prompt: 'Select a role' %>
+    </div>
+
+    <h2>Личная информация</h2>
+
+    <div>
+        <%= form.fields_for :profile do |profile_form| %>
+            <div>
+                <%= profile_form.label :name %>
+                <%= profile_form.text_field :name %>
+            </div>
+            <div>
+                <%= profile_form.label :date_of_birth %>
+                <%= profile_form.date_field :date_of_birth %>
+            </div>
+            <div>
+                <%= profile_form.label :faculty %>
+                <%= profile_form.text_field :faculty %>
+            </div>
+            <div>
+                <%= profile_form.label :country %>
+                <%= profile_form.text_field :country %>
+            </div>
+            <div>
+                <%= profile_form.label :languages %>
+                <%= profile_form.text_field :languages %>
+            </div>
+            <div>
+                <%= profile_form.label :program_type %>
+                <%= profile_form.text_field :program_type %>
+            </div>
+            <div>
+                <%= profile_form.label :gender %>
+                <%= profile_form.text_field :gender %>
+            </div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.submit 'Сохранить изменения', class: "btn btn-primary" %>
+    </div>
+<% end %>
+
+<%= link_to 'Назад к профилям', admin_users_path, class: "btn btn-secondary" %>
