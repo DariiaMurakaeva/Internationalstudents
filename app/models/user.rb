@@ -7,6 +7,7 @@ class User < ApplicationRecord
   enum user_role: { international_student: 'international_student', buddy: 'buddy', admin: 'admin' }
   
   before_create :set_user_role_based_on_email
+  after_create :create_profile
 
   has_many :posts
   has_many :discussions
@@ -26,6 +27,10 @@ class User < ApplicationRecord
 
   private
 
+  def create_profile
+    Profile.find_or_create_by(user: self)
+  end
+  
   def set_user_role_based_on_email
     return if user_role.present?
 

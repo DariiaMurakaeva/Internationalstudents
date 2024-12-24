@@ -43,6 +43,16 @@ def create_users(quantity)
 	program_types = ["Студент полной степени обучения", "Студент по обмену", "Студент программы подготовки"]
 
 	admin = User.create!(email: 'admin@edu.hse.ru', password: 'password', admin: true, user_role: 'admin')
+	admin_profile = Profile.create!(
+				user: admin,
+				name: 'юнглас',
+				date_of_birth: Date.new(rand(1989..2005), rand(1..12), rand(1..28)),
+				gender: 'Ж',
+				country: "Russia",
+				faculty: faculties.sample,
+				languages: ["English", "Russian", "Chinese", "French", "Spanish"].sample(2).join(", "),
+				program_type: "Студент полной степени обучения"
+			)
 	puts "Admin created with email: #{admin.email}"
 
 	10.times do |i|
