@@ -154,26 +154,24 @@ def create_posts(quantity)
 	}
 
 	headlines = all_info.keys
-	tags = ['быт', 'учёба', 'культура', 'документы']
 
 	quantity.times do
 		user = User.all.sample
 		title = headlines.sample
-		content = all_info[title]
+		content, tag = all_info[title]
 		description_content = content.length > 50 ? "#{content[0...50]}..." : content
 		post = Post.create(
-			title: headlines.sample, 
+			title: title, 
 			content: description_content,
 			user: user,
-			tag: tags.sample
-			)
+			tag: tag
+		)
 		post_image = upload_random_image(post, :post_image)
 		post.post_image = post_image
 		post.save!
 		puts "Post with id #{post.id} just created"
 	end
-end
-
+end  
 def create_discussions(quantity)
 
 	all_info = {
@@ -189,19 +187,18 @@ def create_discussions(quantity)
 	}
 
 	headlines = all_info.keys
-	tags = ['быт', 'учёба', 'культура', 'документы']
 
 	quantity.times do
 		user = User.all.sample
 		title = headlines.sample
-		content = all_info[title]
+		content, tag = all_info[title]
 		description_content = content.length > 50 ? "#{content[0...50]}..." : content
 		discussion = Discussion.create(
-			title: headlines.sample, 
+			title: title, 
 			content: description_content,
 			user: user,
-			tag: tags.sample
-			)
+			tag: tag
+		)
 		discussion.save!
 		puts "Discussion with id #{discussion.id} just created"
 	end
