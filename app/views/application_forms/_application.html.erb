@@ -17,3 +17,4 @@
     <p><strong>Дополнительно:</strong> <%= application_form.note.blank? ? "No additional notes provided" : application_form.note %><br></p>
     <%= button_to "Выбрать студента", take_student_application_form_path(application_form), method: :patch if current_user.buddy? && application_form.buddy_id.nil? %>
 </div>
+

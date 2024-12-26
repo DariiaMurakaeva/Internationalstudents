@@ -1,54 +1,58 @@
-<% if current_user.buddy? %>
-    <h2>Мои студенты</h2>
-    <% my_students = @application_forms.where(buddy_id: current_user.id) %>
-    <% if my_students.any? %>
-        <div id="my_students">
-            <% my_students.each do |form| %>
-                <div class="application-card">
-                    <%= render "application_forms/application", application_form: form %>
-                </div>
-            <% end %>
-        </div>
-    <% else %>
-        <p>Ты пока не выбрал никого из иностранных студентов</p>
+<div class="applic_bg <%= current_user.buddy? ? 'buddy-bg' : 'student-bg' %>">
+    <% if current_user.buddy? %>
+        <h2 class="page_header_yunglas">мОи стуДеНТы</h2>
+        <% my_students = @application_forms.where(buddy_id: current_user.id) %>
+        <% if my_students.any? %>
+            <div id="my_students">
+                <% my_students.each do |form| %>
+                    <div class="application-card">
+                        <%= render "application_forms/application", application_form: form %>
+                    </div>
+                <% end %>
+            </div>
+        <% else %>
+            <p>Ты пока не выбрал никого из иностранных студентов</p>
+        <% end %>
+        <h2 class="page_header_yunglas">АнКеТы</h2>
+        <% available_applications = @application_forms.where(buddy_id: nil) %>
+        <% if available_applications.any? %>
+            <div id="available_applications">
+                <% available_applications.each do |form| %>
+                    <div class="application-card">
+                        <%= render "application_forms/application", application_form: form %>
+                    </div>
+                <% end %>
+            </div>
+        <% else %>
+            <p>Пока что свободных анкет нет. Но они скоро появятся!</p>
+        <% end %>
     <% end %>
-    <h2>Свободные анкеты</h2>
-    <% available_applications = @application_forms.where(buddy_id: nil) %>
-    <% if available_applications.any? %>
-        <div id="available_applications">
-            <% available_applications.each do |form| %>
-                <div class="application-card">
-                    <%= render "application_forms/application", application_form: form %>
-                </div>
-            <% end %>
-        </div>
-    <% else %>
-        <p>Пока что свободных анкет нет. Но они скоро появятся!</p>
-    <% end %>
-<% end %>
 
-<% if current_user.international_student? %>
-    <% form = @application_forms.find { |form| form.student_id == current_user.id } %>
-    <% if form %>
-        <p>
-        <strong>Status:</strong>
-            <% if form.buddy_id.nil? %>
-                Заявка отправлена! Твой бадди свяжется с тобой, как только сможет.
-            <% else %>
-                Поздравляем! Теперь <%= form.buddy.profile.name %> — твой бадди!
-            <% end %>
-        </p>
-    <% else %>
-        <p>You have not submitted an application yet.</p>
-        <%= render "form", application_form: @application_form %>
+    <div class="anketa">
+    <h1 class="anketa_text">АнКета</h1>
+    <% if current_user.international_student? %>
+        <% form = @application_forms.find { |form| form.student_id == current_user.id } %>
+        <% if form %>
+            <p class="post_header textleft anketa_container">
+                <% if form.buddy_id.nil? %>
+                    Заявка отправлена! Твой бадди свяжется с тобой, как только сможет.
+                <% else %>
+                    Поздравляем! Теперь <%= form.buddy.profile.name %> — твой бадди!
+                <% end %>
+            </p>
+        <% else %>
+            <p>You have not submitted an application yet.</p>
+            <%= render "form", application_form: @application_form %>
+        <% end %>
     <% end %>
-<% end %>
+    </div>
 
-<% if current_user.admin? %>
+    <% if current_user.admin? %>
     <% @application_forms.each do |form| %>
         <p>
-            <strong>Student Name:</strong> <%= form.student.name %><br>
-            <strong>Buddy Assigned:</strong>
+            <strong>Студент Имя:</strong> 
+            <span class="student-name"><%= form.student.name %></span><br>
+            <strong>Бадди Assigned:</strong>
             <% if form.buddy_id.nil? %>
                 Not yet assigned
             <% else %>
@@ -57,3 +61,28 @@
         </p>
     <% end %>
 <% end %>
+
+</div>
+
+<div class="footer whitetext">
+    <div class="ft_1">
+    <div class="text-logo">юНГлАс</div>
+    <div class="socials"></div>
+    <p class="ft_text">HSE ADC 2024</p>
+</div>
+
+<div class="ft_wrapper">
+    <div class="ft_2">
+    <p class="ft_text text_opacity">кураторы</p>
+    <p class="ft_text">Захар День</p>
+    <p class="ft_text">Вадим Булгаков</p>
+    </div>
+    <div class="ft_3">
+    <p class="ft_text text_opacity">улучшатели бадди системы</p>
+    <p class="ft_text">Нарыйаана Парникова</p>
+    <p class="ft_text">Дария Муракаева</p>
+    <p class="ft_text">Полина Ефимова</p>
+    <p class="ft_text">Мадина Утемисова (иллюстратор-вдохновитель)</p>
+    </div>
+    </div>
+</div>

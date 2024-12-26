@@ -8,16 +8,28 @@
 
 <% content_for :title, "Discussions" %>
 
-<h1>Обсуждения</h1>
+<h1 class="page_header_yunglas">ОБСУжДЕНия</h1>
 
-<% if current_user %> 
-  <div id="new-discussion-form">
-    <h2>Create a New Discussion</h2>
-    <%= render "form", discussion: @discussion %>
-  </div>
-<% end %>
+<div class="girl"></div>
 
-<div id="discussions">
+<div>
+  <% if current_user %> 
+    <div id="new-discussion-form">
+      <%= render "form", discussion: @discussion %>
+    </div>
+  <% end %>
+</div>
+
+<div class="filters_container">
+  <div class="edu_tag black_tag" data-filter="all">ВСЕ</div>
+  <div class="edu_tag" data-filter="БЫТ" >БЫТ</div>
+  <div class="edu_tag" data-filter="ДОКУМЕНТЫ" >ДОКУМЕНТЫ</div>
+  <div class="edu_tag" data-filter="ОБУЧЕНИЕ" >ОБУЧЕНИЕ</div>
+  <div class="edu_tag" data-filter="КУЛЬТУРА" >КУЛЬТУРА</div>
+
+</div>
+
+<div class="column_discussions">
   <% @discussions.each do |discussion| %>
     <%= render discussion %>
 
@@ -28,3 +40,27 @@
     <% end %>
   <% end %>
 </div>
+
+<div class="footer whitetext">
+  <div class="ft_1">
+    <div class="text-logo">юНГлАс</div>
+    <div class="socials"></div>
+    <p class="ft_text">HSE ADC 2024</p>
+  </div>
+
+  <div class="ft_wrapper">
+    <div class="ft_2">
+      <p class="ft_text text_opacity">кураторы</p>
+      <p class="ft_text">Захар День</p>
+      <p class="ft_text">Вадим Булгаков</p>
+    </div>
+    <div class="ft_3">
+      <p class="ft_text text_opacity">улучшатели бадди системы</p>
+      <p class="ft_text">Нарыйаана Парникова</p>
+      <p class="ft_text">Дария Муракаева</p>
+      <p class="ft_text">Полина Ефимова</p>
+      <p class="ft_text">Мадина Утемисова (иллюстратор-вдохновитель)</p>
+    </div>
+  </div>
+</div>
+
