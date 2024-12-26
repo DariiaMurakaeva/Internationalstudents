@@ -1,26 +1,8 @@
+<div class="post">
+
 <div id="<%= dom_id post %>">
-  <%= image_tag post.post_image.url, width: 600 %>
 
-  <h2>
-    <%= link_to post.title, post_path(post) %>
-  </h2>
-
-  <p>
-    <%= post.content %>
-  </p>
-
-  <div>
-    <p>
-      <%= post.tag %>
-    </p>
-  </div>
-
-  <div class="comment_count">
-    <%= image_tag "Icon_comment.svg", class: "comment-icon" %>
-    <p><%= post.comments.count %></p>
-  </div>
-
-  <% if current_user %>
+<% if current_user %>
     <div class="bookmark_block">
       <% 
         is_bookmarked = post.bookmarks.where(user_id: current_user.id).exists?
@@ -30,9 +12,33 @@
 
       <%= link_to bookmark_post_path(post), method: :post, remote: true do %>
         <%= image_tag bookmark_icon, alt: bookmark_alt_text, class: "bookmark-icon" %>
-        <span><%= post.bookmarks.count %></span>
+        
       <% end %>
     </div>
   <% end %>
 
+
+
+  <%= image_tag post.post_image.url, class: "image_size" %>
+
+  <div class="post_contents">
+    <div>
+      <p class="edu_tag">
+        <%= post.tag %>
+      </p>
+    </div>
+
+    <h2>
+      <%= link_to post.title, post_path(post), class: "post_header" %>
+    </h2>
+
+    <p class="text_article_desc">
+      <%= post.content %>
+    </p>
+  </div>
+
+
+
+  
+  </div>
 </div>

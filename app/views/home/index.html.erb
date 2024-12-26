@@ -1,103 +1,257 @@
-<div class="menu-bar"></div>
-<h1 class="text-logo">hey!Buddy</h1>
-<div class="mark"></div>
-<div class="chat_bubble">
-  <img class="px_icon_size_small" src="/assets/pixel_chat.svg" alt="" />
-  <div class="bubble_text">
-    <p class="desript_font">Марк Мрамба, Танзания</p>
-    <p>
-      О мой бог, как тут холодно, <br />
-      в моей стране даже кофт нет!
-    </p>
-  </div>
-</div>
-<div class="description_follow">
-  <p class="whitetext">
-    Медиа-сервис, помогающий иностранным студентам адаптироваться к жизни
-    в России
-  </p>
-  <a href="https://t.me/heeeybuddy"><button>подписаться</button></a>
-</div>
-
-<div class="folder">
-  <div class="folder_container">
-    <img class="px_icon_size_big" src="/assets/pixel_chel.svg" alt="" />
-    <h1>МЕДИА-СЕРВИС ДЛЯ ИНОСТРАННЫХ СТУДЕНТОВ</h1>
-    <p>
-      Готовящихся к обучению или уже обучающихся <br />
-      в Вышке, а также для их бадди — волонтеров, которые <br />
-      помогают им с адаптацией к жизни и учёбе в России
-    </p>
-  </div>
-  <div class="mini_folder1">
-    <p class="text_folder">заселение</p>
-  </div>
-  <div class="mini_folder2">
-    <p class="text_folder">документы</p>
-  </div>
-  <div class="mini_folder3">
-    <p class="text_folder">культура</p>
-  </div>
-  <div class="mini_folder4">
-    <p class="text_folder">обучение</p>
-  </div>
-</div>
-
-<div class="text_container">
-  <h1 class="whitetext textleft">УЗНАВАЙ БОЛЬШЕ <br />ОБ УЧЕБЕ</h1>
-  <p class="whitetext">
-    Вас ждут полезные статьи для бадди<br />
-    и иностранных студентов. Мы подготовили<br />
-    информацию для комфортной жизни в России,<br />
-    включая сбор документов и учебные вопросы
-  </p>
-</div>
-<div class="mailbox"></div>
-<div class="emission"></div>
-<div class="note1 bubble_text">
-  <p class="desript_font">#жизньвроссии</p>
-  <p>Где купить сим-карту?</p>
-</div>
-<div class="note2 bubble_text">
-  <p class="desript_font">#жилье</p>
-  <p>Что нужно знать перед заселением в общежитие?</p>
-</div>
-<div class="note3 bubble_text">
-  <p class="desript_font">#учебныйпроцесс</p>
-  <p>Адаптационная встреча: <br />что это?</p>
-</div>
-<div class="note4 bubble_text">
-  <p class="desript_font">#документы</p>
-  <p>Как и где пройти медицинский осмотр?</p>
-</div>
-
-<div class="mail folder" id="position">
-  <div class="sub">
-    <h1 class="textleft">БУДЬ В КУРСЕ ЗАПУСКА ПРОЕКТА</h1>
-    <div class="email_container">
-      <p>Подписывайся на рассылку, чтобы не пропустить все самое интересное!</p>
-      <div id="new_subscription"><%= render 'subscriptions/form' %></div>
+<div class="main_article">
+  <div class="main_article_bg"></div>
+  <div class="main_article_contents">
+    <div class="main_article_tags">
+      <div class="edu_tag">
+        <p>ОБУЧЕНИЕ</p>
+      </div>
+      <div class="fav_tag">
+        <img
+          src="/assets/Icon_BookmarkDefault.svg"
+          alt=""
+          class="small_icon_size"
+        />
+      </div>
+    </div>
+    <div class="main_article_text">
+      <h1>КАК ЗАВЕСТИ ДРУЗЕЙ В УНИВЕРСИТЕТЕ?</h1>
+      <div class="description_container">
+        <p class="gray_text_desc">
+          Переезд в другую страну для учёбы — это захватывающий и увлекательный
+          опыт. Однако, чтобы этот процесс прошёл гладко, важно тщательно
+          подготовиться и ничего не упустить
+        </p>
+      </div>
     </div>
   </div>
-  <div class="img_rocket"></div>
+</div>
+
+<div class="calendar_container">
+  <div class="calendar_text">
+    <h2>КАЛЕНДАРЬ МЕРОПРИЯТИЙ</h2>
+    <p class="gray_text_desc">
+      Будь в курсе событий, которые проходят в Вышке и в городе, Они помогут
+      тебе влиться как в учебный процесс, так и в жизнь в России
+    </p>
+  </div>
+
+  <div class="calendar_month">
+    <h2>Декабрь 2024</h2>
+    <div class="category_container">
+      <div class="category">
+        <div class="dot_1"></div>
+        <p>БЫТ</p>
+      </div>
+      <div class="category">
+        <div class="dot_2"></div>
+        <p>ДОКУМЕНТЫ</p>
+      </div>
+      <div class="category">
+        <div class="dot_3"></div>
+        <p>ОБУЧЕНИЕ</p>
+      </div>
+      <div class="category">
+        <div class="dot_4"></div>
+        <p>КУЛЬТУРА</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="week">
+    <div class="day">
+      <div class="calender_weekday">
+        <h2>ПН</h2>
+        <h2>23</h2>
+      </div>
+      <div class="task">
+        <div class="category_time_mark">
+          <div class="dot_3"></div>
+          <p class="semi-bold_body_text">12:00</p>
+        </div>
+        <p>Лекция «Из идеи <br />в технологический...</p>
+      </div>
+
+      <div class="task">
+        <div class="category_time_mark">
+          <div class="dot_4"></div>
+          <p class="semi-bold_body_text">20:00</p>
+        </div>
+        <p>Концерт «Большого джазового оркестра»</p>
+      </div>
+    </div>
+    <div class="day">
+      <div class="calender_weekday">
+        <h2>ВТ</h2>
+        <h2>24</h2>
+      </div>
+      <div class="task">
+        <div class="category_time_mark">
+          <div class="dot_3"></div>
+          <p class="semi-bold_body_text">11:00</p>
+        </div>
+        <p>Кейс «Бизнес инкубатор»</p>
+      </div>
+
+      <div class="task">
+        <div class="category_time_mark">
+          <div class="dot_4"></div>
+          <p class="semi-bold_body_text">18:00</p>
+        </div>
+        <p>Программа «Магия новогоднего кино»</p>
+      </div>
+
+      <div class="task">
+        <div class="category_time_mark">
+          <div class="dot_3"></div>
+          <p class="semi-bold_body_text">18:00</p>
+        </div>
+        <p>Презентация дисциплины маг...</p>
+      </div>
+    </div>
+    <div class="day">
+      <div class="calender_weekday">
+        <h2>СР</h2>
+        <h2>25</h2>
+      </div>
+      <div class="task">
+        <div class="category_time_mark">
+          <div class="dot_3"></div>
+          <p class="semi-bold_body_text">10:00</p>
+        </div>
+        <p>Открытая лекция <br />по ИИ</p>
+      </div>
+
+      <div class="task">
+        <div class="category_time_mark">
+          <div class="dot_1"></div>
+          <p class="semi-bold_body_text">18:00</p>
+        </div>
+        <p>Tandem meeting</p>
+      </div>
+    </div>
+    <div class="day_4">
+      <div class="calender_weekday">
+        <h2 class="whitetext">ЧТ</h2>
+        <h2 class="whitetext">24</h2>
+      </div>
+      <div class="task_4">
+        <div class="category_time_mark">
+          <div class="dot_3"></div>
+          <p class="semi-bold_body_text whitetext">10:00</p>
+        </div>
+        <p class="whitetext">Просмотр T-T (этого тут не должно быть)</p>
+      </div>
+    </div>
+    <div class="day">
+      <div class="calender_weekday">
+        <h2>ПТ</h2>
+        <h2>25</h2>
+      </div>
+      <div class="task">
+        <div class="category_time_mark">
+          <div class="dot_4"></div>
+          <p class="semi-bold_body_text">9:00</p>
+        </div>
+        <p>Выставка экранных искусств «Глядя...</p>
+      </div>
+    </div>
+    <div class="day">
+      <div class="calender_weekday">
+        <h2>СБ</h2>
+        <h2>26</h2>
+      </div>
+      <div class="task">
+        <div class="category_time_mark">
+          <div class="dot_2"></div>
+          <p class="semi-bold_body_text">10:00</p>
+        </div>
+        <p>Вебинар Банка России</p>
+      </div>
+
+      <div class="task">
+        <div class="category_time_mark">
+          <div class="dot_3"></div>
+          <p class="semi-bold_body_text">19:00</p>
+        </div>
+        <p>Церемония награждения «Эко...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section_arrow">
+  <p class="tags_text">К СТАТЬЯМ</p>
+  <a class="arrow_right" href="<%= posts_path %>"></a>
+</div>
+<div class="big_article">
+  <div class="big_article_content">
+    <div class="big_article_text_container">
+      <div class="edu_tag">БЫТ</div>
+      <h2>Как справиться с культурным шоком?</h2>
+      <p>
+        Переезд в другую страну для учёбы — это захватывающий и увлекательный
+        опыт. Однако, чтобы этот процесс прошёл гладко, важно тщательно
+        подготовиться
+      </p>
+    </div>
+    <div class="button_fav">
+      <button>ПРОЧИТАТЬ</button>
+      <div>
+        <img
+          src="/assets/big_Icon_BookmarkDefault.svg"
+          alt=""
+          class="big_icon_size"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="big_article_img"></div>
+</div>
+
+<div>
+  <div id="posts">
+    <%= render collection: @posts_cards, partial: "posts/post" %>
+  </div>
+</div>
+
+<div class="section_arrow">
+  <p class="tags_text">К ОБСУЖДЕНИЯМ</p>
+  <a class="arrow_right" href="<%= discussions_path %>"></a>
+</div>
+
+<div class="discussion_wrapper">
+  <div id="discussions">
+    <%= render collection: @discussions_cards, partial: "discussions/discussion"
+    %>
+  </div>
+</div>
+
+<div class="pagination">
+  <% @cards_count = 6 %> <% @cards_count.times do |i| %>
+  <div class="dot <%= 'active' if i == 0 %>"></div>
+  <% end %>
 </div>
 
 <div class="footer whitetext">
   <div class="ft_1">
+    <div class="text-logo">юНГлАс</div>
+    <div class="socials"></div>
     <p class="ft_text">HSE ADC 2024</p>
-    <p class="ft_text">tg: heeeeybuddy</p>
   </div>
-  <div class="ft_2">
-    <p class="ft_text text_opacity">кураторы</p>
-    <p class="ft_text">Захар День</p>
-    <p class="ft_text">Вадим Булгаков</p>
-  </div>
-  <div class="ft_3">
-    <p class="ft_text text_opacity">улучшатели бадди системы</p>
-    <p class="ft_text">Нарыйаана Парникова</p>
-    <p class="ft_text">Дария Муракаева</p>
-    <p class="ft_text">Полина Ефимова</p>
+
+  <div class="ft_wrapper">
+    <div class="ft_2">
+      <p class="ft_text text_opacity">кураторы</p>
+      <p class="ft_text">Захар День</p>
+      <p class="ft_text">Вадим Булгаков</p>
+    </div>
+    <div class="ft_3">
+      <p class="ft_text text_opacity">улучшатели бадди системы</p>
+      <p class="ft_text">Нарыйаана Парникова</p>
+      <p class="ft_text">Дария Муракаева</p>
+      <p class="ft_text">Полина Ефимова</p>
+      <p class="ft_text">Мадина Утемисова (иллюстратор-вдохновитель)</p>
+    </div>
   </div>
 </div>
-
-<%= api_v1_discussions_url %>
