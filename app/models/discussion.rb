@@ -6,4 +6,5 @@ class Discussion < ApplicationRecord
     has_many :comments, as: :commentable
     has_many :bookmarks, as: :bookmarkable
     
+    default_scope { order(created_at: "DESC")}
 end

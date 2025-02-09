@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_21_100740) do
+ActiveRecord::Schema[7.2].define(version: 2025_02_03_092305) do
   create_table "application_forms", force: :cascade do |t|
     t.text "about"
     t.date "date_of_arrival"
@@ -91,7 +91,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_21_100740) do
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
     t.string "user_role"
+    t.string "jti", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["jti"], name: "index_users_on_jti", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

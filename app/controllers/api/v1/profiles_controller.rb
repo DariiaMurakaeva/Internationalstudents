@@ -1,4 +1,5 @@
 class Api::V1::ProfilesController < ApplicationController
+    skip_before_action :verify_authenticity_token, only: [:create]
     before_action :authenticate_user!
 
     def index
@@ -19,6 +20,17 @@ class Api::V1::ProfilesController < ApplicationController
         end
     end
 
+    def create
+        user = User.find_by_jti(decrypt_payload[0]['jti'])
+        profile = user.profile.new(profile_params)
+    
+        if profile.save
+            render json: profile, status: :created
+        else
+            render json: profile.errors, status: :unprocessable_entity
+        end
+    end
+
     private
 
     def set_profile
@@ -27,5 +39,10 @@ class Api::V1::ProfilesController < ApplicationController
 
     def profile_params
         params.require(:profile).permit(:name, :date_of_birth, :faculty, :country, :languages, :program_type, :gender)
+    end
+
+    def decrypt_payload
+        jwt = request.headers["Authorization"]
+        token = JWT.decode(jwt, Rails.application.credentials.devise_jwt_secret_key!, true, { algorithm: 'HS256' })
     end
 end

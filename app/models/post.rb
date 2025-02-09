@@ -8,4 +8,5 @@ class Post < ApplicationRecord
 
     mount_uploader :post_image, PostImageUploader
 
+    default_scope { order(created_at: "DESC")}
 end
