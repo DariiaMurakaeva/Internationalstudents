@@ -20,14 +20,30 @@ class Api::V1::DiscussionsController < ApplicationController
         end
     end
 
+    def update
+        respond_to do |format|
+            if @discussion.update(discussion_params)
+                format.html { redirect_to discussion_path(@discussion), notice: "Discussion was successfully updated." }
+                format.json { render :show, status: :ok, location: @discussion }
+            else
+                format.html { render :edit, status: :unprocessable_entity }
+                format.json { render json: @discussion.errors, status: :unprocessable_entity }
+            end
+        end
+    end
+
+    def destroy
+        @discussion.destroy!
+    
+        respond_to do |format|
+            format.html { redirect_to discussion_path(@discussion), status: :see_other, notice: "Discussion was successfully destroyed." }
+            format.json { head :no_content }
+        end
+    end
+
     private
 
     def discussion_params
         params.require(:discussion).permit( :user_id, :title, :content, :tag)
-    end
-
-    def decrypt_payload
-        jwt = request.headers["Authorization"]
-        token = JWT.decode(jwt, Rails.application.credentials.devise_jwt_secret_key!, true, { algorithm: 'HS256' })
     end
 end

@@ -40,9 +40,4 @@ class Api::V1::ProfilesController < ApplicationController
     def profile_params
         params.require(:profile).permit(:name, :date_of_birth, :faculty, :country, :languages, :program_type, :gender)
     end
-
-    def decrypt_payload
-        jwt = request.headers["Authorization"]
-        token = JWT.decode(jwt, Rails.application.credentials.devise_jwt_secret_key!, true, { algorithm: 'HS256' })
-    end
 end

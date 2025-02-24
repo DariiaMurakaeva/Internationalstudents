@@ -1,0 +1,295 @@
+//иконки
+
+.Q_Logo {
+    display: block;
+    width: 5.29vw;
+    height: 3.17vw;
+    background-image: url('./images/Q_Logo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.Q_Icon {
+    width: 1.59vw;
+    height: 1.59vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.PlaneBlack {
+    background-image: url('./images/PlaneBlack.svg');
+}
+
+.PlaneWhite {
+    background-image: url('./images/PlaneWhite.svg');
+}
+
+.PlaneGrey{
+    background-image: url('./images/PlaneGrey.svg');
+}
+
+.DropDownBlackActive {
+    background-image: url('./images/DropdownBlackActive.svg');
+}
+
+.DropDownBlackDefault {
+    background-image: url('./images/DropdownBlackDefault.svg');
+}
+
+.DropDownWhiteActive {
+    background-image: url('./images/DropdownWhiteActive.svg');
+}
+
+.DropDownWhiteDefault {
+    background-image: url('./images/DropdownWhiteDefault.svg');
+}
+
+.DropDownGreyActive {
+    background-image: url('./images/DropdownGreyActive.svg');
+}
+
+.DropDownGreyDefault {
+    background-image: url('./images/DropdownGreyDefault.svg');
+}
+
+.LocationGrey{
+    background-image: url('./images/LocationGrey.svg');
+}
+
+.LocationWhite{
+    background-image: url('./images/LocationWhite.svg');
+}
+
+.LocationBlack{
+    background-image: url('./images/LocationBlack.svg');
+}
+
+.ProfileGrey{
+    background-image: url('./images/ProfileGrey.svg');
+}
+
+.ProfileWhite{
+    background-image: url('./images/ProfileWhite.svg');
+}
+
+.ProfileBlack{
+    background-image: url('./images/ProfileBlack.svg');
+}
+
+.CrossGrey{
+    background-image: url('./images/CrossGrey.svg');
+}
+
+.CrossWhite{
+    background-image: url('./images/CrossWhite.svg');
+}
+
+.CrossBlack{
+    background-image: url('./images/CrossBlack.svg');
+}
+
+.BookmarkGrey{
+    background-image: url('./images/BookmarkGrey.svg');
+}
+
+.BookmarkWhite{
+    background-image: url('./images/BookmarkWhite.svg');
+}
+
+.BookmarkBlack{
+    background-image: url('./images/BookmarkBlack.svg');
+}
+
+.BookmarkGrey{
+    background-image: url('./images/BookmarkGrey.svg');
+}
+
+.BookmarkWhite{
+    background-image: url('./images/BookmarkWhite.svg');
+}
+
+.BookmarkBlack{
+    background-image: url('./images/BookmarkBlack.svg');
+}
+
+.CommentGrey{
+    background-image: url('./images/CommentGrey.svg');
+}
+
+.CommentWhite{
+    background-image: url('./images/CommentWhite.svg');
+}
+
+.CommentBlack{
+    background-image: url('./images/CommentBlack.svg');
+}
+
+.SearchGrey{
+    background-image: url('./images/SearchGrey.svg');
+}
+
+.SearchWhite{
+    background-image: url('./images/SearchWhite.svg');
+}
+
+.SearchBlack{
+    background-image: url('./images/SearchBlack.svg');
+}
+
+.CameraGrey{
+    background-image: url('./images/CameraGrey.svg');
+}
+
+.CameraWhite{
+    background-image: url('./images/CameraWhite.svg');
+}
+
+.CameraBlack{
+    background-image: url('./images/CameraBlack.svg');
+}
+
+.Q_SocialMedia {
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.SocialMediaBlack {
+    width: 3.71vw;
+    height: 3.71vw;
+    background-color: green;
+}
+
+.SocialMediaWhite {
+    width: 2.65vw;
+    height: 2.65vw;
+    background-color: pink;
+}
+
+.VKWhite {
+    background-image: url('./images/Q_IconVkWhite.svg');
+}
+
+.VKBlack {
+    background-image: url('./images/Q_IconVkBlack.svg');
+}
+
+.TelegramBlack {
+    background-image: url('./images/Q_IconTelegramBlack.svg');
+}
+
+.TelegramWhite {
+    background-image: url('./images/Q_IconTelegramWhite.svg');
+}
+
+.ChatBlack {
+    background-image: url('./images/Q_IconChatBlack.svg');
+}
+
+.ChatWhite {
+    background-image: url('./images/Q_IconChatWhite.svg');
+}
+
+.Q_Bullet {
+    width: 0.53vw;
+    height: 0.53vw;
+    border-radius: 100%;
+}
+
+.Red {
+    background-color: var(--red_main);
+}
+
+.Pink {
+    background-color: var(--pink_main);
+}
+
+.Blue {
+    background-color: var(--blue_main);
+}
+
+.Green {
+    background-color: var(--green_main);
+}
+
+// Надо сделать радио-кнопку и номерочки
+
+// Картинки
+.Q_ArticleCardImage, .Q_ApplicationFormImage, .Q_ArticleHeaderImage,.Q_ProfileIcon, .Q_FlagIcon {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.Q_ArticleHeaderImage {
+    width: 27.19vw;
+    height: 23.48vw;
+    background-color: var(--red_main);
+}
+
+.Q_ArticleCardImage {
+    width: 16.14vw;
+    height: 16.14vw;
+    background-color: var(--red_main);
+}
+
+.Q_ApplicationFormImage {
+    width: 12.9vw;
+    height: 12.9vw;
+    background-color: var(--green_main);
+}
+
+.Q_ProfileIcon {
+    width: 2.912vw;
+    height: 2.912vw;
+    background-color: var(--blue_main);
+    border-radius: 100%;
+}
+
+.Q_FlagIcon {
+    width: 1.07vw;
+    height: 1.07vw;
+    background-color: var(--blue_main);
+}
+
+// Текст
+
+.Q_ArticleQuote {
+    width: 51.72vw;
+    padding-left: 1.59vw;
+    border-left: 0.33vw solid var(--blue_main)
+}
+
+.QuoteBlue {
+    border-left: 0.33vw solid var(--blue_main);
+}
+
+.QuoteRed {
+    border-left: 0.33vw solid var(--red_main);
+}
+
+.QuotePink {
+    border-left: 0.33vw solid var(--pink_main);
+}
+
+.QuoteGreen {
+    border-left: 0.33vw solid var(--green_main);
+}
+
+.Q_ArticleMenuPoint {
+    width: 100%;
+    padding-left: 1.06vw;
+
+    h6 {
+        color: var(--grey500)
+    }
+}
+
+.MenuPointActive {
+    border-left: 3px solid var(--red_main);
+
+    h6 {
+        color: var(--black)
+    }
+}
+

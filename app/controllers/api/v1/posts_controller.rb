@@ -20,14 +20,30 @@ class Api::V1::PostsController < ApplicationController
         end
     end
 
+    def update
+        respond_to do |format|
+            if @post.update(post_params)
+                format.html { redirect_to post_path(@post), notice: "Post was successfully updated." }
+                format.json { render :show, status: :ok, location: @post }
+            else
+                format.html { render :edit, status: :unprocessable_entity }
+                format.json { render json: [:admin, @post], status: :unprocessable_entity }
+            end
+        end
+    end
+
+    def destroy
+        @post.destroy!
+    
+        respond_to do |format|
+            format.html { redirect_to admin_posts_path, status: :see_other, notice: "Post was successfully destroyed." }
+            format.json { head :no_content }
+        end
+    end
+
     private
 
     def post_params
         params.require(:post).permit( :title, :content, :tags, :post_image)
-    end
-
-    def decrypt_payload
-        jwt = request.headers["Authorization"]
-        token = JWT.decode(jwt, Rails.application.credentials.devise_jwt_secret_key!, true, { algorithm: 'HS256' })
     end
 end

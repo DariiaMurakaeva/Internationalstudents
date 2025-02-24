@@ -2,7 +2,18 @@ class Api::V1::ApplicationFormsController < ApplicationController
     skip_before_action :verify_authenticity_token, only: [:create]
     
     def index
-        @application_forms = ApplicationForm.all
+        if @current_user.admin?
+            @application_forms = ApplicationForm.includes(:student, :buddy)
+        elsif @current_user.buddy?
+            @application_forms = ApplicationForm.all
+        elsif @current_user.international_student?
+            @application_forms = @current_user.application_form_as_student ? [@current_user.application_form_as_student] : []
+        else
+            render json: { error: 'Forbidden' }, status: :forbidden
+            return
+        end
+        
+        render json: @application_forms, include: [:student, :buddy], status: :ok
     end
 
     def create
@@ -20,10 +31,5 @@ class Api::V1::ApplicationFormsController < ApplicationController
 
     def application_form_params
         params.require(:application_form).permit(:about, :date_of_arrival, :time_of_arrival, :place_of_arrival, :place_of_residence, :note)
-    end
-
-    def decrypt_payload
-        jwt = request.headers["Authorization"]
-        token = JWT.decode(jwt, Rails.application.credentials.devise_jwt_secret_key!, true, { algorithm: 'HS256' })
     end
 end
