@@ -13,34 +13,33 @@ body {
 }
 
 h1 {
-  font-family: 'TT Hoves';
-  font-size: 4.2vw;
-  font-weight: 500;
+  font-family: 'Bebas Neue';
+  font-size: 11.11vw;
+  font-weight: 700;
+  line-height: 11vw;
   font-style: normal;
   color: var(--black);
-  /* поправить шрифт*/
 }
 
 h2 {
-  font-family: 'TT Hoves';
-  font-size: 2vw;
-  font-weight: 500;
+  font-family: 'Bebas Neue';
+  font-size: 6.35vw;
+  font-weight: 700;
+  line-height: 5.75vw;
   font-style: normal;
   color: var(--black);
-  /* поправить шрифт*/
 }
 
 h3 {
-  font-family: 'TT Hoves';
-  font-size: 1.5vw;
+  font-family: 'Bebas Neue';
+  font-size: 2.38vw;
   font-weight: 500;
   font-style: normal;
   color: var(--black);
-  /* поправить шрифт*/
 }
 
 h4 {
-  font-family: 'SALongBeach';
+  font-family: 'SA Long Beach';
   font-size: 2.12vw;
   font-style: normal;
   color: var(--black);
@@ -48,7 +47,7 @@ h4 {
 
 h5 {
   font-family: 'TT Hoves';
-  font-size: 1.85vw;
+  font-size: 1.6vw;
   font-weight: 500;
   color: var(--black)
 }

@@ -6,9 +6,23 @@
 }
 
 @font-face {
-  font-family: 'SALongBeach';
+  font-family: 'SA Long Beach';
   src: url('SALongBeach.otf') format('otf');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('BebasNeueRegular.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('BebasNeueBold.woff') format('woff');
+  font-weight: 700;
   font-style: normal;
 }
 

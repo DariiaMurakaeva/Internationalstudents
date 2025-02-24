@@ -197,6 +197,18 @@
     border-radius: 100%;
 }
 
+.Q_OrderedListPoint {
+    display: flex;
+    width: 2vw;
+    height: 10vw;
+    font-size: 1.06vw;
+    border-radius: 50%;
+    color: var(--white);
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+}
+
 .Red {
     background-color: var(--red_main);
 }
@@ -213,7 +225,7 @@
     background-color: var(--green_main);
 }
 
-// Надо сделать радио-кнопку и номерочки
+// Доделать радио-кнопку
 
 // Картинки
 .Q_ArticleCardImage, .Q_ApplicationFormImage, .Q_ArticleHeaderImage,.Q_ProfileIcon, .Q_FlagIcon {
@@ -253,11 +265,14 @@
 }
 
 // Текст
-
 .Q_ArticleQuote {
     width: 51.72vw;
     padding-left: 1.59vw;
-    border-left: 0.33vw solid var(--blue_main)
+    border-left: 0.33vw solid var(--blue_main);
+
+    h5 {
+        font-size: 2.12vw;
+    }
 }
 
 .QuoteBlue {
@@ -291,5 +306,19 @@
     h6 {
         color: var(--black)
     }
+}
+
+.Q_PageLink {
+    font-size: 0.93vw;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.LinkBlack {
+    color: var(--black)
+}
+
+.LinkWhite {
+    color: var(--white)
 }
 
