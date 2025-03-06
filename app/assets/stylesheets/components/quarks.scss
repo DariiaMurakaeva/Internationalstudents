@@ -1,3 +1,5 @@
+//Desktop
+
 //иконки
 
 .Q_Logo {
@@ -7,6 +9,7 @@
     background-image: url('./images/Q_Logo.svg');
     background-repeat: no-repeat;
     background-size: contain;
+    //НЕ ОТОБРАЖАЕТСЯ КАРТИНКА
 }
 
 .Q_Icon {
@@ -158,13 +161,11 @@
 .SocialMediaBlack {
     width: 3.71vw;
     height: 3.71vw;
-    background-color: green;
 }
 
 .SocialMediaWhite {
     width: 2.65vw;
     height: 2.65vw;
-    background-color: pink;
 }
 
 .VKWhite {
@@ -200,7 +201,7 @@
 .Q_OrderedListPoint {
     display: flex;
     width: 2vw;
-    height: 10vw;
+    height: 2vw;
     font-size: 1.06vw;
     border-radius: 50%;
     color: var(--white);
@@ -236,39 +237,34 @@
 .Q_ArticleHeaderImage {
     width: 27.19vw;
     height: 23.48vw;
-    background-color: var(--red_main);
 }
 
 .Q_ArticleCardImage {
     width: 16.14vw;
     height: 16.14vw;
-    background-color: var(--red_main);
 }
 
 .Q_ApplicationFormImage {
     width: 12.9vw;
     height: 12.9vw;
-    background-color: var(--green_main);
+    border-radius: 0.53vw;
 }
 
 .Q_ProfileIcon {
     width: 2.912vw;
     height: 2.912vw;
-    background-color: var(--blue_main);
     border-radius: 100%;
 }
 
 .Q_FlagIcon {
     width: 1.07vw;
     height: 1.07vw;
-    background-color: var(--blue_main);
 }
 
 // Текст
 .Q_ArticleQuote {
     width: 51.72vw;
     padding-left: 1.59vw;
-    border-left: 0.33vw solid var(--blue_main);
 
     h5 {
         font-size: 2.12vw;
@@ -301,7 +297,7 @@
 }
 
 .MenuPointActive {
-    border-left: 3px solid var(--red_main);
+    border-left: 0.198vw solid var(--red_main);
 
     h6 {
         color: var(--black)
@@ -309,7 +305,6 @@
 }
 
 .Q_PageLink {
-    font-size: 0.93vw;
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -322,3 +317,189 @@
     color: var(--white)
 }
 
+//Ipad Landscape
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .Q_Logo {
+        width: 5.29vw;
+        height: 3.17vw;
+    }    
+
+    .SocialMediaBlack {
+        width: 5.08vw;
+        height: 5.08vw;
+    }
+
+    .SocialMediaWhite {
+        width: 2.74vw;
+        height: 2.74vw;
+    }
+
+    .Q_OrderedListPoint {
+        width: 2.35vw;
+        height: 2.35vw;
+        font-size: 1.36vw;
+    }
+
+    .Q_Bullet {
+        width: 0.78vw;
+        height: 0.78vw;
+    }
+
+    // Картинки
+
+    .Q_ApplicationFormImage {
+        width: 12.7vw;
+        height: 12.7vw;
+        border-radius: 0.78vw;
+    }
+
+    .Q_ArticleHeaderImage {
+        width: 28.13vw;
+        height: 23.05vw;
+    }
+
+    .Q_ArticleCardImage {
+        width: 15.82vw;
+        height: 15.82vw;
+    }
+
+    .Q_ProfileIcon {
+        width: 3.13vw;
+        height: 3.13vw;
+    }
+
+    .Q_FlagIcon {
+        width: 1.173vw;
+        height: 1.173vw;
+    }
+
+    // Текст
+    .Q_ArticleQuote {
+        width: 50.54vw;
+        padding-left: 1.56vw;
+
+        h5 {
+            font-size: 2.15vw;
+        }
+    }
+
+    .QuoteBlue {
+        border-left: 0.39vw solid var(--blue_main);
+    }
+    
+    .QuoteRed {
+        border-left: 0.39vw solid var(--red_main);
+    }
+    
+    .QuotePink {
+        border-left: 0.39vw solid var(--pink_main);
+    }
+    
+    .QuoteGreen {
+        border-left: 0.39vw solid var(--green_main);
+    }
+
+    .Q_ArticleMenuPoint {
+        padding-left: 1.17vw;
+    }
+
+    .MenuPointActive {
+        border-left: 0.29vw solid var(--red_main);
+    } 
+}
+
+//Ipad Portrait
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+
+    // Иконки
+    .Q_Logo {
+        width: 7.82vw;
+        height: 4.69vw;
+    }    
+
+    .SocialMediaBlack {
+        width: 6.77vw;
+        height: 6.77vw;
+    }
+
+    .SocialMediaWhite {
+        width: 3.65vw;
+        height: 3.65vw;
+    }
+
+    .Q_OrderedListPoint {
+        width: 2.61vw;
+        height: 2.61vw;
+        font-size: 1.69vw;
+    }
+
+    .Q_Bullet {
+        width: 0.79vw;
+        height: 0.79vw;
+    }
+
+    .Q_ApplicationFormImage {
+        width: 19.8vw;
+        height: 19.8vw;
+        border-radius: 1.04vw;
+    }
+
+    .Q_ArticleHeaderImage {
+        width: 27.47vw;
+        height: 22.66vw;
+        background-color: var(--pink_main);
+    }
+
+
+    .Q_ArticleCardImage {
+        width: 17.71vw;
+        height: 17.71vw;
+        background-color: var(--red_main);
+    }
+
+    .Q_ProfileIcon {
+        width: 3.13vw;
+        height: 3.13vw;
+    }
+
+    .Q_FlagIcon {
+        width: 1.56vw;
+        height: 1.56vw;
+        background-color: var(--pink_main);
+    }
+
+    // Текст
+    .Q_ArticleQuote {
+        width: 49.16vw;
+        padding-left: 1.56vw;
+
+        h5 {
+            font-size: 2.15vw;
+        }
+    }
+
+    .QuoteBlue {
+        border-left: 0.3vw solid var(--blue_main);
+    }
+    
+    .QuoteRed {
+        border-left: 0.3vw solid var(--red_main);
+    }
+    
+    .QuotePink {
+        border-left: 0.3vw solid var(--pink_main);
+    }
+    
+    .QuoteGreen {
+        border-left: 0.3vw solid var(--green_main);
+    }
+
+    .Q_ArticleMenuPoint {
+        padding-left: 1.04vw;
+    }
+
+    .MenuPointActive {
+        border-left: 0.26vw solid var(--red_main);
+    }
+}

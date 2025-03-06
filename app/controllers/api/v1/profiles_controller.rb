@@ -1,6 +1,5 @@
 class Api::V1::ProfilesController < ApplicationController
     skip_before_action :verify_authenticity_token, only: [:create]
-    before_action :authenticate_user!
 
     def index
         @profiles = Profile.all
@@ -33,6 +32,7 @@ class Api::V1::ProfilesController < ApplicationController
 
     private
 
+    #set profile не надо
     def set_profile
         @profile = Profile.find_by(user_id: params[:id])
     end

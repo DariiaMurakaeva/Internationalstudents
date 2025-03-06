@@ -20,6 +20,7 @@ class Api::V1::DiscussionsController < ApplicationController
         end
     end
 
+    #Поправить#
     def update
         respond_to do |format|
             if @discussion.update(discussion_params)
@@ -32,6 +33,7 @@ class Api::V1::DiscussionsController < ApplicationController
         end
     end
 
+    #Тут тоже, и в постах#
     def destroy
         @discussion.destroy!
     
