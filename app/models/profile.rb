@@ -7,6 +7,14 @@ class Profile < ApplicationRecord
     validates :country, presence: true
     validates :languages, presence: true
     validates :program_type, presence: true
-    validates :name, presence: true
-    validates :gender, presence: true, inclusion: { in: %w[М Ж] }
+    validates :first_name, presence: true
+    validates :last_name, presence: true
+
+    def name
+        "#{first_name} #{last_name}"
+    end
+
+    def formatted_languages
+        languages.split(',').join(' / ')
+    end
 end

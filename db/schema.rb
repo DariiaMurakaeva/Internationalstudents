@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_02_03_092305) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_07_124202) do
   create_table "application_forms", force: :cascade do |t|
     t.text "about"
     t.date "date_of_arrival"
     t.time "time_of_arrival"
     t.string "place_of_arrival"
-    t.string "place_of_residence"
-    t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "student_id"
@@ -64,7 +62,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_03_092305) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer "user_id"
-    t.string "name"
     t.date "date_of_birth"
     t.string "faculty"
     t.string "country"
@@ -72,7 +69,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_03_092305) do
     t.string "program_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "gender"
+    t.string "first_name"
+    t.string "last_name"
   end
 
   create_table "subscriptions", force: :cascade do |t|
