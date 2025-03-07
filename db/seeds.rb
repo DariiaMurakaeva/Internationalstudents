@@ -36,77 +36,111 @@ def upload_random_image(record, attachment_field)
 end
 
 def create_users(quantity)
+	names = {
+    "John" => "Doe",
+	"Felix" => "Lee",
+    "Jane" => "Smith",
+	"Nilufer" => "Yildiz",
+    "Alex" => "Johnson",
+    "Emily" => "Brown",
+	"Miguel" => "Hernandez",
+    "Michael" => "Davis",
+    "Jiho" => "Kang",
+	"Sana" => "Minatozaki",
+	"Taylor" => "Swift",
+	"Vanessa" => "Jang",
+	"Yimou" => "Zhang",
+	"Pyotr" => "Fedorov",
+	"Serkan" => "Bolat",
+	"Diana" => "Middleton",
+    "Chris" => "Wilson",
+    "Mark" => "Taylor",
+    "Sophia" => "Anderson",
+    "Aydana" => "Abay",
+    "Yeji" => "Hwang",
+    "Paulina" => "Martinez",
+	}
 
-	first_names = ["John", "Jane", "Alex", "Emily", "Michael", "Jiho", "Chan", "Chris", "Mark", "Sophia", "Nilufer", "Aydana", "Yeji", "Paulina", "Felix", "Miguel"]
-	surnames = ["Yildiz", "Johnson", "Williams", "Brown", "Kim", "Kang", "Ali", "Zhang", "Martinez", "Hernandez", "Abdusattorov", "Lee", "Miyawaki", "Acar", "Abay", "Wang"]
-	faculties = ["Факультет математики", "Факультет экономических наук", "Московский институт электроники и математики им. А.Н. Тихонова", "Факультет компьютерных наук", "Высшая школа бизнеса", "Высшая школа юриспруденции и администрирования", "Факультет гуманитарных наук", "Факультет социальных наук", "Факультет креативных индустрий", "Факультет мировой экономики и мировой политики", "Факультет физики", "Международный институт экономики и финансов", "Факультет городского и регионального развития", "Факультет химии", "Факультет биологии и биотехнологии", "Факультет географии и геоинформационных технологий", "Школа иностранных языков", "Институт статистических исследований и экономики знаний", "Банковский институт", "Школа инноватики и предпринимательства"]
+	faculties = [
+    "Факультет математики", "Факультет экономических наук", "Московский институт электроники и математики им. А.Н. Тихонова", 
+    "Факультет компьютерных наук", "Высшая школа бизнеса", "Высшая школа юриспруденции и администрирования", 
+    "Факультет гуманитарных наук", "Факультет социальных наук", "Факультет креативных индустрий", 
+    "Факультет мировой экономики и мировой политики", "Факультет физики", "Международный институт экономики и финансов", 
+    "Факультет городского и регионального развития", "Факультет химии", "Факультет биологии и биотехнологии", 
+    "Факультет географии и геоинформационных технологий", "Школа иностранных языков", 
+    "Институт статистических исследований и экономики знаний", "Банковский институт", "Школа инноватики и предпринимательства"
+	]
+
+	countries = ["China", "USA", "South Korea", "Spain", "Germany", "Japan", "France", "Equador", "Turkey", "Kazakhstan", "Kyrgyzstan", "Argentina", "Uzbekistan", "Belgium", "Poland"]
+
 	program_types = ["Студент полной степени обучения", "Студент по обмену", "Студент программы подготовки"]
 
+	# admin
 	admin = User.create!(email: 'admin@edu.hse.ru', password: 'password', admin: true, user_role: 'admin')
 	admin_profile = Profile.create!(
-				user: admin,
-				name: 'юнглас',
-				date_of_birth: Date.new(rand(1989..2005), rand(1..12), rand(1..28)),
-				gender: 'Ж',
-				country: "Russia",
-				faculty: faculties.sample,
-				languages: ["English", "Russian", "Chinese", "French", "Spanish"].sample(2).join(", "),
-				program_type: "Студент полной степени обучения"
-			)
+    	user: admin,
+    	first_name: 'Admin',
+    	last_name: 'User',
+    	date_of_birth: Date.new(rand(1989..2005), rand(1..12), rand(1..28)),
+    	country: "Russia",
+    	faculty: faculties.sample,
+    	languages: ["English", "Russian", "Chinese", "French", "Spanish"].sample(2).join(", "),
+    	program_type: "Студент полной степени обучения"
+	)
+
 	puts "Admin created with email: #{admin.email}"
 
-	10.times do |i|
+	# Students
+	quantity.times do |i|
 		begin
-			student_name = "#{first_names.sample} #{surnames.sample}"
+
+			first_name = names.keys.sample
+			last_name = names[first_name]
+	
 			student = User.create!(
 				email: "student_#{i}@edu.hse.ru",
 				password: 'password',
 				user_role: 'international_student'
 			)
+
 			student_profile = Profile.create!(
 				user: student,
-				name: student_name,
+				first_name: first_name,
+				last_name: last_name,
 				date_of_birth: Date.new(rand(1989..2005), rand(1..12), rand(1..28)),
-				gender: ['М', 'Ж'].sample,
-				country: ["Russia", "USA", "China", "India", "Germany", "France", "Japan"].sample,
+				country: countries.sample,
 				faculty: faculties.sample,
-				languages: ["English", "Russian", "Chinese", "French", "Spanish"].sample(2).join(", "),
+				languages: ["English", "Russian", "Chinese", "French", "Spanish", "Korean", "French", "Arabic", "Turkish", "Japanese", "German", "Polish"].sample(2).join(", "),
 				program_type: program_types.sample
 			)
 			puts "International student created with email: #{student.email}"
 
 			create_application_forms(student) if student.persisted?
 
-			buddy_name = "#{first_names.sample} #{surnames.sample}"
+			#Buddies
+			buddy_first_name = names.keys.sample
+			buddy_last_name = names[buddy_first_name]
+
 			buddy = User.create!(
-				email: "buddy_#{i}@edu.hse.ru",
-				password: 'password',
-				user_role: 'buddy'
-			)
+        		email: "buddy_#{i}@edu.hse.ru",
+        		password: 'password',
+        		user_role: 'buddy'
+    		)
+
 			buddy_profile = Profile.create!(
-				user: buddy,
-				name: buddy_name,
-				date_of_birth: Date.new(rand(1989..2005), rand(1..12), rand(1..28)),
-				gender: ['М', 'Ж'].sample,
-				country: ["Russia", "USA", "China", "India", "Germany", "France", "Japan"].sample,
-				faculty: faculties.sample,
-				languages: ["English", "Russian", "Chinese", "French", "Spanish"].sample(2).join(", "),
-				program_type: "Студент полной степени обучения"
+        		user: buddy,
+        		first_name: buddy_first_name,
+        		last_name: buddy_last_name,
+        		date_of_birth: Date.new(rand(1989..2005), rand(1..12), rand(1..28)),
+        		country: ["Russia", "USA", "China", "India", "Germany", "France", "Japan"].sample,
+        		faculty: faculties.sample,
+        		languages: ["English", "Russian", "Chinese", "French", "Spanish"].sample(2).join(", "),
+        		program_type: "Студент полной степени обучения"
 			)
 			puts "Buddy created with email: #{buddy.email}"
-		rescue ActiveRecord::RecordInvalid => e
-			puts "Error creating record for #{student_name || buddy_name}: #{e.message}"
-			puts "Validation errors: #{e.record.errors.inspect}"
-			e.record.errors.each do |field, messages|
-				if messages.present? # Check if messages is not nil or empty
-					puts "#{field}: #{messages.join(', ')}"
-				else
-					puts "#{field}: No error message available"
-				end
-			end
 		end
 	end
-end
+end 
 
 def create_application_forms(user)
 
@@ -119,20 +153,12 @@ def create_application_forms(user)
     'Белорусский вокзал', 'Павелецкий вокзал', 'Рижский вокзал', 'Восточный вокзал'
 	]
 
-	residence_places = [
-    'Общежитие №1', 'Общежитие №2', 'Общежитие №3', 'Общежитие №4', 
-    'Общежитие №5', 'Общежитие №6', 'Общежитие №7', 'Общежитие №8', 
-    'Общежитие №9', 'Общежитие №10', 'Другое'
-	]
-
 	application_form_data = {
 		student_id: user.id,
 		about: create_sentence,
 		date_of_arrival: Date.today + rand(1..30).days,
 		time_of_arrival: Time.now + rand(1..10).hours,
 		place_of_arrival: arrival_places.sample,
-		place_of_residence: residence_places.sample,
-		note: [create_sentence, nil].sample
 	}
 
 	application_form = ApplicationForm.create!(application_form_data)

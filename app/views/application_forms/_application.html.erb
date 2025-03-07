@@ -1,10 +1,9 @@
 <div>
     <h3>Персональные данные</h3>
     <p><strong>Student Имя:</strong> <%= application_form.student.profile.name %><br></p>
-    <p><strong>Пол:</strong> <%= application_form.student.profile.gender %><br></p>
     <p><strong>Дата рождения:</strong> <%= application_form.student.profile.date_of_birth %><br></p>
     <p><strong>Страна гражданства:</strong> <%= application_form.student.profile.country %><br></p>
-    <p><strong>Языки:</strong> <%= application_form.student.profile.languages %><br></p>
+    <p><strong>Языки:</strong> <%= application_form.student.profile.formatted_languages %><br></p>
     <p><strong>Факультет:</strong> <%= application_form.student.profile.faculty %><br></p>
     <p><strong>Тип студента:</strong> <%= application_form.student.profile.program_type %><br></p>
     <p><strong>О себе:</strong> <%= application_form.about %><br></p>
@@ -13,8 +12,6 @@
     <p><strong>Дата:</strong> <%= application_form.date_of_arrival %><br></p>
     <p><strong>Время:</strong> <%= application_form.time_of_arrival %><br></p>
     <p><strong>Аэропорт:</strong> <%= application_form.place_of_arrival %><br></p>
-    <p><strong>Место проживания:</strong> <%= application_form.place_of_residence %><br></p>
-    <p><strong>Дополнительно:</strong> <%= application_form.note.blank? ? "No additional notes provided" : application_form.note %><br></p>
     <%= button_to "Выбрать студента", take_student_application_form_path(application_form), method: :patch if current_user.buddy? && application_form.buddy_id.nil? %>
 </div>
 
