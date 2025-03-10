@@ -26,7 +26,7 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
     end
     
     def profile_params
-        params.require(:profile).permit(:name, :date_of_birth, :faculty, :country, :languages, :program_type, :gender)
+        params.require(:profile).permit(:first_name, :last_name, :date_of_birth, :faculty, :country, :languages, :program_type, :profile_photo)
     end
 
     def encrypt_payload

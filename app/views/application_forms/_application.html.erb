@@ -1,5 +1,10 @@
 <div>
     <h3>Персональные данные</h3>
+    <% if application_form.student.profile.profile_photo.attached? %>
+        <div>
+    <%= image_tag application_form.student.profile.profile_photo.variant(resize_to_limit: [200, 200]), alt: "Profile Photo", class: "A_ProfilePhoto" %>
+        </div>
+<% end %>
     <p><strong>Student Имя:</strong> <%= application_form.student.profile.name %><br></p>
     <p><strong>Дата рождения:</strong> <%= application_form.student.profile.date_of_birth %><br></p>
     <p><strong>Страна гражданства:</strong> <%= application_form.student.profile.country %><br></p>

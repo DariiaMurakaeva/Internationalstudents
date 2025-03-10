@@ -1,7 +1,8 @@
 class Profile < ApplicationRecord
 
     belongs_to :user
-    
+    has_one_attached :profile_photo
+
     validates :faculty, presence: true
     validates :date_of_birth, presence: true
     validates :country, presence: true

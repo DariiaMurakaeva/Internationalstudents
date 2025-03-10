@@ -1,42 +1,23 @@
-<nav class="S_MenuBar">
-    <div class="select_language">
-        <p>RU</p>
-        <div class="icon_dropdown"></div>
-    </div>
+<nav class="A_MenuBar">
 
-    <div class="logo_menu_container">
-    
-            <p class="text-logo">юНГлАс</p>
+    <%= link_to "главная", root_url %>
+    <%= link_to "статьи", posts_url %>
+    <%= link_to "обсуждения", discussions_url %>
+    <%= link_to "о нас", home_about_url %>
 
-        <div class="menu">
-
-            <%= link_to "главная", root_url %>
-            <%= link_to "статьи", posts_url %>
-            <%= link_to "обсуждения", discussions_url %>
-            <%= link_to "о нас", home_about_url %>
-
-            <% if user_signed_in? %>
-                <% if current_user.user_role == 'international_student' %>
-                    <%= link_to "заявка на бадди", application_forms_url %>
-                <% elsif current_user.user_role == 'buddy' %>
-                    <%= link_to "анкеты студентов", application_forms_url %>
-                <% elsif current_user.admin? %>
-                    <%= link_to "Подписки", admin_subscriptions_url %>
-                    <%= link_to "Управление пользователями", admin_users_url %>
-                <% end %>
-            <% end %>
-        </div>
-    </div>
+    <% if user_signed_in? %>
+        <% if current_user.user_role == 'international_student' %>
+            <%= link_to "заявка на бадди", application_forms_url, style: "color: black;" %>
+        <% elsif current_user.user_role == 'buddy' %>
+            <%= link_to "анкеты студентов", application_forms_url, style: "color: black;" %>
+        <% elsif current_user.admin? %>
+            <%= link_to "Подписки", admin_subscriptions_url, style: "color: black;" %>
+            <%= link_to "Управление пользователями", admin_users_url, style: "color: black;" %>
+        <% end %>
+    <% end %>
 
     <div class="userlogin">
         <% if user_signed_in? %>
-            <!-- Пока просто иконка -->
-            <%= image_tag "Q_SearchIcon.svg", alt: "Search", class: "menu_icon" %>
-
-            <!-- Пока просто иконка -->
-            <!-- Static Notifications Icon -->
-            <%= image_tag "Q_NotificationsIcon.svg", alt: "Notifications", class: "menu_icon" %>
-
             <%= link_to profile_path(current_user.profile) do %>
                 <%= image_tag "Q_ProfileIcon.svg", alt: "Profile", class: "menu_icon" %>
             <% end %>
@@ -46,8 +27,3 @@
         <% end %>
     </div>
 </nav>
-<div class="mobile_menu">
-        <%= image_tag "menubar_mobile.svg", alt: "Profile", class: "mobile_menu_icon"%>
-        <p class="menubar_mobile_text">меню</p>
-        </div>
-</div>

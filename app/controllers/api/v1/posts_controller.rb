@@ -21,23 +21,20 @@ class Api::V1::PostsController < ApplicationController
     end
 
     def update
-        respond_to do |format|
-            if @post.update(post_params)
-                format.html { redirect_to post_path(@post), notice: "Post was successfully updated." }
-                format.json { render :show, status: :ok, location: @post }
-            else
-                format.html { render :edit, status: :unprocessable_entity }
-                format.json { render json: [:admin, @post], status: :unprocessable_entity }
-            end
+        post = Post.find(params[:id])
+        if discussion.update(post_params)
+            render json: post, status: :ok
+        else
+            render json: post.errors, status: :unprocessable_entity
         end
     end
 
     def destroy
-        @post.destroy!
-    
-        respond_to do |format|
-            format.html { redirect_to admin_posts_path, status: :see_other, notice: "Post was successfully destroyed." }
-            format.json { head :no_content }
+        post = Post.find(params[:id])
+        if post.destroy
+            head :no_content
+        else
+            render json: { error: "Failed to delete the post" }, status: :unprocessable_entity
         end
     end
 

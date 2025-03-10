@@ -254,6 +254,7 @@
     width: 2.912vw;
     height: 2.912vw;
     border-radius: 100%;
+    background-color: var(--red_main);
 }
 
 .Q_FlagIcon {
@@ -289,10 +290,12 @@
 
 .Q_ArticleMenuPoint {
     width: 100%;
+    height: 1.92vw;
     padding-left: 1.06vw;
+    // Надо сделать текст по центру высоты
 
     h6 {
-        color: var(--grey500)
+        color: var(--grey500);
     }
 }
 

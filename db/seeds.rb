@@ -3,7 +3,7 @@
 
 def seed 
 	reset_db
-	create_users(10)
+	create_users(16)
 	create_discussions(20)
 	create_posts(20)
 	create_comments(20)
@@ -37,28 +37,21 @@ end
 
 def create_users(quantity)
 	names = {
-    "John" => "Doe",
-	"Felix" => "Lee",
-    "Jane" => "Smith",
+    "Hyunjin" => "Hwang",
+	"Marinette" => "Boucher",
+	"Mark" => "Mramba",
+    "Karina" => "Smbatian",
+	"Batbayar" => "Baatar",
+    "Jiyi" => "Zhang",
+	"Alihan" => "Shaldanbaev",
 	"Nilufer" => "Yildiz",
-    "Alex" => "Johnson",
-    "Emily" => "Brown",
-	"Miguel" => "Hernandez",
-    "Michael" => "Davis",
-    "Jiho" => "Kang",
-	"Sana" => "Minatozaki",
-	"Taylor" => "Swift",
-	"Vanessa" => "Jang",
-	"Yimou" => "Zhang",
-	"Pyotr" => "Fedorov",
+    "Muhammad" => "Abdusattorov",
+	"Jiho" => "Kang",
 	"Serkan" => "Bolat",
-	"Diana" => "Middleton",
-    "Chris" => "Wilson",
-    "Mark" => "Taylor",
-    "Sophia" => "Anderson",
-    "Aydana" => "Abay",
-    "Yeji" => "Hwang",
-    "Paulina" => "Martinez",
+	"Esther" => "Musa",
+	"Denis" => "Artemiev",
+    "Jasmin" => "Asilbekova",
+	"Riki" => "Nishimura",
 	}
 
 	faculties = [
@@ -73,6 +66,9 @@ def create_users(quantity)
 
 	countries = ["China", "USA", "South Korea", "Spain", "Germany", "Japan", "France", "Equador", "Turkey", "Kazakhstan", "Kyrgyzstan", "Argentina", "Uzbekistan", "Belgium", "Poland"]
 
+	first_name = names.keys.sample
+	last_name = names[first_name]
+			
 	program_types = ["Студент полной степени обучения", "Студент по обмену", "Студент программы подготовки"]
 
 	# admin
@@ -88,6 +84,8 @@ def create_users(quantity)
     	program_type: "Студент полной степени обучения"
 	)
 
+	attach_profile_photo(admin_profile, 'admin')
+
 	puts "Admin created with email: #{admin.email}"
 
 	# Students
@@ -96,7 +94,7 @@ def create_users(quantity)
 
 			first_name = names.keys.sample
 			last_name = names[first_name]
-	
+
 			student = User.create!(
 				email: "student_#{i}@edu.hse.ru",
 				password: 'password',
@@ -111,9 +109,11 @@ def create_users(quantity)
 				country: countries.sample,
 				faculty: faculties.sample,
 				languages: ["English", "Russian", "Chinese", "French", "Spanish", "Korean", "French", "Arabic", "Turkish", "Japanese", "German", "Polish"].sample(2).join(", "),
-				program_type: program_types.sample
+				program_type: program_types.sample,
 			)
 			puts "International student created with email: #{student.email}"
+			
+			attach_profile_photo(student_profile, first_name)
 
 			create_application_forms(student) if student.persisted?
 
@@ -137,6 +137,8 @@ def create_users(quantity)
         		languages: ["English", "Russian", "Chinese", "French", "Spanish"].sample(2).join(", "),
         		program_type: "Студент полной степени обучения"
 			)
+
+			attach_profile_photo(buddy_profile, buddy_name)
 			puts "Buddy created with email: #{buddy.email}"
 		end
 	end
@@ -163,6 +165,15 @@ def create_application_forms(user)
 
 	application_form = ApplicationForm.create!(application_form_data)
 	puts "Application form created for user_id #{user.id} with id #{application_form.id}"
+
+	profile = user.profile 
+	if profile.profile_photo.attached?
+		application_form.profile_photo.attach(
+			io: StringIO.new(profile.profile_photo.download),
+			filename: profile.profile_photo.filename.to_s,
+			content_type: profile.profile_photo.content_type
+		)
+	end
 end
 
 def create_posts(quantity)
@@ -266,6 +277,16 @@ def create_comment_replies
 				)
 			puts "Comment reply with id #{comment_reply.id} for discussion with id #{comment.id} just created"
 		end
+	end
+end
+
+def attach_profile_photo(profile, name_key)
+	photo_path = Dir.glob(Rails.root.join("public/autoupload/profile_photos/#{name_key.downcase}*")).first
+	if photo_path.present? && File.exist?(photo_path)
+		profile.profile_photo.attach(io: File.open(photo_path), filename: File.basename(photo_path), content_type: "image/jpeg")
+		puts "Attached profile photo for #{profile.first_name} #{profile.last_name}"
+	else
+		puts "No profile photo found for #{profile.first_name} #{profile.last_name}"
 	end
 end
 

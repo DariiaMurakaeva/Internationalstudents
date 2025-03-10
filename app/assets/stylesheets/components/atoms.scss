@@ -1,6 +1,627 @@
+//Desktop
+
+// Header
 .A_Header {
     width: 32.47vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.A_Profile {
+    width: 2.38vw;
+    height: 2.38vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black);
+    border-radius: 0.53vw;
+
+    .Q_Icon {
+        width: 1.59vw;
+        height: 1.59vw;
+    }
+}
+
+.A_Language {
+    width: fit-content;
+    height: 1.78vw;
+    display: flex;
+    flex-direction: row;
+    gap: 0.53vw;
+    padding: 0.3vw 0.4vw 0.3vw 0.79vw;
+    border-radius: 0.53vw;
+    align-items: center;
+
+    .Q_Icon {
+        width: 1.59vw;
+        height: 1.59vw;
+    }
+}
+
+.BlackSelect {
+    background-color: var(--black);
+    
+    p {
+        color: var(--white)
+    }
+}
+
+.StrokeSelect {
+    background-color: none;
+    border: 0.067vw solid var(--grey500);
+
+    p {
+        color: var(--grey500)
+    }
+}
+
+// Footer
+.A_FooterText {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.06vw;
+
+    a {
+        color: var(--white)
+    }
+    p {
+        color: var(--white)
+    }
+}
+
+.A_SocialMedia {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 1.06vw;
+}
+
+// Tags
+.A_StudentInfoTag {
+    width: fit-content;
+    display: flex;
+    gap: 0.26vw;
+    border-radius: 0.53vw;
+    align-items: center;
+}
+
+.TagWithFlag {
+    background-color: var(--grey100);
+    padding: 0.53vw 1.06vw 0.53vw 1.06vw;
+}
+
+.TagNoFlag {
+    background-color: var(--white);
+    border: 0.067vw solid var(--grey300);
+    padding: 0.26vw 0.78vw 0.26vw 0.78vw;
+}
+
+.A_ContentTag {
+    width: fit-content;
+    border-radius: 100px;
+    padding: 0.484vw 1.06vw;
+}
+
+.TagGreen {
+    background-color: var(--green_light);
+    
+    p {
+        color: var(--green_dark);
+    }
+}
+
+.TagBlue {
+    background-color: var(--blue_light);
+    
+    p {
+        color: var(--blue_dark);
+    }
+}
+
+.TagRed {
+    background-color: var(--red_light);
+    
+    p {
+        color: var(--red_dark);
+    }
+}
+
+.TagPink {
+    background-color: var(--pink_light);
+    
+    p {
+        color: var(--pink_dark);
+    }
+}
+
+// Tabs, Buttons, Text
+.A_ReadMoreButton {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 0.26vw;
+    align-items: center;
+
+    p {
+        color: var(--grey500);
+    }
+}
+
+.A_LoadMoreButton {
+    width: fit-content;
+
+    p {
+        color: var(--grey500);
+    }
+} // Добавить ховер
+
+.A_LoadMoreButton:hover {
+    text-decoration: underline;
+    transition: all 0.3s;
+}
+
+.A_Button {
+    width: 14.29vw;
+    height: 3.24vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.53vw;
+}
+
+.A_Button:hover {
+    transform: scale(1.02);
+    transition: all 0.3s; 
+    // надо добавить обратный transition
+    cursor: pointer;
+}
+
+.PrimaryButton {
+    background-color: var(--black);
+
+    p {
+        color: var(--white);
+    }
+}
+
+.SecondaryButton {
+    background-color: var(--white);
+    border: 0.067vw solid var(--grey300);
+
+    p {
+        color: var(--Black);
+    }
+}
+
+.TertiaryButton {
+    background-color: var(--red_light);
+    border: 0.067vw solid var(--red_dark);
+
+    p {
+        color: var(--Black);
+    }
+}
+
+.Disabled {
+    background-color: var(--grey100);
+
+    p {
+        color: var(--black);
+    }
+}
+
+.Disabled:hover {
+    transform: none;
+    cursor: default;
+}
+
+.A_ArrivalInfo {
+    width: fit-content;
+    display: flex;
+    gap: 0.4vw;
+    align-items: center;
+
+    div {
+        background-color: var(--green_main);
+    }
+}
+
+// Images
+.A_ArticleImage {
+    width: 52.78vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.79vw;
+    align-items: center;
+
+    div {
+        width: 100%;
+        height: 26.19vw;
+        background-color: var(--green_main);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    p {
+        color: var(--grey500);
+        width: 37.7vw;
+        text-align: center;
+    }
+}
+
+// Text + Icons
+.A_ProfileInfo {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 0.795vw;
+    align-items: center;
+}
+
+.A_CommentCount {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 0.265vw;
+    align-items: center;
+
+    .Q_Icon {
+        background-color: var(--blue_main);
+    }
+}
+
+.A_ArticleText {
+    width: 52.78vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.06vw;
+}
+
+.A_CommentText {
+    width: 52.78vw;
+    height: fit-content;
+}
+
+.A_OrderedListPoint, .A_UnorderedListPoint {
+    width: 52.78vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 1.06vw;
+    align-items: top;
+
+    p {
+        width: 100%;
+    }
+}
+
+.A_UnorderedListPoint {
+    width: 100%;
+    gap: 0.795vw;
+}
+
+.A_ArticleNavigationMenu {
+    width: 31.42vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.53vw;
+    background-color: var(--white);
+    border-radius: 0.53vw;
+    padding: 1.59vw;
+
+    div {
+        width: 100%;
+    }
+}
+
+.A_RegistrationHeader {
+    width: 42.39vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.53vw;
+
+    .RegistrationHeaderTitle {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 1.06vw;
+
+        h3 {
+            max-width: 100%;
+        }
+    }
+
+    p {
+        width: 59.2%;
+        color: var(--grey500);
+    }
+}
+
+.A_ArticleHeader {
+    width: 52.78vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0vw;
+
+    h2 {
+        width: 100%;
+        color: black;
+    }
+
+    p {
+        width: 100%;
+        color: var(--grey500);
+    }
+}
+
+// Ipad Landscape
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    // Header
+    .A_Header {
+        width: 36.33vw;
+    }
+
+    .A_Profile {
+        width: 3.123vw;
+        height: 3.123vw;
+        border-radius: 0.78vw;
+
+        .Q_Icon {
+            width: 1.96vw;
+            height: 1.96vw;
+        }
+    }
+
+    .A_Language {
+        height: 1.78vw;
+        gap: 0.78vw;
+        padding: 0.586vw 1.11vw 0.586vw 0.77vw;
+        border-radius: 0.78vw;
+    
+        .Q_Icon {
+            width: 1.96vw;
+            height: 1.96vw;
+        }
+    }
+
+    // Footer 
+    .A_FooterText {
+        gap: 1.17vw;
+    }
+
+
+    .A_SocialMedia {
+        gap: 1.56vw;
+    }
+
+    // Tags and Buttons
+    .A_Button {
+        width: 14.65vw;
+        height: 3.52vw;
+        border-radius: 0.78vw;
+    }
+
+    .A_StudentInfoTag {
+        gap: 0.39vw;
+        border-radius: 0.78vw;
+    }
+    
+    .TagWithFlag {
+        padding: 0.59vw 0.78vw;
+    }
+    
+    .TagNoFlag {
+        padding: 0.39vw 0.78vw;
+        border: 0.1vw solid var(--grey300);
+    }
+
+    .A_ContentTag {
+        padding: 0.98vw 1.17vw;
+    }
+
+    .A_ReadMoreButton {
+        gap: 0.39vw;
+
+        .Q_Icon {
+            width: 2.34vw;
+            height: 2.34vw;
+        }
+    }
+
+    .A_ArrivalInfo {
+        gap: 0.59vw;
+    
+        div {
+            width: 1.95vw;
+            height: 1.95vw;
+        }
+    }
+
+    // Images
+    .A_ArticleImage {
+        width: 52.44vw;
+        gap: 0.78vw;
+    
+        div {
+            width: 100%;
+            height: 26.37vw;
+        }
+    
+        p {
+            width: 100%;
+        }
+    }
+
+    // Text + Icons
+    .A_ProfileInfo {
+        gap: 0.98vw;
+    }
+
+    .A_CommentCount {
+        gap: 0.39vw;
+    
+        .Q_Icon {
+            width: 2.15vw;
+            height: 2.15vw;
+        }
+    }
+
+    .A_ArticleText {
+        width: 52.44vw;
+        gap: 1.56vw;
+    }
+    
+    .A_CommentText {
+        width: 52.44vw;
+    }
+
+    .A_OrderedListPoint, .A_UnorderedListPoint {
+        width: 52.44vw;
+        gap: 1.56vw;
+    }
+    
+    .A_UnorderedListPoint {
+        width: 100%;
+        gap: 1.17vw;
+    }
+
+    .A_ArticleNavigationMenu {
+        width: 38.57vw;
+        gap: 0.78vw;
+        border-radius: 0.78vw;
+        padding: 2.34vw;
+    }
+
+    .A_RegistrationHeader {
+        width: 41.99vw;
+        gap: 0.53vw;
+    
+        .RegistrationHeaderTitle {
+            width: 100%;
+            gap: 1.56vw;
+
+            .Q_Icon {
+                width: 2.34vw;
+                height: 2.34vw;
+            }
+        }
+    
+        p {
+            width: 88%;
+        }
+    }
+
+    .A_ArticleHeader {
+        width: 52.44vw;
+    }
+}
+
+// Ipad Portrait
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    // Header
+    .A_Header {
+        width: 48.44vw;
+    }
+
+    .A_Profile {
+        width: 4.17vw;
+        height: 4.17vw;
+        border-radius: 1.04vw;
+
+        .Q_Icon {
+            width: 2.6vw;
+            height: 2.6vw;
+        }
+    }
+
+    .A_Language {
+        height: 3.65vw;
+        gap: 1.04vw;
+        padding: 0.4vw 1.11vw 0.4vw 0.77vw;
+        border-radius: 1.04vw;
+    
+        .Q_Icon {
+            width: 2.6vw;
+            height: 2.6vw;
+        }
+    }
+
+    .StrokeSelect {
+        border: 0.195vw solid var(--grey500);
+    }
+
+    // Footer
+
+    .A_FooterText {
+        gap: 1.56vw;
+    }
+
+    .A_SocialMedia {
+        gap: 2.08vw;
+    }
+
+    // Tags and Buttons
+    .A_Button {
+        width: 19.53vw;
+        height: 4.56vw;
+        border-radius: 0.78vw;
+    }
+
+    .A_StudentInfoTag {
+        gap: 0.52vw;
+        border-radius: 0.65vw;
+    }
+    
+    .TagWithFlag {
+        padding: 0.52vw 0.71vw;
+    }
+    
+    .TagNoFlag {
+        padding: 0.52vw 0.71vw;
+        border: 0.13vw solid var(--grey300);
+    }
+
+    .A_ContentTag {
+        padding: 1vw 1.3vw;
+    }
+
+    .A_ReadMoreButton {
+        gap: 0.52vw;
+
+        .Q_Icon {
+            width: 3.125vw;
+            height: 3.125vw;
+        }
+    }
+
+    .A_ArrivalInfo {
+        gap: 0.78vw;
+    
+        div {
+            width: 2.6vw;
+            height: 2.6vw;
+        }
+    }
+
+    .A_ArticleImage {
+        width: 51.04vw;
+        gap: 1.04vw;
+    
+        div {
+            width: 100%;
+            height: 25.65vw;
+        }
+    
+        p {
+            width: 100%;
+        }
+    }
 }

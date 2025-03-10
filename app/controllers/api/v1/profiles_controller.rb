@@ -32,12 +32,7 @@ class Api::V1::ProfilesController < ApplicationController
 
     private
 
-    #set profile не надо
-    def set_profile
-        @profile = Profile.find_by(user_id: params[:id])
-    end
-
     def profile_params
-        params.require(:profile).permit(:name, :date_of_birth, :faculty, :country, :languages, :program_type, :gender)
+        params.require(:profile).permit(:first_name, :last_name, :date_of_birth, :faculty, :country, :languages, :program_type, :profile_photo)
     end
 end

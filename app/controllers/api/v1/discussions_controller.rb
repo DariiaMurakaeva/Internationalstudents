@@ -20,32 +20,27 @@ class Api::V1::DiscussionsController < ApplicationController
         end
     end
 
-    #Поправить#
     def update
-        respond_to do |format|
-            if @discussion.update(discussion_params)
-                format.html { redirect_to discussion_path(@discussion), notice: "Discussion was successfully updated." }
-                format.json { render :show, status: :ok, location: @discussion }
-            else
-                format.html { render :edit, status: :unprocessable_entity }
-                format.json { render json: @discussion.errors, status: :unprocessable_entity }
-            end
+        discussion = Discussion.find(params[:id])
+        if discussion.update(discussion_params)
+            render json: discussion, status: :ok
+        else
+            render json: discussion.errors, status: :unprocessable_entity
         end
     end
 
-    #Тут тоже, и в постах#
     def destroy
-        @discussion.destroy!
-    
-        respond_to do |format|
-            format.html { redirect_to discussion_path(@discussion), status: :see_other, notice: "Discussion was successfully destroyed." }
-            format.json { head :no_content }
+        discussion = Discussion.find(params[:id])
+        if discussion.destroy
+            head :no_content
+        else
+            render json: { error: "Failed to delete the discussion" }, status: :unprocessable_entity
         end
     end
 
     private
 
     def discussion_params
-        params.require(:discussion).permit( :user_id, :title, :content, :tag)
+        params.require(:discussion).permit(:user_id, :title, :content, :tag)
     end
 end

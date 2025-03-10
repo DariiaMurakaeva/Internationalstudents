@@ -30,6 +30,6 @@ class Api::V1::ApplicationFormsController < ApplicationController
     private
 
     def application_form_params
-        params.require(:application_form).permit(:about, :date_of_arrival, :time_of_arrival, :place_of_arrival, :place_of_residence, :note)
+        params.require(:application_form).permit(:about, :date_of_arrival, :time_of_arrival, :place_of_arrival)
     end
 end

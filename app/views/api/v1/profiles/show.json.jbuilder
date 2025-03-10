@@ -1,9 +1,9 @@
 json.id profile.id
-json.user_id profile.user_id
-json.name profile.name
+json.first_name profile.first_name
+json.last_name profile.last_name
 json.date_of_birth profile.date_of_birth
 json.faculty profile.faculty
 json.country profile.country
 json.languages profile.languages
 json.program_type profile.program_type
-json.gender profile.gender
+json.profile_photo profile.profile_photo

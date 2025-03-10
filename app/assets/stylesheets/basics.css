@@ -64,7 +64,7 @@ p {
   font-size: 1.2vw;
   color: var(--black);
   line-height: 110%;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .PrimaryButton_Text {
@@ -91,6 +91,11 @@ p {
   font-size: 0.925vw;
   font-weight: 400;
   font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
 }
 
 /* Ipad Landscape */
