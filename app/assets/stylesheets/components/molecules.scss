@@ -319,4 +319,234 @@
             }
         }
     }
+
+    .M_CommentHead {
+        gap: 1.17vw;
+    }
+    
+    .M_CommentBottom {
+        width: 62.89vw;
+        padding-left: 3.52vw;
+        gap: 1.17vw; 
+    }
+
+    // Forms and Buttons
+    .M_TwoButtons {
+        gap: 1.17vw;
+    }
+
+    .Sec_Tert {
+        .A_Button {
+            width: 5.66vw;
+        }
+    }
+
+    // Сделать в фигме
+    // .Prim_Tert {
+    //     .TertiaryButton {
+    //         width: 6.35vw;
+    //     }
+    // }
+
+    // Text
+    .M_ArticleHeader {
+        width: 52.34vw;
+        gap: 2.34vw;
+    }
+
+    .M_ArticleQuote {
+        width: 52.34vw;
+        gap: 1.56vw;
+    }
+
+    .M_OrderedList {
+        width: 52.34vw;
+        gap: 1.56vw;
+    
+        .OrderedListItems {
+            gap: 1.17vw;
+        }
+    }
+
+    .M_UnorderedList {
+        width: 52.34vw;
+        padding: 2.34vw;
+        gap: 1.36vw;
+        border-radius: 1.17vw;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .M_HeaderNavigation {
+        width: 73.18vw;
+        padding: 0.78vw 2.6vw 0.78vw 2.6vw;
+        border-radius: 0.78vw;
+    }
+
+    .M_HeaderSettings {
+        gap: 1.56vw;
+    }
+
+    .M_ChooseLanguage {
+        gap: 0.78vw;
+    }
+
+    // Student Cards
+
+    .M_StudentInfoTags {
+        width: 66.67vw;
+        gap: 1.04vw;
+    }
+
+    .M_StudentArrivalInfo {
+        width: 51.3vw;
+        gap: 0.78vw;
+    
+        .ArrivalInfo_Container {
+            gap: 0.26vw;
+        }
+    }
+
+    .M_StudentPersonalInfo {
+        gap: 0.26vw;
+    }
+
+    .M_StudentCardPhoto {
+        width: 19.8vw;
+        gap: 1.04vw;
+
+        .A_Button {
+            width: 100%;
+        }
+    }
+
+    .M_StudentAdditionalInfo{
+        width: 67.7vw;
+        gap: 1.04vw;
+    
+        .AdditionalInfo_Container {
+            gap: 1.04vw
+        }
+    }
+
+        // Toggle Switches
+        .M_TagsToggle, .M_ApplicationsToggle {
+            width: 89.58vw;
+            justify-content: space-between;
+        }
+    
+        .M_ApplicationsToggle {
+            width: 100%;
+            justify-content: center;
+            gap: 2.08vw;
+        }
+
+    .M_DiscussionHead {
+        width: 43.95vw;
+    }
+
+    .M_DiscussionBottom {
+        width: 43.95vw;
+    
+        .DiscussionBottom_Icons {
+            gap: 1.56vw;
+
+            .Q_Icon {
+                width: 2.15vw;
+                height: 2.15vw;
+            }
+        }
+    }
+
+    .M_CommentHead {
+        gap: 1.56vw;
+    }
+    
+    .M_CommentBottom {
+        width: 62.89vw;
+        padding-left: 3.52vw;
+        gap: 1.17vw; 
+    }
+
+    // Forms and Buttons
+    .M_TwoButtons {
+        gap: 1.17vw;
+    }
+
+    .Sec_Tert {
+        .A_Button {
+            width: 8.59vw;
+        }
+    }
+
+    // Discussion Card
+
+    .M_DiscussionHead {
+        width: 89.06vw;
+    }
+
+    .M_DiscussionBottom {
+        width: 89.06vw;
+    
+        .DiscussionBottom_Icons {
+            gap: 2.08vw;
+
+            .Q_Icon {
+                width: 2.6vw;
+                height: 2.6vw;
+            }
+        }
+    }
+
+    .M_CommentHead {
+        gap: 1.56vw;
+    }
+    
+    .M_CommentBottom {
+        width: 61.72vw;
+        padding-left: 4.6875vw;
+        gap: 1.56vw; 
+    }
+
+    // Forms and Buttons
+    .M_TwoButtons {
+        gap: 1.56vw;
+    }
+
+    .Sec_Tert {
+        .A_Button {
+            width: 9.375vw;
+        }
+    }
+
+    // Text
+    .M_ArticleHeader {
+        width: 51.04vw;
+        gap: 2.08vw;
+    }
+
+    .M_ArticleQuote {
+        width: 51.04vw;
+        gap: 1.56vw;
+    }
+
+    .M_OrderedList {
+        width: 51.04vw;
+        gap: 2.08vw;
+    
+        .OrderedListItems {
+            gap: 1.56vw;
+        }
+    }
+
+    .M_UnorderedList {
+        width: 51.04vw;
+        padding: 3.125vw;
+        gap: 1.82vw;
+        border-radius: 1.56vw;
+
+        .A_UnorderedListPoint {
+            width: 100%;
+        }
+    }
 }
