@@ -1,0 +1,332 @@
+//Desktop
+
+// Header
+.M_HeaderNavigation {
+    width: 53.97vw;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.53vw 2.78vw 0.53vw 1.59vw;
+    background-color: var(--white);
+    border-radius: 0.53vw;
+}
+
+// Тут что-то странное почему-то опять, поэтому в html этот див в конце
+.M_HeaderSettings {
+    width: fit-content;
+    height: fit-content;
+    display: inline-flex;
+    flex-direction: row;
+    gap: 0.79vw;
+}
+
+// Footer
+.M_ChooseLanguage {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.53vw;
+
+    .Tag_Text {
+        color: var(--white);
+    }
+}
+
+// Student Cards
+.M_StudentInfoTags {
+    width: 27.844vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.53vw;
+}
+
+.M_StudentArrivalInfo {
+    width: 26.06vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.53vw;
+
+    .ArrivalInfo_Container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.13vw;
+    }
+}
+
+.M_StudentPersonalInfo {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.13vw;
+
+    p {
+        color: var(--grey500);
+    }
+
+    .PrimaryButton_Text {
+        color: var(--black)
+    }
+}
+
+.M_StudentCardPhoto {
+    width: 14.29vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.93vw;
+
+    // Надо убрать потом
+    .Q_ApplicationFormImage {
+        background-color: var(--green_dark);
+    }
+}
+
+.M_StudentAdditionalInfo{
+    width: 26.06vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.794vw;
+
+    .AdditionalInfo_Container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.53vw
+    }
+
+    .None {
+        display: none;
+    }
+}
+
+// Toggle Switches
+.M_TagsToggle, .M_ApplicationsToggle {
+    width: fit-content;
+    max-width: 96.83vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 1.05vw;
+}
+
+.M_ApplicationsToggle {
+    width: 96.83vw;
+    justify-content: center;
+}
+
+// Discussion Card
+
+.M_DiscussionHead {
+    width: 44.577vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.M_DiscussionBottom {
+    width: 44.577vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .DiscussionBottom_Icons {
+        display: flex;
+        flex-direction: row;
+        gap: 1.323vw;
+
+        .Q_Icon {
+            width: 1.59vw;
+            height: 1.59vw;
+        }
+    }
+
+    // Надо убрать потом
+    .BookmarkBlack {
+        background-color: var(--red_main);
+    }
+}
+
+.M_CommentHead {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 1.59vw;
+    align-items: center;
+}
+
+.M_CommentBottom {
+    width: 53.04vw;
+    padding-left: 3.48vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.058vw; 
+
+    .A_CommentCount {
+        p {
+            color: var(--grey500);
+        }
+    }
+}
+
+// Forms and Buttons
+.M_TwoButtons {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 0.794vw;
+}
+
+.Sec_Tert {
+    .A_Button {
+        width: 6.35vw;
+    }
+}
+
+.Prim_Tert {
+    .TertiaryButton {
+        width: 6.35vw;
+    }
+}
+
+// Text
+.M_ArticleHeader {
+    width: 52.78vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2.12vw;
+}
+
+.M_ArticleQuote {
+    width: 51.72vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.06vw;
+}
+
+.M_OrderedList {
+    width: 51.72vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.06vw;
+
+    .OrderedListItems {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 0.794vw;
+    }
+}
+
+.M_UnorderedList {
+    width: 51.72vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 2.12vw;
+    gap: 1.06vw;
+    background-color: var(--white);
+    border-radius: 0.79vw;
+}
+
+// Ipad Landscape
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .M_HeaderNavigation {
+        width: 54.88vw;
+        padding: 0.59vw 2.34vw 0.59vw 2.34vw;
+        border-radius: 0.78vw;
+    }
+
+    .M_HeaderSettings {
+        gap: 1.17vw;
+    }
+
+    .M_ChooseLanguage {
+        gap: 0.59vw;
+    }
+
+    // Student Cards
+
+    .M_StudentInfoTags {
+        width: 26.27vw;
+        gap: 0.79vw;
+    }
+
+    .M_StudentArrivalInfo {
+        width: 38.48vw;
+        gap: 0.78vw;
+    
+        .ArrivalInfo_Container {
+            gap: 0.39vw;
+        }
+    }
+
+    .M_StudentPersonalInfo {
+        gap: 0.195vw;
+    }
+
+    .M_StudentCardPhoto {
+        width: 13.97vw;
+        gap: 1.17vw;
+
+        .A_Button {
+            width: 100%;
+        }
+    }
+
+    .M_StudentAdditionalInfo{
+        width: 26.27vw;
+        gap: 0.78vw;
+    
+        .AdditionalInfo_Container {
+            gap: 0.6vw
+        }
+    }
+
+    // Toggle Switches
+    .M_TagsToggle, .M_ApplicationsToggle {
+        width: 46.68vw;
+        justify-content: space-between;
+    }
+
+    .M_ApplicationsToggle {
+        width: 100%;
+        justify-content: center;
+        gap: 1.56vw;
+    }
+
+
+    // Discussion Card
+
+    .M_DiscussionHead {
+        width: 43.95vw;
+    }
+
+    .M_DiscussionBottom {
+        width: 43.95vw;
+    
+        .DiscussionBottom_Icons {
+            gap: 1.56vw;
+
+            .Q_Icon {
+                width: 2.15vw;
+                height: 2.15vw;
+            }
+        }
+    }
+}

@@ -6,10 +6,9 @@ html {
 body {
   font-family: 'TT Hoves';
   box-sizing: border-box;
-  background-color: var(--purple);
   width: 100%;
   height: max-content;
-  background-color: var(--white);
+  background-color: var(--grey50);
 }
 
 /* Text Styles */

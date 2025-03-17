@@ -12,8 +12,8 @@
     width: 2.38vw;
     height: 2.38vw;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     background-color: var(--black);
     border-radius: 0.53vw;
 
@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: row;
     gap: 0.53vw;
-    padding: 0.3vw 0.4vw 0.3vw 0.79vw;
+    padding: 0.4vw 0.53vw 0.4vw 0.79vw;
     border-radius: 0.53vw;
     align-items: center;
 
@@ -85,6 +85,7 @@
     gap: 0.26vw;
     border-radius: 0.53vw;
     align-items: center;
+    padding: 0.53vw;
 }
 
 .TagWithFlag {
@@ -95,7 +96,10 @@
 .TagNoFlag {
     background-color: var(--white);
     border: 0.067vw solid var(--grey300);
-    padding: 0.26vw 0.78vw 0.26vw 0.78vw;
+
+    h6 {
+        color: var(--grey700);
+    }
 }
 
 .A_ContentTag {
@@ -228,6 +232,31 @@
     }
 }
 
+.A_ToggleOption {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.8vw;
+    gap: 0.4vw;
+
+    div {
+        display: none;
+    }
+}
+
+.Toggled {
+
+    div {
+        display: inline-block;
+        width: 0.4vw;
+        height: 0.4vw;
+        border-radius: 50%;
+        background-color: var(--black);
+    }
+}
+
 // Images
 .A_ArticleImage {
     width: 52.78vw;
@@ -292,7 +321,7 @@
     display: flex;
     flex-direction: row;
     gap: 1.06vw;
-    align-items: top;
+    align-items: initial;
 
     p {
         width: 100%;
@@ -418,8 +447,8 @@
     }
     
     .TagNoFlag {
-        padding: 0.39vw 0.78vw;
-        border: 0.1vw solid var(--grey300);
+        padding: 0.59vw 0.78vw;
+        border: 0.098vw solid var(--grey300);
     }
 
     .A_ContentTag {
@@ -441,6 +470,19 @@
         div {
             width: 1.95vw;
             height: 1.95vw;
+        }
+    }
+
+    .A_ToggleOption {
+        padding: 0.78vw;
+        gap: 0.59vw;
+    }
+    
+    .Toggled {
+    
+        div {
+            width: 0.59vw;
+            height: 0.59vw;
         }
     }
 
@@ -611,6 +653,21 @@
         }
     }
 
+    .A_ToggleOption {
+        padding: 0.78vw;
+        gap: 0.78vw;
+    }
+    
+    .Toggled {
+    
+        div {
+            width: 0.78vw;
+            height: 0.78vw;
+        }
+    }
+
+    // Картинки
+
     .A_ArticleImage {
         width: 51.04vw;
         gap: 1.04vw;
@@ -623,5 +680,61 @@
         p {
             width: 100%;
         }
+    }
+
+    .A_ProfileInfo {
+        gap: 1.04vw;
+    }
+
+    .A_CommentCount {
+        gap: 0.52vw;
+    
+        .Q_Icon {
+            width: 1.953vw;
+            height: 1.953vw;
+        }
+    }
+
+    .A_ArticleText {
+        width: 51.04vw;
+        gap: 1.17vw;
+    }
+
+    .A_CommentText {
+        width: 51.04vw;
+    }
+
+    .A_OrderedListPoint, .A_UnorderedListPoint {
+        width: 51.04vw;
+        gap: 1.56vw;
+    }
+
+    .A_ArticleNavigationMenu {
+        width: 37.5vw;
+        gap: 1.56vw;
+        border-radius: 1.04vw;
+        padding: 2.08vw;
+    }
+
+    .A_RegistrationHeader {
+        width: 57.55vw;
+        gap: 1.04vw;
+    
+        .RegistrationHeaderTitle {
+            gap: 1.04vw;
+
+            .Q_Icon {
+                width: 2.6vw;
+                height: 2.6vw;
+            }
+        }
+    
+        p {
+            width: 86%;
+        }
+    }
+
+    .A_ArticleHeader {
+        width: 51.56vw;
     }
 }
