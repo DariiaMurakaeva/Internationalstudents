@@ -82,11 +82,6 @@
     flex-direction: column;
     align-items: center;
     gap: 0.93vw;
-
-    // Надо убрать потом
-    .Q_ApplicationFormImage {
-        background-color: var(--green_dark);
-    }
 }
 
 .M_StudentAdditionalInfo{
@@ -150,11 +145,6 @@
             width: 1.59vw;
             height: 1.59vw;
         }
-    }
-
-    // Надо убрать потом
-    .BookmarkBlack {
-        background-color: var(--red_main);
     }
 }
 

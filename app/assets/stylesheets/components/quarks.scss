@@ -6,10 +6,9 @@
     display: block;
     width: 5.29vw;
     height: 3.17vw;
-    background-image: url('./images/Q_Logo.svg');
+    background-image: asset-url('Q_Logo.svg');
     background-repeat: no-repeat;
     background-size: contain;
-    //НЕ ОТОБРАЖАЕТСЯ КАРТИНКА
 }
 
 .Q_Icon {
@@ -21,135 +20,123 @@
 }
 
 .PlaneBlack {
-    background-image: url('./images/PlaneBlack.svg');
+    background-image: asset-url('PlaneBlack.svg');
 }
 
 .PlaneWhite {
-    background-image: url('./images/PlaneWhite.svg');
+    background-image: asset-url('PlaneWhite.svg');
 }
 
 .PlaneGrey{
-    background-image: url('./images/PlaneGrey.svg');
+    background-image: asset-url('PlaneGrey.svg');
 }
 
 .DropDownBlackActive {
-    background-image: url('./images/DropdownBlackActive.svg');
+    background-image: asset-url('DropdownBlackActive.svg');
 }
 
 .DropDownBlackDefault {
-    background-image: url('./images/DropdownBlackDefault.svg');
+    background-image: asset-url('DropdownBlackDefault.svg');
 }
 
 .DropDownWhiteActive {
-    background-image: url('./images/DropdownWhiteActive.svg');
+    background-image: asset-url('DropdownWhiteActive.svg');
 }
 
 .DropDownWhiteDefault {
-    background-image: url('./images/DropdownWhiteDefault.svg');
+    background-image: asset-url('DropdownWhiteDefault.svg');
 }
 
 .DropDownGreyActive {
-    background-image: url('./images/DropdownGreyActive.svg');
+    background-image: asset-url('DropdownGreyActive.svg');
 }
 
 .DropDownGreyDefault {
-    background-image: url('./images/DropdownGreyDefault.svg');
+    background-image: asset-url('DropdownGreyDefault.svg');
 }
 
 .LocationGrey{
-    background-image: url('./images/LocationGrey.svg');
+    background-image: asset-url('LocationGrey.svg');
 }
 
 .LocationWhite{
-    background-image: url('./images/LocationWhite.svg');
+    background-image: asset-url('LocationWhite.svg');
 }
 
 .LocationBlack{
-    background-image: url('./images/LocationBlack.svg');
+    background-image: asset-url('LocationBlack.svg');
 }
 
 .ProfileGrey{
-    background-image: url('./images/ProfileGrey.svg');
+    background-image: asset-url('ProfileGrey.svg');
 }
 
 .ProfileWhite{
-    background-image: url('./images/ProfileWhite.svg');
+    background-image: asset-url('ProfileWhite.svg');
 }
 
 .ProfileBlack{
-    background-image: url('./images/ProfileBlack.svg');
+    background-image: asset-url('ProfileBlack.svg');
 }
 
 .CrossGrey{
-    background-image: url('./images/CrossGrey.svg');
+    background-image: asset-url('CrossGrey.svg');
 }
 
 .CrossWhite{
-    background-image: url('./images/CrossWhite.svg');
+    background-image: asset-url('CrossWhite.svg');
 }
 
 .CrossBlack{
-    background-image: url('./images/CrossBlack.svg');
+    background-image: asset-url('CrossBlack.svg');
 }
 
 .BookmarkGrey{
-    background-image: url('./images/BookmarkGrey.svg');
+    background-image: asset-url('BookmarkGrey.svg');
 }
 
 .BookmarkWhite{
-    background-image: url('./images/BookmarkWhite.svg');
+    background-image: asset-url('BookmarkWhite.svg');
 }
 
 .BookmarkBlack{
-    background-image: url('./images/BookmarkBlack.svg');
-}
-
-.BookmarkGrey{
-    background-image: url('./images/BookmarkGrey.svg');
-}
-
-.BookmarkWhite{
-    background-image: url('./images/BookmarkWhite.svg');
-}
-
-.BookmarkBlack{
-    background-image: url('./images/BookmarkBlack.svg');
+    background-image: asset-url('BookmarkBlack.svg');
 }
 
 .CommentGrey{
-    background-image: url('./images/CommentGrey.svg');
+    background-image: asset-url('CommentGrey.svg');
 }
 
 .CommentWhite{
-    background-image: url('./images/CommentWhite.svg');
+    background-image: asset-url('CommentWhite.svg');
 }
 
 .CommentBlack{
-    background-image: url('./images/CommentBlack.svg');
+    background-image: asset-url('CommentBlack.svg');
 }
 
 .SearchGrey{
-    background-image: url('./images/SearchGrey.svg');
+    background-image: asset-url('SearchGrey.svg');
 }
 
 .SearchWhite{
-    background-image: url('./images/SearchWhite.svg');
+    background-image: asset-url('SearchWhite.svg');
 }
 
 .SearchBlack{
-    background-image: url('./images/SearchBlack.svg');
+    background-image: asset-url('SearchBlack.svg');
 }
 
 .CameraGrey{
-    background-image: url('./images/CameraGrey.svg');
+    background-image: asset-url('CameraGrey.svg');
 }
 
 .CameraWhite{
-    background-image: url('./images/CameraWhite.svg');
+    background-image: asset-url('CameraWhite.svg');
 }
 
 .CameraBlack{
-    background-image: url('./images/CameraBlack.svg');
+    background-image: asset-url('CameraBlack.svg');
 }
 
 .Q_SocialMedia {
@@ -169,27 +156,27 @@
 }
 
 .VKWhite {
-    background-image: url('./images/Q_IconVkWhite.svg');
+    background-image: asset-url('Q_IconVkWhite.svg');
 }
 
 .VKBlack {
-    background-image: url('./images/Q_IconVkBlack.svg');
+    background-image: asset-url('Q_IconVkBlack.svg');
 }
 
 .TelegramBlack {
-    background-image: url('./images/Q_IconTelegramBlack.svg');
+    background-image: asset-url('Q_IconTelegramBlack.svg');
 }
 
 .TelegramWhite {
-    background-image: url('./images/Q_IconTelegramWhite.svg');
+    background-image: asset-url('Q_IconTelegramWhite.svg');
 }
 
 .ChatBlack {
-    background-image: url('./images/Q_IconChatBlack.svg');
+    background-image: asset-url('Q_IconChatBlack.svg')
 }
 
 .ChatWhite {
-    background-image: url('./images/Q_IconChatWhite.svg');
+    background-image: asset-url('Q_IconChatWhite.svg')
 }
 
 .Q_Bullet {

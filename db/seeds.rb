@@ -138,7 +138,7 @@ def create_users(quantity)
         		program_type: "Студент полной степени обучения"
 			)
 
-			attach_profile_photo(buddy_profile, buddy_name)
+			attach_profile_photo(buddy_profile, first_name)
 			puts "Buddy created with email: #{buddy.email}"
 		end
 	end

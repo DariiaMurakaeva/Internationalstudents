@@ -6,10 +6,9 @@
   <%= link_to "Редактировать профиль", edit_profile_path(@profile) %> 
 
   <% if user_signed_in? %>
-  <%= link_to "выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>
+    <%= link_to "выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>
   <% end %>
 
   <%= button_to "Destroy this profile", @profile, method: :delete %>
 </div>
-<% end %>
 

@@ -78,6 +78,129 @@
     gap: 1.06vw;
 }
 
+
+// Inputs
+// Input Text
+.A_Input {
+    width: 100%;
+    height: 3.24vw;
+    padding: 0.26vw 0.79vw;
+    border-radius: 0.53vw;
+    border: solid 0.07vw var(--grey100);
+    background-color: var(--white);
+    font-size: 1.2vw;
+    font-weight: 400;
+    color: var(--black);
+    line-height: 110%;
+    display: flex;
+    align-items: center;
+    gap: 0.53vw;
+}
+
+input::placeholder, textarea::placeholder {
+    font-size: 1.2vw;
+    line-height: 110%;
+    font-weight: 400;
+    color: var(--grey500);
+}
+
+legend {
+    font-size: 1.08vw;
+    margin-bottom: 0.26vw;
+    font-weight: 500;
+    color: var(--black);
+}
+
+input:focus, textarea:focus {
+    border: solid 0.07vw var(--green_main);
+    outline: none;
+}
+
+.ExpandedField {
+    height: 6.61vw;
+    padding: 0.79vw 0.79vw 0.26vw 0.79vw; 
+}
+
+textarea.A_Input {
+    height: 6.61vw;
+    padding: 0.79vw 0.79vw;
+    font-weight: 400;
+    font-family: 'TT Hoves'; 
+    color: var(--black);
+    line-height: 110%;
+}
+// Input Dropdown
+.InputDropdown select {
+    width: 19.7vw;
+    height: 3.24vw;
+    margin-top: 0.26vw;
+    padding: 0.26vw 0.79vw;
+    border-radius: 0.53vw;
+    border: solid 0.07vw var(--grey100);
+    font-size: 1.2vw;
+    font-weight: 400;
+    color: var(--black);
+    line-height: 110%;
+    background-color: var(--white);
+    cursor: pointer;
+    position: relative;
+    appearance: none;
+}
+
+.InputDropdown select:focus {
+    border: solid 0.07vw var(--green_main);
+    outline: none;
+}
+
+.InputDropdown {
+    position: relative; 
+    width: 19.7vw;
+    height: fit-content;
+}
+
+.InputDropdown::after {
+    content: "";
+    position: absolute;
+    right: 0.79vw;
+    top: 48%;
+    width: 1.59vw;
+    height: 1.59vw;
+    background-image: asset-url('DropdownGreyDefault.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.InputDropdown:focus-within::after {
+    background-image: asset-url('DropdownGreyActive.svg'); /* Change to the active icon */
+}
+
+// InputSearch
+.InputSearch {
+    input {
+        border: none;
+        width: 100%;
+        font-size: 1.2vw;
+        color: var(--black);
+        font-family: "TT Hoves";
+        font-weight: 400;
+    }
+
+    input::placeholder {
+        font-family: "TT Hoves";
+        font-size: 1.2vw;
+        line-height: 110%;
+        font-weight: 400;
+        color: var(--grey500);
+        opacity: 1;
+        font-weight: 400;
+    }
+
+    .Q_Icon {
+        width: 1.59vw;
+        height: 1.59vw;
+    }
+}
+
 // Tags
 .A_StudentInfoTag {
     width: fit-content;
@@ -159,7 +282,7 @@
     p {
         color: var(--grey500);
     }
-} // Добавить ховер
+}
 
 .A_LoadMoreButton:hover {
     text-decoration: underline;
@@ -173,12 +296,11 @@
     justify-content: center;
     align-items: center;
     border-radius: 0.53vw;
+    transition: all 0.3s ease;
 }
 
 .A_Button:hover {
     transform: scale(1.02);
-    transition: all 0.3s; 
-    // надо добавить обратный transition
     cursor: pointer;
 }
 
@@ -226,10 +348,6 @@
     display: flex;
     gap: 0.4vw;
     align-items: center;
-
-    div {
-        background-color: var(--green_main);
-    }
 }
 
 .A_ToggleOption {
@@ -296,10 +414,6 @@
     flex-direction: row;
     gap: 0.265vw;
     align-items: center;
-
-    .Q_Icon {
-        background-color: var(--blue_main);
-    }
 }
 
 .A_ArticleText {
@@ -428,6 +542,82 @@
 
     .A_SocialMedia {
         gap: 1.56vw;
+    }
+
+    // Inputs
+    // Input Text
+    .A_Input {
+        height: 4.3vw;
+        padding: 0.39vw 1.17vw;
+        border-radius: 0.78vw;
+        border: solid 0.1vw var(--grey100);
+        font-size: 1.53vw;
+        gap: 0.78vw;
+    }
+
+    input::placeholder, textarea::placeholder {
+        font-size: 1.53vw;
+    }
+    
+    legend {
+        font-size: 1.36vw;
+        margin-bottom: 0.2vw;
+    }
+
+    input:focus, textarea:focus {
+        border: solid 0.1vw var(--green_main);
+    }
+    
+    .ExpandedField {
+        height: 6.61vw;
+        padding: 1.17vw 1.17vw 0.39vw 1.17vw; 
+    }
+    
+    textarea.A_Input {
+        height: 6.61vw;
+        padding: 1vw 1vw;
+    }
+
+    // Input Dropdown
+    .InputDropdown select {
+        width: 100%;
+        height: 4.3vw;
+        margin-top: 0.2vw;
+        padding: 0.39vw 1.17vw;
+        border-radius: 0.78vw;
+        border: solid 0.1vw var(--grey100);
+        font-size: 1.53vw;
+    }
+
+    .InputDropdown select:focus {
+        border: solid 0.1vw var(--green_main);
+    }
+    
+    .InputDropdown {
+        width: 100%;
+    }
+    
+    .InputDropdown::after {
+        right: 1.17vw;
+        top: 44%;
+        width: 2.34vw;
+        height: 2.34vw;
+    }
+
+    // InputSearch
+    .InputSearch {
+        input {
+            font-size: 1.53vw;
+        }
+
+        input::placeholder {
+            font-size: 1.53vw;
+        }
+
+        .Q_Icon {
+            width: 2.34vw;
+            height: 2.34vw;
+        }
     }
 
     // Tags and Buttons
@@ -608,6 +798,82 @@
 
     .A_SocialMedia {
         gap: 2.08vw;
+    }
+
+    // Inputs
+    // Input Text
+    .A_Input {
+        height: 4.6875vw;
+        padding: 1.3vw 1.56vw;
+        border-radius: 0.78vw;
+        border: solid 0.13vw var(--grey100);
+        font-size: 1.8vw;
+        gap: 0.78vw;
+    }
+
+    input::placeholder, textarea::placeholder {
+        font-size: 1.8vw;
+    }
+    
+    legend {
+        font-size: 1.83vw;
+        margin-bottom: 0.26vw;
+    }
+
+    input:focus, textarea:focus {
+        border: solid 0.13vw var(--green_main);
+    }
+    
+    .ExpandedField {
+        height: 10.42vw;
+        padding: 1.56vw 1.56vw 1.3vw 1.56vw; 
+    }
+    
+    textarea.A_Input {
+        height: 10.42vw;
+        padding: 1vw 1.56vw;
+    }
+
+    // Input Dropdown
+    .InputDropdown select {
+        width: 100%;
+        height: 4.6875vw;
+        margin-top: 0.26vw;
+        padding: 1.3vw 1.56vw;
+        border-radius: 0.78vw;
+        border: solid 0.13vw var(--grey100);
+        font-size: 1.8vw;
+    }
+
+    .InputDropdown {
+        width: 100%;
+    }
+
+    .InputDropdown select:focus {
+        border: solid 0.13vw var(--green_main);
+    }
+
+    .InputDropdown::after {
+        right: 1.56vw;
+        top: 46%;
+        width: 2.6vw;
+        height: 2.6vw;
+    }
+
+    // InputSearch
+    .InputSearch {
+        input {
+            font-size: 1.8vw;
+        }
+
+        input::placeholder {
+            font-size: 1.8vw;
+        }
+
+        .Q_Icon {
+            width: 2.6vw;
+            height: 2.6vw;
+        }
     }
 
     // Tags and Buttons
