@@ -25,9 +25,14 @@
 
   <%= f.fields_for :profile do |profile_form| %>
 
-    <div class="field">
-    <%= profile_form.label :name, "Введи своё полное имя" %><br />
-    <%= profile_form.text_field :name %>
+  <div class="field">
+    <%= profile_form.label :first_name, "Введи имя" %><br />
+    <%= profile_form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= profile_form.label :last_name, "Введи фамилию" %><br />
+    <%= profile_form.text_field :last_name %>
   </div>
 
   <div class="field">
