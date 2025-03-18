@@ -7,7 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :email,
       :password,
       :password_confirmation,
-      profile_attributes: [:name, :faculty, :date_of_birth, :country, :languages, :program_type, :gender]
+      profile_attributes: [:first_name,:last_name, :faculty, :date_of_birth, :country, :languages, :program_type, :profile_photo]
     )
   end
 
