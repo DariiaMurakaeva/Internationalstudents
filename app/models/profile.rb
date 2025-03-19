@@ -18,4 +18,8 @@ class Profile < ApplicationRecord
     def formatted_languages
         languages.split(',').join(' / ')
     end
+
+    def profile_photo_url
+        Rails.application.routes.url_helpers.url_for(profile_photo) if profile_photo.attached?
+    end
 end

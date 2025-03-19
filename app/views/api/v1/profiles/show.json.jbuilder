@@ -6,4 +6,9 @@ json.faculty profile.faculty
 json.country profile.country
 json.languages profile.languages
 json.program_type profile.program_type
-json.profile_photo profile.profile_photo
+
+if profile.profile_photo.attached?
+  json.profile_photo_url url_for(profile.profile_photo)
+else
+  json.profile_photo_url nil
+end

@@ -1,4 +1,6 @@
 class Api::V1::ProfilesController < ApplicationController
+    include Rails.application.routes.url_helpers
+
     skip_before_action :verify_authenticity_token, only: [:create]
 
     def index
@@ -8,7 +10,9 @@ class Api::V1::ProfilesController < ApplicationController
 
     def show
         @profile = Profile.find(params[:id])
-        render json: @profile
+        render json: @profile.as_json.merge({
+            profile_photo_url: @profile.profile_photo.attached? ? url_for(@profile.profile_photo) : nil
+        })
     end
 
     def update
