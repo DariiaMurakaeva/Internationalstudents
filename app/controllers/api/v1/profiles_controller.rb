@@ -5,7 +5,13 @@ class Api::V1::ProfilesController < ApplicationController
 
     def index
         @profiles = Profile.all
-        render json: @profiles
+        profiles_with_photos = @profiles.map do |profile|
+            profile.as_json.merge({
+                profile_photo_url: profile.profile_photo.attached? ? url_for(profile.profile_photo) : nil
+            })
+        end
+        
+        render json: profiles_with_photos
     end
 
     def show
