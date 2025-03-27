@@ -2,551 +2,1093 @@
 
 // Header
 .M_HeaderNavigation {
-    width: 53.97vw;
-    height: fit-content;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.53vw 2.78vw 0.53vw 1.59vw;
-    background-color: var(--white);
-    border-radius: 0.53vw;
+  width: 53.97vw;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.53vw 2.78vw 0.53vw 1.59vw;
+  background-color: var(--white);
+  border-radius: 0.53vw;
 }
 
 // Тут что-то странное почему-то опять, поэтому в html этот див в конце
 .M_HeaderSettings {
-    width: fit-content;
-    height: fit-content;
-    display: inline-flex;
-    flex-direction: row;
-    gap: 0.79vw;
+  width: fit-content;
+  height: fit-content;
+  display: inline-flex;
+  flex-direction: row;
+  gap: 0.79vw;
 }
 
 // Footer
 .M_ChooseLanguage {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 0.53vw;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.53vw;
 
-    .Tag_Text {
-        color: var(--white);
-    }
+  .Tag_Text {
+    color: var(--white);
+  }
 }
 
 // Student Cards
 .M_StudentInfoTags {
-    width: 27.844vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.53vw;
+  width: 27.844vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.53vw;
 }
 
 .M_StudentArrivalInfo {
-    width: 26.06vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 0.53vw;
+  width: 26.06vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.53vw;
 
-    .ArrivalInfo_Container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 0.13vw;
-    }
-}
-
-.M_StudentPersonalInfo {
+  .ArrivalInfo_Container {
     width: 100%;
-    height: fit-content;
     display: flex;
     flex-direction: column;
     gap: 0.13vw;
+  }
+}
 
-    p {
-        color: var(--grey500);
-    }
+.M_StudentPersonalInfo {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7vw;
+  margin-bottom: 1vw;
 
-    .PrimaryButton_Text {
-        color: var(--black)
-    }
+  p {
+    color: var(--grey500);
+  }
+
+  .PrimaryButton_Text {
+    color: var(--black);
+  }
 }
 
 .M_StudentCardPhoto {
-    width: 14.29vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.93vw;
+  width: 14.29vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.93vw;
 }
 
-.M_StudentAdditionalInfo{
-    width: 26.06vw;
-    height: fit-content;
+.M_StudentAdditionalInfo {
+  width: 26.06vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.794vw;
+
+  .AdditionalInfo_Container {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.794vw;
+    gap: 0.53vw;
+  }
 
-    .AdditionalInfo_Container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 0.53vw
-    }
+  .None {
+    display: none;
+  }
+}
 
-    .None {
-        display: none;
-    }
+.BuddyContactContainer {
+  display: flex;
+  gap: 0.5vw;
+  flex-direction: column;
 }
 
 // Toggle Switches
-.M_TagsToggle, .M_ApplicationsToggle {
-    width: fit-content;
-    max-width: 96.83vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    gap: 1.05vw;
+.M_TagsToggle,
+.M_ApplicationsToggle {
+  width: fit-content;
+  max-width: 96.83vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 1.05vw;
 }
 
 .M_ApplicationsToggle {
-    width: 96.83vw;
-    justify-content: center;
+  width: 96.83vw;
+  justify-content: center;
+
+  .Q_Icon {
+    display: none;
+  }
+}
+
+.ToggleOption_Container {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
 }
 
 // Discussion Card
 
 .M_DiscussionHead {
-    width: 44.577vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  width: 44.577vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .M_DiscussionBottom {
-    width: 44.577vw;
+  width: 44.577vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .DiscussionBottom_Icons {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    gap: 1.323vw;
 
-    .DiscussionBottom_Icons {
-        display: flex;
-        flex-direction: row;
-        gap: 1.323vw;
-
-        .Q_Icon {
-            width: 1.59vw;
-            height: 1.59vw;
-        }
+    .Q_Icon {
+      width: 1.59vw;
+      height: 1.59vw;
     }
+  }
 }
 
 .M_CommentHead {
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    gap: 1.59vw;
-    align-items: center;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 1.59vw;
+  align-items: center;
 }
 
 .M_CommentBottom {
-    width: 53.04vw;
-    padding-left: 3.48vw;
-    display: flex;
-    flex-direction: column;
-    gap: 1.058vw; 
+  width: fit-content;
+  padding-left: 3.48vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.058vw;
 
-    .A_CommentCount {
-        p {
-            color: var(--grey500);
-        }
+  .A_CommentCount {
+    p {
+      color: var(--grey500);
     }
+  }
 }
 
 // Forms and Buttons
 .M_TwoButtons {
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    gap: 0.794vw;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 0.794vw;
+}
+.M_FormProfile {
+  width: 45vw;
+  height: 27vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3vw;
+}
+
+.InputLegend {
+  width: 100%;
+  display: flex;
+  gap: 0.2vw;
+  flex-direction: column;
+}
+
+.InputLegendLong {
+  display: flex;
+  gap: 0.2vw;
+  flex-direction: column;
+  grid-column: span 2;
+}
+
+.M_FormApplication {
+  width: 42.4vw;
+  height: 20.3vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.3vw;
+}
+
+.M_FormApplication textarea {
+  grid-column: span 2;
+}
+
+.ApplicationDate {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.3vw;
+  grid-column: span 2;
+  align-items: end;
+}
+
+.M_FormReg1 {
+  width: 41vw;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1vw;
+}
+
+.M_FormReg2 {
+  width: 45vw;
+  height: fit-content;
+  display: flex;
+  gap: 0.4vw;
+  flex-direction: column;
+}
+
+.M_FormReg3 {
+  width: 45vw;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3vw;
+}
+
+.M_FormSignIn {
+  width: 41vw;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3vw;
+}
+
+.M_FormDiscussion {
+  width: 42vw;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3vw;
+}
+
+.Grey {
+  color: var(--grey500);
+}
+.Grey700 {
+  color: var(--grey700);
 }
 
 .Sec_Tert {
-    .A_Button {
-        width: 6.35vw;
-    }
+  .A_Button {
+    width: 6.35vw;
+  }
 }
 
 .Prim_Tert {
-    .TertiaryButton {
-        width: 6.35vw;
-    }
+  .SecondaryButton {
+    width: 6.35vw;
+  }
 }
 
 // Text
 .M_ArticleHeader {
-    width: 52.78vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 2.12vw;
+  width: 52.78vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2.12vw;
 }
 
 .M_ArticleQuote {
-    width: 51.72vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 1.06vw;
+  width: 51.72vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1.06vw;
 }
 
 .M_OrderedList {
-    width: 51.72vw;
+  width: 51.72vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1.06vw;
+
+  .OrderedListItems {
+    width: 100%;
     height: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 1.06vw;
-
-    .OrderedListItems {
-        width: 100%;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-        gap: 0.794vw;
-    }
+    gap: 0.794vw;
+  }
 }
 
 .M_UnorderedList {
-    width: 51.72vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    padding: 2.12vw;
-    gap: 1.06vw;
-    background-color: var(--white);
-    border-radius: 0.79vw;
+  width: 51.72vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 2.12vw;
+  gap: 1.06vw;
+  background-color: var(--white);
+  border-radius: 0.79vw;
+}
+
+.M_StudentApplicationFilters {
+  width: 83vw;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5vw;
+}
+
+.M_AddComment {
+  width: 47.6vw;
+  display: flex;
+  flex-direction: row;
+  gap: 1.3vw;
 }
 
 // Ipad Landscape
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-    .M_HeaderNavigation {
-        width: 54.88vw;
-        padding: 0.59vw 2.34vw 0.59vw 2.34vw;
-        border-radius: 0.78vw;
+  .M_HeaderNavigation {
+    width: 54.88vw;
+    padding: 0.59vw 2.34vw 0.59vw 2.34vw;
+    border-radius: 0.78vw;
+  }
+
+  .M_HeaderSettings {
+    gap: 1.17vw;
+  }
+
+  .M_ChooseLanguage {
+    gap: 0.59vw;
+  }
+
+  // Student Cards
+
+  .M_StudentInfoTags {
+    width: 26.27vw;
+    gap: 0.79vw;
+  }
+
+  .M_StudentArrivalInfo {
+    width: 38.48vw;
+    gap: 0.78vw;
+
+    .ArrivalInfo_Container {
+      gap: 0.39vw;
     }
+  }
 
-    .M_HeaderSettings {
-        gap: 1.17vw;
+  .M_StudentPersonalInfo {
+    gap: 0.195vw;
+  }
+
+  .M_StudentCardPhoto {
+    width: 13.97vw;
+    gap: 1.17vw;
+
+    .A_Button {
+      width: 100%;
     }
+  }
 
-    .M_ChooseLanguage {
-        gap: 0.59vw;
+  .M_StudentAdditionalInfo {
+    width: 26.27vw;
+    gap: 0.78vw;
+
+    .AdditionalInfo_Container {
+      gap: 0.6vw;
     }
+  }
 
-    // Student Cards
+  .BuddyContactContainer {
+    gap: 0.1vw;
+  }
 
-    .M_StudentInfoTags {
-        width: 26.27vw;
-        gap: 0.79vw;
+  // Toggle Switches
+  .M_TagsToggle,
+  .M_ApplicationsToggle {
+    width: 46.68vw;
+    justify-content: space-between;
+  }
+
+  .M_ApplicationsToggle {
+    width: 100%;
+    justify-content: center;
+    gap: 1.56vw;
+
+    .Q_Icon {
+      display: none;
     }
+  }
+  .ToggleOption_Container {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+  }
 
-    .M_StudentArrivalInfo {
-        width: 38.48vw;
-        gap: 0.78vw;
-    
-        .ArrivalInfo_Container {
-            gap: 0.39vw;
-        }
+  // Discussion Card
+
+  .M_DiscussionHead {
+    width: 43.95vw;
+  }
+
+  .M_DiscussionBottom {
+    width: 43.95vw;
+
+    .DiscussionBottom_Icons {
+      gap: 1.56vw;
+
+      .Q_Icon {
+        width: 2.15vw;
+        height: 2.15vw;
+      }
     }
+  }
 
-    .M_StudentPersonalInfo {
-        gap: 0.195vw;
+  .M_CommentHead {
+    gap: 1.17vw;
+  }
+
+  .M_CommentBottom {
+    width: 62.89vw;
+    padding-left: 3.52vw;
+    gap: 1.17vw;
+  }
+
+  // Forms and Buttons
+
+  .M_FormProfile {
+    width: 43vw;
+    height: 33.5vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw;
+  }
+
+  .M_FormApplication {
+    width: 39.2vw;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5vw;
+
+    .InputLegend {
+      grid-column: span 2;
     }
+  }
 
-    .M_StudentCardPhoto {
-        width: 13.97vw;
-        gap: 1.17vw;
+  .ApplicationDate {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1vw;
+  }
 
-        .A_Button {
-            width: 100%;
-        }
+  .M_FormReg1 {
+    width: 42vw;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw;
+  }
+
+  .M_FormReg2 {
+    width: 45vw;
+    gap: 0.7vw;
+  }
+
+  .M_FormReg3 {
+    width: 42.7vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+  }
+
+  .M_FormSignIn {
+    width: 42vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+  }
+
+  .M_FormDiscussion {
+    width: 42vw;
+    height: fit-content;
+    gap: 1.5vw;
+  }
+
+  .M_TwoButtons {
+    gap: 1.17vw;
+  }
+
+  .Sec_Tert {
+    .A_Button {
+      width: 5.66vw;
     }
+  }
 
-    .M_StudentAdditionalInfo{
-        width: 26.27vw;
-        gap: 0.78vw;
-    
-        .AdditionalInfo_Container {
-            gap: 0.6vw
-        }
+  // Сделать в фигме
+  // .Prim_Tert {
+  //     .TertiaryButton {
+  //         width: 6.35vw;
+  //     }
+  // }
+
+  // Text
+  .M_ArticleHeader {
+    width: 52.34vw;
+    gap: 2.34vw;
+  }
+
+  .M_ArticleQuote {
+    width: 52.34vw;
+    gap: 1.56vw;
+  }
+
+  .M_OrderedList {
+    width: 52.34vw;
+    gap: 1.56vw;
+
+    .OrderedListItems {
+      gap: 1.17vw;
     }
+  }
 
-    // Toggle Switches
-    .M_TagsToggle, .M_ApplicationsToggle {
-        width: 46.68vw;
-        justify-content: space-between;
-    }
+  .M_UnorderedList {
+    width: 52.34vw;
+    padding: 2.34vw;
+    gap: 1.36vw;
+    border-radius: 1.17vw;
+  }
 
-    .M_ApplicationsToggle {
-        width: 100%;
-        justify-content: center;
-        gap: 1.56vw;
-    }
+  .M_StudentApplicationFilters {
+    width: 93vw;
+    gap: 2.3vw;
+  }
 
-
-    // Discussion Card
-
-    .M_DiscussionHead {
-        width: 43.95vw;
-    }
-
-    .M_DiscussionBottom {
-        width: 43.95vw;
-    
-        .DiscussionBottom_Icons {
-            gap: 1.56vw;
-
-            .Q_Icon {
-                width: 2.15vw;
-                height: 2.15vw;
-            }
-        }
-    }
-
-    .M_CommentHead {
-        gap: 1.17vw;
-    }
-    
-    .M_CommentBottom {
-        width: 62.89vw;
-        padding-left: 3.52vw;
-        gap: 1.17vw; 
-    }
-
-    // Forms and Buttons
-    .M_TwoButtons {
-        gap: 1.17vw;
-    }
-
-    .Sec_Tert {
-        .A_Button {
-            width: 5.66vw;
-        }
-    }
-
-    // Сделать в фигме
-    // .Prim_Tert {
-    //     .TertiaryButton {
-    //         width: 6.35vw;
-    //     }
-    // }
-
-    // Text
-    .M_ArticleHeader {
-        width: 52.34vw;
-        gap: 2.34vw;
-    }
-
-    .M_ArticleQuote {
-        width: 52.34vw;
-        gap: 1.56vw;
-    }
-
-    .M_OrderedList {
-        width: 52.34vw;
-        gap: 1.56vw;
-    
-        .OrderedListItems {
-            gap: 1.17vw;
-        }
-    }
-
-    .M_UnorderedList {
-        width: 52.34vw;
-        padding: 2.34vw;
-        gap: 1.36vw;
-        border-radius: 1.17vw;
-    }
+  .M_AddComment {
+    width: 62.8vw;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+  }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    .M_HeaderNavigation {
-        width: 73.18vw;
-        padding: 0.78vw 2.6vw 0.78vw 2.6vw;
-        border-radius: 0.78vw;
+@media only screen and (min-device-width: 490px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .M_HeaderNavigation {
+    width: 73.18vw;
+    padding: 0.78vw 2.6vw 0.78vw 2.6vw;
+    border-radius: 0.78vw;
+  }
+
+  .M_HeaderSettings {
+    gap: 1.56vw;
+  }
+
+  .M_ChooseLanguage {
+    gap: 0.78vw;
+  }
+
+  // Student Cards
+
+  .M_StudentInfoTags {
+    width: 66.67vw;
+    gap: 1.04vw;
+  }
+
+  .M_StudentArrivalInfo {
+    width: 51.3vw;
+    gap: 0.78vw;
+
+    .ArrivalInfo_Container {
+      gap: 0.26vw;
     }
+  }
 
-    .M_HeaderSettings {
-        gap: 1.56vw;
+  .M_StudentPersonalInfo {
+    gap: 0.26vw;
+  }
+
+  .M_StudentCardPhoto {
+    width: 19.8vw;
+    gap: 1.04vw;
+
+    .A_Button {
+      width: 100%;
     }
+  }
 
-    .M_ChooseLanguage {
-        gap: 0.78vw;
+  .M_StudentAdditionalInfo {
+    width: 67.7vw;
+    gap: 1.04vw;
+
+    .AdditionalInfo_Container {
+      gap: 1.04vw;
     }
+  }
 
-    // Student Cards
+  // Toggle Switches
+  .M_TagsToggle,
+  .M_ApplicationsToggle {
+    width: 89.58vw;
+    justify-content: space-between;
+  }
 
-    .M_StudentInfoTags {
-        width: 66.67vw;
-        gap: 1.04vw;
+  .M_ApplicationsToggle {
+    width: 100%;
+    justify-content: center;
+    gap: 2.08vw;
+
+    .Q_Icon {
+      display: none;
     }
+  }
 
-    .M_StudentArrivalInfo {
-        width: 51.3vw;
-        gap: 0.78vw;
-    
-        .ArrivalInfo_Container {
-            gap: 0.26vw;
-        }
+  .ToggleOption_Container {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+  }
+
+  .M_DiscussionHead {
+    width: 43.95vw;
+  }
+
+  .M_DiscussionBottom {
+    width: 43.95vw;
+
+    .DiscussionBottom_Icons {
+      gap: 1.56vw;
+
+      .Q_Icon {
+        width: 2.15vw;
+        height: 2.15vw;
+      }
     }
+  }
 
-    .M_StudentPersonalInfo {
-        gap: 0.26vw;
+  .M_CommentHead {
+    gap: 1.56vw;
+  }
+
+  .M_CommentBottom {
+    width: 62.89vw;
+    padding-left: 3.52vw;
+    gap: 1.17vw;
+  }
+
+  // Forms and Buttons
+
+  .M_FormProfile {
+    width: 49.8vw;
+    height: 23.7vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.8vw;
+    row-gap: 1.2vw;
+  }
+
+  .InputLegendLong {
+    grid-column: span 2;
+  }
+
+  .M_FormApplication {
+    width: 39.2vw;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vw;
+
+    .InputLegend {
+      grid-column: span 2;
     }
+  }
 
-    .M_StudentCardPhoto {
-        width: 19.8vw;
-        gap: 1.04vw;
+  .ApplicationDate {
+    gap: 2vw;
+    grid-template-columns: 1fr;
+  }
 
-        .A_Button {
-            width: 100%;
-        }
+  .M_FormReg1 {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    gap: 2vw;
+    flex-direction: column;
+  }
+
+  .M_FormReg2 {
+    width: 60.5vw;
+    gap: 1vw;
+  }
+
+  .M_FormReg3 {
+    width: 55.4vw;
+    height: fit-content;
+    column-gap: 2vw;
+    row-gap: 2.6vw;
+  }
+
+  .M_FormSignIn {
+    width: 55.3vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2.6vw;
+  }
+
+  .M_FormDiscussion {
+    width: 57.5vw;
+    height: fit-content;
+    gap: 2vw;
+  }
+
+  .M_TwoButtons {
+    gap: 1.17vw;
+  }
+
+  .Sec_Tert {
+    .A_Button {
+      width: 8.59vw;
     }
+  }
 
-    .M_StudentAdditionalInfo{
-        width: 67.7vw;
-        gap: 1.04vw;
-    
-        .AdditionalInfo_Container {
-            gap: 1.04vw
-        }
+  // Discussion Card
+
+  .M_DiscussionHead {
+    width: 89.06vw;
+  }
+
+  .M_DiscussionBottom {
+    width: 89.06vw;
+
+    .DiscussionBottom_Icons {
+      gap: 2.08vw;
+
+      .Q_Icon {
+        width: 2.6vw;
+        height: 2.6vw;
+      }
     }
+  }
 
-        // Toggle Switches
-        .M_TagsToggle, .M_ApplicationsToggle {
-            width: 89.58vw;
-            justify-content: space-between;
-        }
-    
-        .M_ApplicationsToggle {
-            width: 100%;
-            justify-content: center;
-            gap: 2.08vw;
-        }
+  .M_CommentHead {
+    gap: 1.56vw;
+  }
 
-    .M_DiscussionHead {
-        width: 43.95vw;
+  .M_CommentBottom {
+    width: 61.72vw;
+    padding-left: 4.6875vw;
+    gap: 1.56vw;
+  }
+
+  // Forms and Buttons
+  .M_TwoButtons {
+    gap: 1.56vw;
+  }
+
+  .Sec_Tert {
+    .A_Button {
+      width: 9.375vw;
     }
+  }
 
-    .M_DiscussionBottom {
-        width: 43.95vw;
-    
-        .DiscussionBottom_Icons {
-            gap: 1.56vw;
+  // Text
+  .M_ArticleHeader {
+    width: 51.04vw;
+    gap: 2.08vw;
+  }
 
-            .Q_Icon {
-                width: 2.15vw;
-                height: 2.15vw;
-            }
-        }
+  .M_ArticleQuote {
+    width: 51.04vw;
+    gap: 1.56vw;
+  }
+
+  .M_OrderedList {
+    width: 51.04vw;
+    gap: 2.08vw;
+
+    .OrderedListItems {
+      gap: 1.56vw;
     }
+  }
 
-    .M_CommentHead {
-        gap: 1.56vw;
+  .M_UnorderedList {
+    width: 51.04vw;
+    padding: 3.125vw;
+    gap: 1.82vw;
+    border-radius: 1.56vw;
+
+    .A_UnorderedListPoint {
+      width: 100%;
     }
-    
-    .M_CommentBottom {
-        width: 62.89vw;
-        padding-left: 3.52vw;
-        gap: 1.17vw; 
+  }
+
+  .M_StudentApplicationFilters {
+    width: 89vw;
+    gap: 1.5vw;
+  }
+
+  .M_AddComment {
+    width: 61.7vw;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5vw;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .M_HeaderNavigation {
+    width: 91.7vw;
+    height: 9.2vw;
+    padding: 0.78vw 2.6vw 0.78vw 2.6vw;
+    background: none;
+  }
+
+  .M_HeaderSettings {
+    gap: 2vw;
+  }
+
+  .M_ChooseLanguage {
+    gap: 1.5vw;
+    margin-left: 8vw;
+  }
+
+  // Student Cards
+
+  .M_StudentInfoTags {
+    width: 81.5vw;
+    gap: 1.5vw;
+  }
+
+  .M_StudentArrivalInfo {
+    width: 70vw;
+    gap: 1.5vw;
+
+    .ArrivalInfo_Container {
+      gap: 2vw;
     }
+  }
 
-    // Forms and Buttons
-    .M_TwoButtons {
-        gap: 1.17vw;
+  .M_StudentPersonalInfo {
+    gap: 0.5vw;
+  }
+
+  .M_StudentCardPhoto {
+    width: 33.3vw;
+
+    .A_Button {
+      display: none;
     }
+  }
 
-    .Sec_Tert {
-        .A_Button {
-            width: 8.59vw;
-        }
+  .M_StudentAdditionalInfo {
+    width: 45vw;
+    gap: 2vw;
+
+    .AdditionalInfo_Container {
+      gap: 1.5vw;
     }
+  }
 
-    // Discussion Card
+  .BuddyContactContainer {
+    gap: 0.5vw;
+  }
 
-    .M_DiscussionHead {
-        width: 89.06vw;
+  // Toggle Switches
+  .M_TagsToggle,
+  .M_ApplicationsToggle {
+    width: 86.6vw;
+    justify-content: space-between;
+  }
+
+  .M_ApplicationsToggle {
+    width: 91.7vw;
+    justify-content: space-between;
+    gap: 2vw;
+
+    .Q_Icon {
+      display: block;
+      background-image: asset-url('FilterBlack.svg');
     }
+  }
 
-    .M_DiscussionBottom {
-        width: 89.06vw;
-    
-        .DiscussionBottom_Icons {
-            gap: 2.08vw;
+  .ToggleOption_Container {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+  }
 
-            .Q_Icon {
-                width: 2.6vw;
-                height: 2.6vw;
-            }
-        }
+  .M_CommentHead {
+    gap: 3vw;
+  }
+
+  .M_CommentBottom {
+    width: 91.7vw;
+    padding-left: 8.2vw;
+    gap: 2vw;
+  }
+
+  // // Forms and Buttons
+
+  .M_FormProfile {
+    width: 81.2vw;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2vw;
+    row-gap: 4vw;
+  }
+
+  .M_FormApplication {
+    width: 83.5vw;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4vw;
+
+    .InputLegend {
+      grid-column: span 2;
     }
+  }
 
-    .M_CommentHead {
-        gap: 1.56vw;
-    }
-    
-    .M_CommentBottom {
-        width: 61.72vw;
-        padding-left: 4.6875vw;
-        gap: 1.56vw; 
-    }
+  .ApplicationDate {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3vw;
+  }
 
-    // Forms and Buttons
-    .M_TwoButtons {
-        gap: 1.56vw;
-    }
+  .M_FormReg1 {
+    width: 83.5vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+  }
 
-    .Sec_Tert {
-        .A_Button {
-            width: 9.375vw;
-        }
-    }
+  .M_FormReg2 {
+    width: 83.5vw;
+    gap: 2vw;
+  }
 
-    // Text
-    .M_ArticleHeader {
-        width: 51.04vw;
-        gap: 2.08vw;
-    }
+  .M_FormReg3 {
+    width: 83.5vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+  }
 
-    .M_ArticleQuote {
-        width: 51.04vw;
-        gap: 1.56vw;
-    }
+  .M_FormSignIn {
+    width: 83.5vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+  }
 
-    .M_OrderedList {
-        width: 51.04vw;
-        gap: 2.08vw;
-    
-        .OrderedListItems {
-            gap: 1.56vw;
-        }
-    }
+  .M_FormDiscussion {
+    width: 91.7vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+  }
 
-    .M_UnorderedList {
-        width: 51.04vw;
-        padding: 3.125vw;
-        gap: 1.82vw;
-        border-radius: 1.56vw;
+  .M_TwoButtons {
+    gap: 2vw;
+  }
 
-        .A_UnorderedListPoint {
-            width: 100%;
-        }
+  .Sec_Tert {
+    .A_Button {
+      width: 14.3vw;
     }
+  }
+
+  // // Discussion Card
+
+  .M_DiscussionHead {
+    width: 91vw;
+  }
+
+  .M_DiscussionBottom {
+    width: 91.7vw;
+
+    .DiscussionBottom_Icons {
+      gap: 4vw;
+
+      .Q_Icon {
+        width: 5.6vw;
+        height: 5.6vw;
+      }
+    }
+  }
+
+  .M_CommentHead {
+    gap: 3vw;
+  }
+
+  .M_CommentBottom {
+    width: 91.7vw;
+    padding-left: 8.2vw;
+    gap: 2vw;
+  }
+
+  // // Text
+  .M_ArticleHeader {
+    width: 83.5vw;
+    gap: 4vw;
+    align-items: center;
+  }
+
+  .M_ArticleQuote {
+    width: 91.7vw;
+    gap: 3vw;
+  }
+
+  .M_OrderedList {
+    width: 91.7vw;
+    gap: 4vw;
+
+    .OrderedListItems {
+      gap: 3vw;
+    }
+  }
+
+  .M_UnorderedList {
+    width: 91.7vw;
+    padding: 6vw;
+    gap: 3.5vw;
+    border-radius: 3vw;
+
+    .A_UnorderedListPoint {
+      width: 100%;
+    }
+  }
+
+  .M_StudentApplicationFilters {
+    width: 91.7vw;
+    gap: 3vw;
+    flex-direction: column;
+  }
+
+  .M_AddComment {
+    width: 91.7vw;
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+  }
+
+  .Prim_Tert {
+    .SecondaryButton {
+      width: 24vw;
+    }
+  }
 }

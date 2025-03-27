@@ -2,1005 +2,1286 @@
 
 // Header
 .A_Header {
-    width: 32.47vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  width: 32.47vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .A_Profile {
-    width: 2.38vw;
-    height: 2.38vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--black);
-    border-radius: 0.53vw;
+  width: 2.38vw;
+  height: 2.38vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  border-radius: 0.53vw;
 
-    .Q_Icon {
-        width: 1.59vw;
-        height: 1.59vw;
-    }
+  .Q_Icon {
+    width: 1.59vw;
+    height: 1.59vw;
+  }
 }
 
 .A_Language {
-    width: fit-content;
-    height: 1.78vw;
-    display: flex;
-    flex-direction: row;
-    gap: 0.53vw;
-    padding: 0.4vw 0.53vw 0.4vw 0.79vw;
-    border-radius: 0.53vw;
-    align-items: center;
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 0.53vw;
+  padding: 0.4vw 0.53vw 0.4vw 0.79vw;
+  border-radius: 0.53vw;
+  align-items: center;
 
-    .Q_Icon {
-        width: 1.59vw;
-        height: 1.59vw;
-    }
+  .Q_Icon {
+    width: 1.59vw;
+    height: 1.59vw;
+  }
 }
 
 .BlackSelect {
-    background-color: var(--black);
-    
-    p {
-        color: var(--white)
-    }
+  background-color: var(--black);
+
+  p {
+    color: var(--white);
+  }
 }
 
 .StrokeSelect {
-    background-color: none;
-    border: 0.067vw solid var(--grey500);
+  background-color: none;
+  border: 0.067vw solid var(--grey500);
 
-    p {
-        color: var(--grey500)
-    }
+  p {
+    color: var(--grey500);
+  }
 }
 
 // Footer
 .A_FooterText {
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 1.06vw;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1.06vw;
 
-    a {
-        color: var(--white)
-    }
-    p {
-        color: var(--white)
-    }
+  a {
+    color: var(--white);
+  }
+  p {
+    color: var(--white);
+  }
 }
 
 .A_SocialMedia {
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    gap: 1.06vw;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 1.06vw;
 }
-
 
 // Inputs
 // Input Text
 .A_Input {
-    width: 100%;
-    height: 3.24vw;
-    padding: 0.26vw 0.79vw;
-    border-radius: 0.53vw;
-    border: solid 0.07vw var(--grey100);
-    background-color: var(--white);
-    font-size: 1.2vw;
-    font-weight: 400;
-    color: var(--black);
-    line-height: 110%;
-    display: flex;
-    align-items: center;
-    gap: 0.53vw;
+  width: 100%;
+  height: 3.24vw;
+  padding: 0.26vw 0.79vw;
+  border-radius: 0.53vw;
+  border: solid 0.07vw var(--grey100);
+  background-color: var(--white);
+  font-size: 1.2vw;
+  font-weight: 400;
+  color: var(--black);
+  line-height: 110%;
+  gap: 0.53vw;
+  text-overflow: ellipsis;
 }
 
-input::placeholder, textarea::placeholder {
-    font-size: 1.2vw;
-    line-height: 110%;
-    font-weight: 400;
-    color: var(--grey500);
+input::placeholder,
+textarea::placeholder {
+  font-size: 1.2vw;
+  line-height: 110%;
+  font-weight: 400;
+  color: var(--grey500);
+}
+
+// радио кнопка
+
+input[type='radio'] {
+  // appearance: none; тут можно включить стиль, но лучше выглядит без него
+  width: 1.3vw;
+  height: 1.3vw;
+  background-color: var(--white);
+  border-radius: 50%;
+  border: 0.07vw;
+  border-color: var(--grey100);
+  cursor: pointer;
+  margin: 0.3vw;
+}
+input[type='radio']:checked {
+  background-color: var(--green_main);
+  border: 0.1vw;
+}
+
+.A_RadioOption {
+  gap: 0.2vw;
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
 }
 
 legend {
-    font-size: 1.08vw;
-    margin-bottom: 0.26vw;
-    font-weight: 500;
-    color: var(--black);
+  font-size: 1.08vw;
+  margin-bottom: 0.26vw;
+  font-weight: 500;
+  color: var(--black);
 }
 
-input:focus, textarea:focus {
-    border: solid 0.07vw var(--green_main);
-    outline: none;
+input:focus,
+textarea:focus {
+  border: solid 0.07vw var(--green_main);
+  outline: none;
 }
 
 .ExpandedField {
-    height: 6.61vw;
-    padding: 0.79vw 0.79vw 0.26vw 0.79vw; 
+  height: 6.61vw;
+  padding: 0.79vw 0.79vw 0.26vw 0.79vw;
 }
 
 textarea.A_Input {
-    height: 6.61vw;
-    padding: 0.79vw 0.79vw;
-    font-weight: 400;
-    font-family: 'TT Hoves'; 
-    color: var(--black);
-    line-height: 110%;
+  height: 6.61vw;
+  padding: 0.79vw 0.79vw;
+  font-weight: 400;
+  font-family: 'TT Hoves';
+  color: var(--black);
+  line-height: 110%;
 }
 // Input Dropdown
 .InputDropdown select {
-    width: 19.7vw;
-    height: 3.24vw;
-    margin-top: 0.26vw;
-    padding: 0.26vw 0.79vw;
-    border-radius: 0.53vw;
-    border: solid 0.07vw var(--grey100);
-    font-size: 1.2vw;
-    font-weight: 400;
-    color: var(--black);
-    line-height: 110%;
-    background-color: var(--white);
-    cursor: pointer;
-    position: relative;
-    appearance: none;
+  width: 19.7vw;
+  height: 3.24vw;
+  margin-top: 0.26vw;
+  padding: 0.26vw 0.79vw;
+  border-radius: 0.53vw;
+  border: solid 0.07vw var(--grey100);
+  font-size: 1.2vw;
+  font-weight: 400;
+  color: var(--black);
+  line-height: 110%;
+  background-color: var(--white);
+  cursor: pointer;
+  position: relative;
+  appearance: none;
 }
 
 .InputDropdown select:focus {
-    border: solid 0.07vw var(--green_main);
-    outline: none;
+  border: solid 0.07vw var(--green_main);
+  outline: none;
 }
 
 .InputDropdown {
-    position: relative; 
-    width: 19.7vw;
-    height: fit-content;
+  position: relative;
+  width: 19.7vw;
+  height: fit-content;
 }
 
 .InputDropdown::after {
-    content: "";
-    position: absolute;
-    right: 0.79vw;
-    top: 48%;
-    width: 1.59vw;
-    height: 1.59vw;
-    background-image: asset-url('DropdownGreyDefault.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
+  content: '';
+  position: absolute;
+  right: 0.79vw;
+  top: 48%;
+  width: 1.59vw;
+  height: 1.59vw;
+  background-image: asset-url('DropdownGreyDefault.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .InputDropdown:focus-within::after {
-    background-image: asset-url('DropdownGreyActive.svg'); /* Change to the active icon */
+  background-image: asset-url(
+    'DropdownGreyActive.svg'
+  ); /* Change to the active icon */
 }
 
 // InputSearch
 .InputSearch {
-    input {
-        border: none;
-        width: 100%;
-        font-size: 1.2vw;
-        color: var(--black);
-        font-family: "TT Hoves";
-        font-weight: 400;
-    }
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  input {
+    border: none;
+    width: 100%;
+    font-size: 1.2vw;
+    color: var(--black);
+    font-family: 'TT Hoves';
+    font-weight: 400;
+  }
 
-    input::placeholder {
-        font-family: "TT Hoves";
-        font-size: 1.2vw;
-        line-height: 110%;
-        font-weight: 400;
-        color: var(--grey500);
-        opacity: 1;
-        font-weight: 400;
-    }
+  input::placeholder {
+    font-family: 'TT Hoves';
+    font-size: 1.2vw;
+    line-height: 110%;
+    font-weight: 400;
+    color: var(--grey500);
+    opacity: 1;
+    font-weight: 400;
+  }
 
-    .Q_Icon {
-        width: 1.59vw;
-        height: 1.59vw;
-    }
+  .Q_Icon {
+    width: 1.59vw;
+    height: 1.59vw;
+  }
 }
 
 // Tags
 .A_StudentInfoTag {
-    width: fit-content;
-    display: flex;
-    gap: 0.26vw;
-    border-radius: 0.53vw;
-    align-items: center;
-    padding: 0.53vw;
+  width: fit-content;
+  display: flex;
+  gap: 0.26vw;
+  border-radius: 0.53vw;
+  align-items: center;
+  padding: 0.53vw;
+
+  h6 {
+    color: var(--grey700);
+  }
 }
 
 .TagWithFlag {
-    background-color: var(--grey100);
-    padding: 0.53vw 1.06vw 0.53vw 1.06vw;
+  background-color: var(--grey100);
+  padding: 0.53vw 1.06vw 0.53vw 1.06vw;
 }
 
 .TagNoFlag {
-    background-color: var(--white);
-    border: 0.067vw solid var(--grey300);
+  background-color: var(--white);
+  border: 0.067vw solid var(--grey300);
 
-    h6 {
-        color: var(--grey700);
-    }
+  h6 {
+    color: var(--grey700);
+  }
 }
 
 .A_ContentTag {
-    width: fit-content;
-    border-radius: 100px;
-    padding: 0.484vw 1.06vw;
+  width: fit-content;
+  border-radius: 100px;
+  padding: 0.484vw 1.06vw;
 }
 
 .TagGreen {
-    background-color: var(--green_light);
-    
-    p {
-        color: var(--green_dark);
-    }
+  background-color: var(--green_light);
+
+  p {
+    color: var(--green_dark);
+  }
 }
 
 .TagBlue {
-    background-color: var(--blue_light);
-    
-    p {
-        color: var(--blue_dark);
-    }
+  background-color: var(--blue_light);
+
+  p {
+    color: var(--blue_dark);
+  }
 }
 
 .TagRed {
-    background-color: var(--red_light);
-    
-    p {
-        color: var(--red_dark);
-    }
+  background-color: var(--red_light);
+
+  p {
+    color: var(--red_dark);
+  }
 }
 
 .TagPink {
-    background-color: var(--pink_light);
-    
-    p {
-        color: var(--pink_dark);
-    }
+  background-color: var(--pink_light);
+
+  p {
+    color: var(--pink_dark);
+  }
 }
 
 // Tabs, Buttons, Text
 .A_ReadMoreButton {
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    gap: 0.26vw;
-    align-items: center;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 0.26vw;
+  align-items: center;
 
-    p {
-        color: var(--grey500);
-    }
+  p {
+    color: var(--grey500);
+  }
 }
 
 .A_LoadMoreButton {
-    width: fit-content;
+  width: fit-content;
 
-    p {
-        color: var(--grey500);
-    }
+  p {
+    color: var(--grey500);
+  }
 }
 
 .A_LoadMoreButton:hover {
-    text-decoration: underline;
-    transition: all 0.3s;
+  text-decoration: underline;
+  transition: all 0.3s;
 }
 
 .A_Button {
-    width: 14.29vw;
-    height: 3.24vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.53vw;
-    transition: all 0.3s ease;
+  width: 14.29vw;
+  height: 3.24vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.53vw;
+  transition: all 0.3s ease;
 }
 
 .A_Button:hover {
-    transform: scale(1.02);
-    cursor: pointer;
+  transform: scale(1.02);
+  cursor: pointer;
 }
 
 .PrimaryButton {
-    background-color: var(--black);
+  background-color: var(--black);
 
-    p {
-        color: var(--white);
-    }
+  p {
+    color: var(--white);
+  }
 }
 
 .SecondaryButton {
-    background-color: var(--white);
-    border: 0.067vw solid var(--grey300);
+  background-color: var(--white);
+  border: 0.067vw solid var(--grey300);
+  width: 6.35vw;
 
-    p {
-        color: var(--Black);
-    }
+  p {
+    color: var(--Black);
+  }
 }
 
 .TertiaryButton {
-    background-color: var(--red_light);
-    border: 0.067vw solid var(--red_dark);
+  background-color: var(--red_light);
+  border: 0.067vw solid var(--red_dark);
 
-    p {
-        color: var(--Black);
-    }
+  p {
+    color: var(--Black);
+  }
 }
 
 .Disabled {
-    background-color: var(--grey100);
+  background-color: var(--grey100);
 
-    p {
-        color: var(--black);
-    }
+  p {
+    color: var(--black);
+  }
 }
 
 .Disabled:hover {
-    transform: none;
-    cursor: default;
+  transform: none;
+  cursor: default;
 }
 
 .A_ArrivalInfo {
-    width: fit-content;
-    display: flex;
-    gap: 0.4vw;
-    align-items: center;
+  width: fit-content;
+  display: flex;
+  gap: 0.4vw;
+  align-items: center;
 }
 
 .A_ToggleOption {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0.8vw;
-    gap: 0.4vw;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.8vw;
+  gap: 0.4vw;
 
-    div {
-        display: none;
-    }
+  div {
+    display: none;
+  }
 }
 
 .Toggled {
-
-    div {
-        display: inline-block;
-        width: 0.4vw;
-        height: 0.4vw;
-        border-radius: 50%;
-        background-color: var(--black);
-    }
+  div {
+    display: inline-block;
+    width: 0.4vw;
+    height: 0.4vw;
+    border-radius: 50%;
+    background-color: var(--black);
+  }
 }
 
 // Images
 .A_ArticleImage {
-    width: 52.78vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 0.79vw;
-    align-items: center;
+  width: 52.78vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.79vw;
+  align-items: center;
 
-    div {
-        width: 100%;
-        height: 26.19vw;
-        background-color: var(--green_main);
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
+  div {
+    width: 100%;
+    height: 26.19vw;
+    background-color: var(--green_main);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 
-    p {
-        color: var(--grey500);
-        width: 37.7vw;
-        text-align: center;
-    }
+  p {
+    color: var(--grey500);
+    width: 37.7vw;
+    text-align: center;
+  }
 }
 
 // Text + Icons
 .A_ProfileInfo {
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    gap: 0.795vw;
-    align-items: center;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 0.795vw;
+  align-items: center;
 }
 
 .A_CommentCount {
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    gap: 0.265vw;
-    align-items: center;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 0.265vw;
+  align-items: center;
 }
 
 .A_ArticleText {
-    width: 52.78vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 1.06vw;
+  width: 52.78vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1.06vw;
 }
 
 .A_CommentText {
-    width: 52.78vw;
-    height: fit-content;
+  width: 52.78vw;
+  height: fit-content;
 }
 
-.A_OrderedListPoint, .A_UnorderedListPoint {
-    width: 52.78vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    gap: 1.06vw;
-    align-items: initial;
+.A_OrderedListPoint,
+.A_UnorderedListPoint {
+  width: 52.78vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 1.06vw;
+  align-items: initial;
 
-    p {
-        width: 100%;
-    }
+  p {
+    width: 100%;
+  }
 }
 
 .A_UnorderedListPoint {
-    width: 100%;
-    gap: 0.795vw;
+  width: 100%;
+  gap: 0.795vw;
 }
 
 .A_ArticleNavigationMenu {
-    width: 31.42vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 0.53vw;
-    background-color: var(--white);
-    border-radius: 0.53vw;
-    padding: 1.59vw;
+  width: 31.42vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.53vw;
+  background-color: var(--white);
+  border-radius: 0.53vw;
+  padding: 1.59vw;
 
-    div {
-        width: 100%;
-    }
+  div {
+    width: 100%;
+  }
 }
 
 .A_RegistrationHeader {
-    width: 42.39vw;
+  width: 42.39vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.53vw;
+
+  .RegistrationHeaderTitle {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 0.53vw;
+    justify-content: space-between;
+    gap: 1.06vw;
 
-    .RegistrationHeaderTitle {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        gap: 1.06vw;
-
-        h3 {
-            max-width: 100%;
-        }
+    h3 {
+      max-width: 100%;
     }
+  }
 
-    p {
-        width: 59.2%;
-        color: var(--grey500);
-    }
+  p {
+    width: 59.2%;
+    color: var(--grey500);
+  }
 }
 
 .A_ArticleHeader {
-    width: 52.78vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 0vw;
+  width: 52.78vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0vw;
 
-    h2 {
-        width: 100%;
-        color: black;
-    }
+  h2 {
+    width: 100%;
+    color: black;
+  }
 
-    p {
-        width: 100%;
-        color: var(--grey500);
-    }
+  p {
+    width: 100%;
+    color: var(--grey500);
+  }
 }
 
 // Ipad Landscape
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-    // Header
-    .A_Header {
-        width: 36.33vw;
+  // Header
+  .A_Header {
+    width: 36.33vw;
+  }
+
+  .A_Profile {
+    width: 3.123vw;
+    height: 3.123vw;
+    border-radius: 0.78vw;
+
+    .Q_Icon {
+      width: 1.96vw;
+      height: 1.96vw;
+    }
+  }
+
+  .A_Language {
+    height: 3.123vw;
+    gap: 0.78vw;
+    padding: 0.586vw 1.11vw 0.586vw 0.77vw;
+    border-radius: 0.78vw;
+
+    .Q_Icon {
+      width: 1.96vw;
+      height: 1.96vw;
+    }
+  }
+
+  // Footer
+  .A_FooterText {
+    gap: 1.17vw;
+  }
+
+  .A_SocialMedia {
+    gap: 1.56vw;
+  }
+
+  // Inputs
+  // Input Text
+  .A_Input {
+    height: 4.3vw;
+    padding: 0.39vw 1.17vw;
+    border-radius: 0.78vw;
+    border: solid 0.1vw var(--grey100);
+    font-size: 1.53vw;
+    gap: 0.78vw;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 1.53vw;
+  }
+
+  legend {
+    font-size: 1.36vw;
+    margin-bottom: 0.2vw;
+  }
+
+  input:focus,
+  textarea:focus {
+    border: solid 0.1vw var(--green_main);
+  }
+
+  .ExpandedField {
+    height: 6.61vw;
+    padding: 1.17vw 1.17vw 0.39vw 1.17vw;
+  }
+
+  textarea.A_Input {
+    height: 6.61vw;
+    padding: 1vw 1vw;
+  }
+
+  // Input Dropdown
+  .InputDropdown select {
+    width: 100%;
+    height: 4.3vw;
+    margin-top: 0.2vw;
+    padding: 0.39vw 1.17vw;
+    border-radius: 0.78vw;
+    border: solid 0.1vw var(--grey100);
+    font-size: 1.53vw;
+  }
+
+  .InputDropdown select:focus {
+    border: solid 0.1vw var(--green_main);
+  }
+
+  .InputDropdown {
+    width: 100%;
+  }
+
+  .InputDropdown::after {
+    right: 1.17vw;
+    top: 44%;
+    width: 2.34vw;
+    height: 2.34vw;
+  }
+
+  // InputSearch
+  .InputSearch {
+    input {
+      font-size: 1.53vw;
     }
 
-    .A_Profile {
-        width: 3.123vw;
-        height: 3.123vw;
-        border-radius: 0.78vw;
-
-        .Q_Icon {
-            width: 1.96vw;
-            height: 1.96vw;
-        }
+    input::placeholder {
+      font-size: 1.53vw;
     }
 
-    .A_Language {
-        height: 1.78vw;
-        gap: 0.78vw;
-        padding: 0.586vw 1.11vw 0.586vw 0.77vw;
-        border-radius: 0.78vw;
-    
-        .Q_Icon {
-            width: 1.96vw;
-            height: 1.96vw;
-        }
+    .Q_Icon {
+      width: 2.34vw;
+      height: 2.34vw;
+    }
+  }
+
+  // Tags and Buttons
+  .A_Button {
+    width: 14.65vw;
+    height: 3.52vw;
+    border-radius: 0.78vw;
+  }
+
+  .A_StudentInfoTag {
+    gap: 0.39vw;
+    border-radius: 0.78vw;
+  }
+
+  .TagWithFlag {
+    padding: 0.59vw 0.78vw;
+  }
+
+  .TagNoFlag {
+    padding: 0.59vw 0.78vw;
+    border: 0.098vw solid var(--grey300);
+  }
+
+  .A_ContentTag {
+    padding: 0.9vw 1vw;
+  }
+
+  .A_ReadMoreButton {
+    gap: 0.39vw;
+
+    .Q_Icon {
+      width: 2.34vw;
+      height: 2.34vw;
+    }
+  }
+
+  .A_ArrivalInfo {
+    gap: 0.59vw;
+
+    div {
+      width: 1.95vw;
+      height: 1.95vw;
+    }
+  }
+
+  .A_ToggleOption {
+    padding: 0.78vw;
+    gap: 0.59vw;
+  }
+
+  .Toggled {
+    div {
+      width: 0.59vw;
+      height: 0.59vw;
+    }
+  }
+
+  // Images
+  .A_ArticleImage {
+    width: 52.44vw;
+    gap: 0.78vw;
+
+    div {
+      width: 100%;
+      height: 26.37vw;
     }
 
-    // Footer 
-    .A_FooterText {
-        gap: 1.17vw;
+    p {
+      width: 100%;
     }
+  }
 
+  // Text + Icons
+  .A_ProfileInfo {
+    gap: 0.98vw;
+  }
 
-    .A_SocialMedia {
-        gap: 1.56vw;
-    }
+  .A_CommentCount {
+    gap: 0.39vw;
 
-    // Inputs
-    // Input Text
-    .A_Input {
-        height: 4.3vw;
-        padding: 0.39vw 1.17vw;
-        border-radius: 0.78vw;
-        border: solid 0.1vw var(--grey100);
-        font-size: 1.53vw;
-        gap: 0.78vw;
+    .Q_Icon {
+      width: 2.15vw;
+      height: 2.15vw;
     }
+  }
 
-    input::placeholder, textarea::placeholder {
-        font-size: 1.53vw;
-    }
-    
-    legend {
-        font-size: 1.36vw;
-        margin-bottom: 0.2vw;
-    }
+  .A_ArticleText {
+    width: 52.44vw;
+    gap: 1.56vw;
+  }
 
-    input:focus, textarea:focus {
-        border: solid 0.1vw var(--green_main);
-    }
-    
-    .ExpandedField {
-        height: 6.61vw;
-        padding: 1.17vw 1.17vw 0.39vw 1.17vw; 
-    }
-    
-    textarea.A_Input {
-        height: 6.61vw;
-        padding: 1vw 1vw;
-    }
+  .A_CommentText {
+    width: 52.44vw;
+  }
 
-    // Input Dropdown
-    .InputDropdown select {
-        width: 100%;
-        height: 4.3vw;
-        margin-top: 0.2vw;
-        padding: 0.39vw 1.17vw;
-        border-radius: 0.78vw;
-        border: solid 0.1vw var(--grey100);
-        font-size: 1.53vw;
-    }
+  .A_OrderedListPoint,
+  .A_UnorderedListPoint {
+    width: 52.44vw;
+    gap: 1.56vw;
+  }
 
-    .InputDropdown select:focus {
-        border: solid 0.1vw var(--green_main);
-    }
-    
-    .InputDropdown {
-        width: 100%;
-    }
-    
-    .InputDropdown::after {
-        right: 1.17vw;
-        top: 44%;
+  .A_UnorderedListPoint {
+    width: 100%;
+    gap: 1.17vw;
+  }
+
+  .A_ArticleNavigationMenu {
+    width: 38.57vw;
+    gap: 0.78vw;
+    border-radius: 0.78vw;
+    padding: 2.34vw;
+  }
+
+  .A_RegistrationHeader {
+    width: fit-content;
+    gap: 0.53vw;
+
+    .RegistrationHeaderTitle {
+      width: 100%;
+      gap: 1.56vw;
+
+      .Q_Icon {
         width: 2.34vw;
         height: 2.34vw;
+      }
     }
 
-    // InputSearch
-    .InputSearch {
-        input {
-            font-size: 1.53vw;
-        }
+    p {
+      width: 88%;
+    }
+  }
 
-        input::placeholder {
-            font-size: 1.53vw;
-        }
+  .A_ArticleHeader {
+    width: 52.44vw;
+  }
 
-        .Q_Icon {
-            width: 2.34vw;
-            height: 2.34vw;
-        }
-    }
-
-    // Tags and Buttons
-    .A_Button {
-        width: 14.65vw;
-        height: 3.52vw;
-        border-radius: 0.78vw;
-    }
-
-    .A_StudentInfoTag {
-        gap: 0.39vw;
-        border-radius: 0.78vw;
-    }
-    
-    .TagWithFlag {
-        padding: 0.59vw 0.78vw;
-    }
-    
-    .TagNoFlag {
-        padding: 0.59vw 0.78vw;
-        border: 0.098vw solid var(--grey300);
-    }
-
-    .A_ContentTag {
-        padding: 0.98vw 1.17vw;
-    }
-
-    .A_ReadMoreButton {
-        gap: 0.39vw;
-
-        .Q_Icon {
-            width: 2.34vw;
-            height: 2.34vw;
-        }
-    }
-
-    .A_ArrivalInfo {
-        gap: 0.59vw;
-    
-        div {
-            width: 1.95vw;
-            height: 1.95vw;
-        }
-    }
-
-    .A_ToggleOption {
-        padding: 0.78vw;
-        gap: 0.59vw;
-    }
-    
-    .Toggled {
-    
-        div {
-            width: 0.59vw;
-            height: 0.59vw;
-        }
-    }
-
-    // Images
-    .A_ArticleImage {
-        width: 52.44vw;
-        gap: 0.78vw;
-    
-        div {
-            width: 100%;
-            height: 26.37vw;
-        }
-    
-        p {
-            width: 100%;
-        }
-    }
-
-    // Text + Icons
-    .A_ProfileInfo {
-        gap: 0.98vw;
-    }
-
-    .A_CommentCount {
-        gap: 0.39vw;
-    
-        .Q_Icon {
-            width: 2.15vw;
-            height: 2.15vw;
-        }
-    }
-
-    .A_ArticleText {
-        width: 52.44vw;
-        gap: 1.56vw;
-    }
-    
-    .A_CommentText {
-        width: 52.44vw;
-    }
-
-    .A_OrderedListPoint, .A_UnorderedListPoint {
-        width: 52.44vw;
-        gap: 1.56vw;
-    }
-    
-    .A_UnorderedListPoint {
-        width: 100%;
-        gap: 1.17vw;
-    }
-
-    .A_ArticleNavigationMenu {
-        width: 38.57vw;
-        gap: 0.78vw;
-        border-radius: 0.78vw;
-        padding: 2.34vw;
-    }
-
-    .A_RegistrationHeader {
-        width: 41.99vw;
-        gap: 0.53vw;
-    
-        .RegistrationHeaderTitle {
-            width: 100%;
-            gap: 1.56vw;
-
-            .Q_Icon {
-                width: 2.34vw;
-                height: 2.34vw;
-            }
-        }
-    
-        p {
-            width: 88%;
-        }
-    }
-
-    .A_ArticleHeader {
-        width: 52.44vw;
-    }
+  input[type='radio'] {
+    width: 1.9vw;
+    height: 1.9vw;
+  }
 }
 
 // Ipad Portrait
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    // Header
-    .A_Header {
-        width: 48.44vw;
+@media only screen and (min-device-width: 490px) and (max-device-width: 1024px) and (orientation: portrait) {
+  // Header
+  .A_Header {
+    width: 48.44vw;
+  }
+
+  .A_Profile {
+    width: 4.17vw;
+    height: 4.17vw;
+    border-radius: 1.04vw;
+
+    .Q_Icon {
+      width: 2.6vw;
+      height: 2.6vw;
+    }
+  }
+
+  .A_Language {
+    height: 4.17vw;
+    gap: 1.04vw;
+    padding: 0.4vw 1.11vw 0.4vw 0.77vw;
+    border-radius: 1.04vw;
+
+    .Q_Icon {
+      width: 2.6vw;
+      height: 2.6vw;
+    }
+  }
+
+  .StrokeSelect {
+    border: 0.195vw solid var(--grey500);
+  }
+
+  // Footer
+
+  .A_FooterText {
+    gap: 1.56vw;
+  }
+
+  .A_SocialMedia {
+    gap: 2.08vw;
+  }
+
+  // Inputs
+  // Input Text
+  .A_Input {
+    height: 4.6875vw;
+    padding: 1.3vw 1.56vw;
+    border-radius: 0.78vw;
+    border: solid 0.13vw var(--grey100);
+    font-size: 1.8vw;
+    gap: 1vw;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 1.8vw;
+  }
+
+  legend {
+    font-size: 1.83vw;
+    margin-bottom: 0.26vw;
+  }
+
+  input:focus,
+  textarea:focus {
+    border: solid 0.13vw var(--green_main);
+  }
+
+  .ExpandedField {
+    height: 10.42vw;
+    padding: 1.56vw 1.56vw 1.3vw 1.56vw;
+  }
+
+  textarea.A_Input {
+    height: 10.42vw;
+    padding: 1vw 1.56vw;
+  }
+
+  // Input Dropdown
+  .InputDropdown select {
+    width: 100%;
+    height: 4.6875vw;
+    margin-top: 0.26vw;
+    padding: 1.3vw 1.56vw;
+    border-radius: 0.78vw;
+    border: solid 0.13vw var(--grey100);
+    font-size: 1.8vw;
+  }
+
+  .InputDropdown {
+    width: 100%;
+  }
+
+  .InputDropdown select:focus {
+    border: solid 0.2vw var(--green_main);
+  }
+
+  .InputDropdown::after {
+    right: 1.56vw;
+    top: 46%;
+    width: 2.6vw;
+    height: 2.6vw;
+  }
+
+  // InputSearch
+  .InputSearch {
+    input {
+      font-size: 1.8vw;
     }
 
-    .A_Profile {
-        width: 4.17vw;
-        height: 4.17vw;
-        border-radius: 1.04vw;
-
-        .Q_Icon {
-            width: 2.6vw;
-            height: 2.6vw;
-        }
+    input::placeholder {
+      font-size: 1.8vw;
     }
 
-    .A_Language {
-        height: 3.65vw;
-        gap: 1.04vw;
-        padding: 0.4vw 1.11vw 0.4vw 0.77vw;
-        border-radius: 1.04vw;
-    
-        .Q_Icon {
-            width: 2.6vw;
-            height: 2.6vw;
-        }
+    .Q_Icon {
+      width: 2.6vw;
+      height: 2.6vw;
+    }
+  }
+
+  // Tags and Buttons
+  .A_Button {
+    width: 19.5vw;
+    height: 4.56vw;
+    border-radius: 0.78vw;
+  }
+
+  .A_StudentInfoTag {
+    gap: 0.52vw;
+    border-radius: 0.65vw;
+  }
+
+  .TagWithFlag {
+    padding: 0.52vw 0.71vw;
+  }
+
+  .TagNoFlag {
+    padding: 0.52vw 0.71vw;
+    border: 0.13vw solid var(--grey300);
+  }
+
+  .A_ContentTag {
+    padding: 1vw 1.3vw;
+  }
+
+  .A_ReadMoreButton {
+    gap: 0.52vw;
+
+    .Q_Icon {
+      width: 3.125vw;
+      height: 3.125vw;
+    }
+  }
+
+  .A_ArrivalInfo {
+    gap: 0.78vw;
+
+    div {
+      width: 2.6vw;
+      height: 2.6vw;
+    }
+  }
+
+  .A_ToggleOption {
+    padding: 0.78vw;
+    gap: 0.78vw;
+  }
+
+  .Toggled {
+    div {
+      width: 0.78vw;
+      height: 0.78vw;
+    }
+  }
+
+  // Картинки
+
+  .A_ArticleImage {
+    width: 51.04vw;
+    gap: 1.04vw;
+
+    div {
+      width: 100%;
+      height: 25.65vw;
     }
 
-    .StrokeSelect {
-        border: 0.195vw solid var(--grey500);
+    p {
+      width: 100%;
     }
+  }
 
-    // Footer
+  .A_ProfileInfo {
+    gap: 1.04vw;
+  }
 
-    .A_FooterText {
-        gap: 1.56vw;
-    }
+  .A_CommentCount {
+    gap: 0.52vw;
 
-    .A_SocialMedia {
-        gap: 2.08vw;
+    .Q_Icon {
+      width: 1.953vw;
+      height: 1.953vw;
     }
+  }
 
-    // Inputs
-    // Input Text
-    .A_Input {
-        height: 4.6875vw;
-        padding: 1.3vw 1.56vw;
-        border-radius: 0.78vw;
-        border: solid 0.13vw var(--grey100);
-        font-size: 1.8vw;
-        gap: 0.78vw;
-    }
+  .A_ArticleText {
+    width: 51.04vw;
+    gap: 1.17vw;
+  }
 
-    input::placeholder, textarea::placeholder {
-        font-size: 1.8vw;
-    }
-    
-    legend {
-        font-size: 1.83vw;
-        margin-bottom: 0.26vw;
-    }
+  .A_CommentText {
+    width: 51.04vw;
+  }
 
-    input:focus, textarea:focus {
-        border: solid 0.13vw var(--green_main);
-    }
-    
-    .ExpandedField {
-        height: 10.42vw;
-        padding: 1.56vw 1.56vw 1.3vw 1.56vw; 
-    }
-    
-    textarea.A_Input {
-        height: 10.42vw;
-        padding: 1vw 1.56vw;
-    }
+  .A_OrderedListPoint,
+  .A_UnorderedListPoint {
+    width: 51.04vw;
+    gap: 1.56vw;
+  }
 
-    // Input Dropdown
-    .InputDropdown select {
-        width: 100%;
-        height: 4.6875vw;
-        margin-top: 0.26vw;
-        padding: 1.3vw 1.56vw;
-        border-radius: 0.78vw;
-        border: solid 0.13vw var(--grey100);
-        font-size: 1.8vw;
-    }
+  .A_ArticleNavigationMenu {
+    width: 37.5vw;
+    gap: 1.56vw;
+    border-radius: 1.04vw;
+    padding: 2.08vw;
+  }
 
-    .InputDropdown {
-        width: 100%;
-    }
+  .A_RegistrationHeader {
+    width: 100%;
+    gap: 1.04vw;
 
-    .InputDropdown select:focus {
-        border: solid 0.13vw var(--green_main);
-    }
+    .RegistrationHeaderTitle {
+      gap: 1.04vw;
 
-    .InputDropdown::after {
-        right: 1.56vw;
-        top: 46%;
+      .Q_Icon {
         width: 2.6vw;
         height: 2.6vw;
+      }
     }
 
-    // InputSearch
-    .InputSearch {
-        input {
-            font-size: 1.8vw;
-        }
+    p {
+      width: 86%;
+    }
+  }
 
-        input::placeholder {
-            font-size: 1.8vw;
-        }
+  .A_ArticleHeader {
+    width: 51.56vw;
+  }
 
-        .Q_Icon {
-            width: 2.6vw;
-            height: 2.6vw;
-        }
+  input[type='radio'] {
+    width: 2.6vw;
+    height: 2.6vw;
+  }
+}
+
+// Mobile
+@media only screen and (max-width: 490px) {
+  // Header
+  .A_Header {
+    width: 91.7vw;
+    height: 49vw;
+    display: flex;
+    background-color: var(--white);
+    border-radius: 3vw;
+    gap: 6vw;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+  }
+
+  .A_Profile {
+    width: 6.6vw;
+    height: 6.6vw;
+    border-radius: 1.5vw;
+
+    .Q_Icon {
+      width: 4.6vw;
+      height: 4.6vw;
+    }
+  }
+
+  .A_Language {
+    height: 6.6vw;
+    gap: 2vw;
+    padding-left: 2vw;
+    padding-right: 1.5vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    border-radius: 1.5vw;
+
+    .Q_Icon {
+      width: 4.6vw;
+      height: 4.6vw;
+    }
+  }
+
+  .StrokeSelect {
+    border: 0.3vw solid var(--grey500);
+  }
+
+  // Footer
+  .A_FooterText {
+    gap: 2.5vw;
+  }
+
+  .A_SocialMedia {
+    gap: 3vw;
+  }
+
+  // Inputs
+  .A_Input {
+    height: 9.2vw;
+    padding: 1vw 3vw;
+    border-radius: 1.5vw;
+    border: solid 0.2vw var(--grey100);
+    font-size: 4vw;
+    gap: 0.5vw;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 4vw;
+  }
+
+  legend {
+    font-size: 3.5vw;
+    margin-bottom: 1vw;
+  }
+
+  input:focus,
+  textarea:focus {
+    border: solid 0.2vw var(--green_main);
+  }
+
+  .ExpandedField {
+    height: 20.5vw;
+    padding: 1vw 2.5vw;
+  }
+
+  textarea.A_Input {
+    height: 20.5vw;
+    padding: 1vw 2.5vw;
+  }
+
+  // Dropdown
+  .InputDropdown select {
+    width: 100%;
+    height: 9.2vw;
+    margin-top: 1vw;
+    padding: 1vw 3vw;
+    border-radius: 1.5vw;
+    border: solid 0.2vw var(--grey100);
+    font-size: 4vw;
+  }
+
+  // проверить это
+  .InputDropdown::after {
+    right: 3vw;
+    top: 46%;
+    width: 5vw;
+    height: 5vw;
+  }
+
+  // Buttons
+  .A_Button {
+    width: 38.4vw;
+    height: 8.2vw;
+    border-radius: 2vw;
+  }
+  .Expanded {
+    width: 83.5vw;
+    height: 12.3vw;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    grid-column: span 2;
+  }
+
+  .A_ContentTag {
+    padding: 1.5vw 2vw;
+  }
+
+  .A_ReadMoreButton {
+    gap: 1vw;
+
+    .Q_Icon {
+      width: 5vw;
+      height: 5vw;
+    }
+  }
+
+  .A_ArrivalInfo {
+    gap: 1.5vw;
+
+    div {
+      width: 5vw;
+      height: 5vw;
+    }
+  }
+
+  // Images
+  .A_ArticleImage {
+    width: 91.7vw;
+    gap: 2vw;
+
+    div {
+      width: 100%;
+      height: 57vw;
     }
 
-    // Tags and Buttons
-    .A_Button {
-        width: 19.53vw;
-        height: 4.56vw;
-        border-radius: 0.78vw;
+    p {
+      width: 100%;
+    }
+  }
+
+  .A_ProfileInfo {
+    gap: 2vw;
+  }
+
+  .A_CommentCount {
+    gap: 1vw;
+
+    .Q_Icon {
+      width: 5.6vw;
+      height: 5.6vw;
+    }
+  }
+
+  .A_ArticleText {
+    width: 91.7vw;
+    gap: 3vw;
+  }
+
+  .A_CommentText {
+    width: 82.5vw;
+  }
+
+  .A_OrderedListPoint,
+  .A_UnorderedListPoint {
+    width: 79.4vw;
+    gap: 3vw;
+  }
+
+  .A_ArticleNavigationMenu {
+    width: 73.8vw;
+    gap: 2vw;
+    border-radius: 2vw;
+    padding: 4vw;
+  }
+
+  .A_RegistrationHeader {
+    width: 83vw;
+    gap: 2vw;
+
+    .RegistrationHeaderTitle {
+      gap: 2vw;
+
+      .Q_Icon {
+        width: 5vw;
+        height: 5vw;
+      }
     }
 
-    .A_StudentInfoTag {
-        gap: 0.52vw;
-        border-radius: 0.65vw;
+    p {
+      width: 100%;
     }
-    
-    .TagWithFlag {
-        padding: 0.52vw 0.71vw;
-    }
-    
-    .TagNoFlag {
-        padding: 0.52vw 0.71vw;
-        border: 0.13vw solid var(--grey300);
-    }
+  }
 
-    .A_ContentTag {
-        padding: 1vw 1.3vw;
+  .A_ArticleHeader {
+    width: 79.2vw;
+    text-align: center;
+  }
+
+  .A_ToggleOption {
+    padding: 1.5vw;
+    gap: 1.5vw;
+  }
+  .Toggled {
+    div {
+      width: 1.5vw;
+      height: 1.5vw;
     }
+  }
 
-    .A_ReadMoreButton {
-        gap: 0.52vw;
-
-        .Q_Icon {
-            width: 3.125vw;
-            height: 3.125vw;
-        }
-    }
-
-    .A_ArrivalInfo {
-        gap: 0.78vw;
-    
-        div {
-            width: 2.6vw;
-            height: 2.6vw;
-        }
-    }
-
-    .A_ToggleOption {
-        padding: 0.78vw;
-        gap: 0.78vw;
-    }
-    
-    .Toggled {
-    
-        div {
-            width: 0.78vw;
-            height: 0.78vw;
-        }
-    }
-
-    // Картинки
-
-    .A_ArticleImage {
-        width: 51.04vw;
-        gap: 1.04vw;
-    
-        div {
-            width: 100%;
-            height: 25.65vw;
-        }
-    
-        p {
-            width: 100%;
-        }
-    }
-
-    .A_ProfileInfo {
-        gap: 1.04vw;
-    }
-
-    .A_CommentCount {
-        gap: 0.52vw;
-    
-        .Q_Icon {
-            width: 1.953vw;
-            height: 1.953vw;
-        }
-    }
-
-    .A_ArticleText {
-        width: 51.04vw;
-        gap: 1.17vw;
-    }
-
-    .A_CommentText {
-        width: 51.04vw;
-    }
-
-    .A_OrderedListPoint, .A_UnorderedListPoint {
-        width: 51.04vw;
-        gap: 1.56vw;
-    }
-
-    .A_ArticleNavigationMenu {
-        width: 37.5vw;
-        gap: 1.56vw;
-        border-radius: 1.04vw;
-        padding: 2.08vw;
-    }
-
-    .A_RegistrationHeader {
-        width: 57.55vw;
-        gap: 1.04vw;
-    
-        .RegistrationHeaderTitle {
-            gap: 1.04vw;
-
-            .Q_Icon {
-                width: 2.6vw;
-                height: 2.6vw;
-            }
-        }
-    
-        p {
-            width: 86%;
-        }
-    }
-
-    .A_ArticleHeader {
-        width: 51.56vw;
-    }
+  input[type='radio'] {
+    width: 5vw;
+    height: 5vw;
+  }
 }

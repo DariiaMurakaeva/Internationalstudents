@@ -29,7 +29,7 @@ h2 {
   font-family: 'Bebas Neue';
   font-size: 6.5vw;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 87%;
   font-style: normal;
   color: var(--black);
 }
@@ -44,7 +44,7 @@ h3 {
 
 h4 {
   font-family: 'SA Long Beach';
-  font-size: 2.12vw;
+  font-size: 2.6vw;
   font-style: normal;
   color: var(--black);
 }
@@ -53,14 +53,14 @@ h5 {
   font-family: 'TT Hoves';
   font-size: 1.6vw;
   font-weight: 500;
-  color: var(--black)
+  color: var(--black);
 }
 
 h6 {
   font-family: 'TT Hoves';
   font-size: 1.08vw;
   font-weight: 500;
-  color: var(--black)
+  color: var(--black);
 }
 
 p {
@@ -92,7 +92,7 @@ p {
 .Tag_Text {
   text-transform: uppercase;
   font-size: 0.925vw;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -103,7 +103,6 @@ a {
 
 /* Ipad Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-
   h1 {
     font-size: 11.11vw;
   }
@@ -132,24 +131,25 @@ a {
     font-size: 1.53vw;
   }
 
-  .PrimaryButton_Text, .SecondaryButton_Text {
+  .PrimaryButton_Text,
+  .SecondaryButton_Text {
     font-size: 1.37vw;
   }
 
-  .Tag_Text, .Caption_Text {
-      font-size: 1.2vw;
+  .Tag_Text,
+  .Caption_Text {
+    font-size: 1.2vw;
   }
 }
 
 /* Ipad Portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-
+@media only screen and (min-device-width: 490px) and (max-device-width: 1024px) and (orientation: portrait) {
   h1 {
     font-size: 10.3vw;
   }
 
   h2 {
-    font-size: 6.5vw;
+    font-size: 6.2vw;
   }
 
   h3 {
@@ -157,7 +157,7 @@ a {
   }
 
   h4 {
-    font-size: 2.6vw;
+    font-size: 3vw;
   }
 
   h5 {
@@ -186,5 +186,52 @@ a {
 
   .Caption_Text {
     font-size: 1.3vw;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 490px) {
+  h1 {
+    font-size: 16.4vw;
+  }
+
+  h2 {
+    font-size: 12.3vw;
+  }
+
+  h3 {
+    font-size: 6vw;
+  }
+
+  h4 {
+    font-size: 5vw;
+  }
+
+  h5 {
+    font-size: 4vw;
+  }
+
+  h6 {
+    font-size: 3.5vw;
+  }
+
+  p {
+    font-size: 3.5vw;
+  }
+
+  .PrimaryButton_Text {
+    font-size: 3vw;
+  }
+
+  .SecondaryButton_Text {
+    font-size: 2.8vw;
+  }
+
+  .Tag_Text {
+    font-size: 2.5vw;
+  }
+
+  .Caption_Text {
+    font-size: 3vw;
   }
 }
