@@ -2,9 +2,9 @@
 .C_ArticleCards, .C_DiscussionCards, .C_ApplicationFormCards {
     width: 100%;
     height: fit-content;
-    padding: 0vw 1.98vw;
-    display: grid;
-    row-gap: 1.32vw;
+    padding: 0vw 1.58vw;
+    display: flex;
+    justify-content: space-between;
 }
 
 .C_ArticleCards {

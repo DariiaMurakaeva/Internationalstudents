@@ -7,7 +7,9 @@
   *= require fonts
   *= require basics
   *= require_tree ./components
+  *= require index
 */
+
 
 .comment {
   border: 1px solid black;

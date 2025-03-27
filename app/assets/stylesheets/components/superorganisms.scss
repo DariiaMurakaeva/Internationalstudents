@@ -14,9 +14,16 @@
 }
 
 .S_DiscussionCards {
-    width: 100%;
+    width: 94%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2.38vw;
+}
+.S_Articles {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.59vw;
 }
