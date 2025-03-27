@@ -1,4 +1,6 @@
 class Api::V1::ApplicationFormsController < ApplicationController
+    before_action :authenticate_user!
+    before_action :set_current_user
     skip_before_action :verify_authenticity_token, only: [:create]
     
     def index
@@ -7,7 +9,7 @@ class Api::V1::ApplicationFormsController < ApplicationController
         elsif @current_user.buddy?
             @application_forms = ApplicationForm.all
         elsif @current_user.international_student?
-            @application_forms = @current_user.application_form_as_student ? [@current_user.application_form_as_student] : []
+            @application_forms = current_user.application_form_as_student ? [current_user.application_form_as_student] : []
         else
             render json: { error: 'Forbidden' }, status: :forbidden
             return
@@ -28,6 +30,10 @@ class Api::V1::ApplicationFormsController < ApplicationController
     end
     
     private
+
+    def set_current_user
+        @current_user = current_user
+    end
 
     def application_form_params
         params.require(:application_form).permit(:about, :date_of_arrival, :time_of_arrival, :place_of_arrival)
