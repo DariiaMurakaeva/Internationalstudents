@@ -632,6 +632,7 @@
 
     .AdditionalInfo_Container {
       gap: 1.04vw;
+      transition: max-height 0.3s ease, opacity 0.2s ease;
     }
   }
 

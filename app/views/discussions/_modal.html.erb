@@ -1,0 +1,8 @@
+<div class="modal-wrapper" 
+    id="discussionModal"
+    data-discussions-modal-target="modal" style="display: none;">
+    <div class="modal-overlay" data-action="click->discussions-modal#closeForm"></div>
+    <div class="modal-content">
+        <%= render 'discussions/form', discussion: @discussion %>
+    </div>
+</div>

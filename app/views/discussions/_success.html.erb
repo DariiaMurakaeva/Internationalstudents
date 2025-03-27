@@ -1,0 +1,19 @@
+<div class="modal-wrapper" id="successModal" data-discussions-modal-target="success" style="display: none;">
+    <div class="modal-overlay" data-action="click->discussions-modal#closeSuccess"></div>
+    <div class="modal-content">
+        <div class="O_FormCreated">
+            <div class="A_RegistrationHeader">
+                <div class="RegistrationHeaderTitle">
+                    <h2>YOUR QUESTION <br />was created</h2>
+                    <div class="Q_Icon CrossBlack" data-action="click->discussions-modal#closeSuccess"></div> <!-- ✅ Fixed -->
+                </div>
+            </div>
+
+            <button class="A_Button PrimaryButton" data-action="click->discussions-modal#goToDiscussions">
+                <p class="PrimaryButton_Text">view discussions</p>
+            </button>
+
+            <div class="Q_ArticleCardImage BlackBoy"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+// Desktop
+.C_ArticleCards, .C_DiscussionCards, .C_ApplicationFormCards {
+    width: 100%;
+    height: fit-content;
+    padding: 0vw 1.98vw;
+    display: grid;
+    row-gap: 1.32vw;
+}
+
+.C_ArticleCards {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.C_DiscussionCards {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.32vw;
+}
+
+.C_ApplicationFormCards {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: masonry;
+    column-gap: 1.32vw;
+    align-items: start;
+    grid-auto-flow: dense;
+}

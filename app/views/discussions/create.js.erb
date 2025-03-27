@@ -1,0 +1,22 @@
+<% if @discussion.persisted? %>
+    document.getElementById('discussionForm').reset();
+
+    var successModal = document.getElementById('successModal');
+    if (successModal) {
+        successModal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal opens
+    }
+
+    var discussionModal = document.getElementById('discussionModal'); // Fix here
+    if (discussionModal) {
+        discussionModal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    var viewDiscussionBtn = document.getElementById('viewDiscussionBtn');
+    if (viewDiscussionBtn) {
+        viewDiscussionBtn.href = "<%= discussion_path(@discussion) %>";
+    }
+<% else %>
+    alert('There was an error creating your discussion. Please try again.');
+<% end %>

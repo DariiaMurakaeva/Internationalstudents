@@ -1,0 +1,2 @@
+const errorMessages = <%= raw @discussion.errors.full_messages.to_json %>;
+alert('Error: ' + errorMessages.join(', '));

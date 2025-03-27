@@ -1,88 +1,101 @@
-<div class="applic_bg <%= current_user.buddy? ? 'buddy-bg' : 'student-bg' %>">
-    <% if current_user.buddy? %>
-        <h2 class="page_header_yunglas">мОи стуДеНТы</h2>
+<div class="S_ApplicationForms">
+  <% if current_user.buddy? %>
+    <div class="ApplicationFilterContainer">
+      <div class="M_ApplicationsToggle">
+        <div class="ToggleOption_Container">
+          <div class="A_ToggleOption <%= params[:view] != 'my_students' ? 'Toggled' : '' %>">
+            <div></div>
+            <%= link_to 'all applications', application_forms_path, class: 'PrimaryButton_Text' %>
+          </div>
+          <div class="A_ToggleOption <%= params[:view] == 'my_students' ? 'Toggled' : '' %>">
+            <div></div>
+            <%= link_to 'my students', application_forms_path(view: 'my_students'), class: 'PrimaryButton_Text' %>
+          </div>
+        </div>
+        <div class="Q_Icon"></div>
+      </div>
+      
+      <div class="O_ApplicationFilters">
+        <div class="M_StudentApplicationFilters">
+          <div class="InputLegend">
+            <legend>Country</legend>
+            <input class="A_Input" type="text" placeholder="Not selected" />
+          </div>
+          <div class="InputLegend">
+            <legend>Languages</legend>
+            <input class="A_Input" type="text" placeholder="Not selected" />
+          </div>
+          <div class="InputLegend">
+            <legend>Type of program</legend>
+            <input class="A_Input" type="text" placeholder="Not selected" />
+          </div>
+          <div class="InputLegend">
+            <legend>Faculty</legend>
+            <input class="A_Input" type="text" placeholder="Not selected" />
+          </div>
+        </div>
+        <div class="A_Button PrimaryButton">
+          <p class="PrimaryButton_Text">apply</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="C_ApplicationFormCards">
+      <% if params[:view] == 'my_students' %>
         <% my_students = @application_forms.where(buddy_id: current_user.id) %>
         <% if my_students.any? %>
-            <div id="my_students">
-                <% my_students.each do |form| %>
-                    <div class="application-card">
-                        <%= render "application_forms/application", application_form: form %>
-                    </div>
-                <% end %>
-            </div>
+          <% my_students.each do |form| %>
+            <%= render "application", application_form: form %>
+          <% end %>
         <% else %>
-            <p>Ты пока не выбрал никого из иностранных студентов</p>
+          <p>Ты пока не выбрал никого из иностранных студентов</p>
         <% end %>
-        <h2 class="page_header_yunglas">АнКеТы</h2>
+      <% else %>
         <% available_applications = @application_forms.where(buddy_id: nil) %>
         <% if available_applications.any? %>
-            <div id="available_applications">
-                <% available_applications.each do |form| %>
-                    <div class="application-card">
-                        <%= render "application_forms/application", application_form: form %>
-                    </div>
-                <% end %>
-            </div>
+          <% available_applications.each do |form| %>
+            <%= render "application", application_form: form %>
+          <% end %>
         <% else %>
-            <p>Пока что свободных анкет нет. Но они скоро появятся!</p>
+          <p>Пока что свободных анкет нет. Но они скоро появятся!</p>
         <% end %>
-    <% end %>
+      <% end %>
+    </div>
 
+  <% elsif current_user.international_student? %>
     <div class="anketa">
-    <h1 class="anketa_text">АнКета</h1>
-    <% if current_user.international_student? %>
-        <% form = @application_forms.find { |form| form.student_id == current_user.id } %>
-        <% if form %>
-            <p class="post_header textleft anketa_container">
-                <% if form.buddy_id.nil? %>
-                    Заявка отправлена! Твой бадди свяжется с тобой, как только сможет.
-                <% else %>
-                    Поздравляем! Теперь <%= form.buddy.profile.name %> — твой бадди!
-                <% end %>
-            </p>
-        <% else %>
-            <p>You have not submitted an application yet.</p>
-            <%= render "form", application_form: @application_form %>
-        <% end %>
-    <% end %>
-    </div>
-
-    <% if current_user.admin? %>
-    <% @application_forms.each do |form| %>
-        <p>
-            <strong>Студент Имя:</strong> 
-            <span class="student-name"><%= form.student.name %></span><br>
-            <strong>Бадди Assigned:</strong>
-            <% if form.buddy_id.nil? %>
-                Not yet assigned
-            <% else %>
-                <%= form.buddy.name %>
-            <% end %>
+      <h1 class="anketa_text">АнКета</h1>
+      <% form = @application_forms.find { |form| form.student_id == current_user.id } %>
+      <% if form %>
+        <p class="post_header textleft anketa_container">
+          <% if form.buddy_id.nil? %>
+            Заявка отправлена! Твой бадди свяжется с тобой, как только сможет.
+          <% else %>
+            Поздравляем! Теперь <%= form.buddy.profile.name %> — твой бадди!
+          <% end %>
         </p>
-    <% end %>
-<% end %>
-
-</div>
-
-<div class="footer whitetext">
-    <div class="ft_1">
-    <div class="text-logo">юНГлАс</div>
-    <div class="socials"></div>
-    <p class="ft_text">HSE ADC 2024</p>
-</div>
-
-<div class="ft_wrapper">
-    <div class="ft_2">
-    <p class="ft_text text_opacity">кураторы</p>
-    <p class="ft_text">Захар День</p>
-    <p class="ft_text">Вадим Булгаков</p>
+      <% else %>
+        <p>You have not submitted an application yet.</p>
+        <%= render "form", application_form: @application_form %>
+      <% end %>
     </div>
-    <div class="ft_3">
-    <p class="ft_text text_opacity">улучшатели бадди системы</p>
-    <p class="ft_text">Нарыйаана Парникова</p>
-    <p class="ft_text">Дария Муракаева</p>
-    <p class="ft_text">Полина Ефимова</p>
-    <p class="ft_text">Мадина Утемисова (иллюстратор-вдохновитель)</p>
+
+  <% elsif current_user.admin? %>
+    <div class="C_ApplicationFormCards">
+      <% @application_forms.each do |form| %>
+        <div class="O_StudentProfileCard">
+          <div class="ProfileCardContainer">
+            <div class="M_StudentPersonalInfo">
+              <h4><%= form.student.profile.name %></h4>
+            </div>
+            <div class="M_StudentInfoTags">
+              <div class="A_StudentInfoTag TagNoFlag">
+                <h6>Assigned buddy: <%= form.buddy_id.nil? ? 'Not yet assigned' : form.buddy.name %></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-    </div>
+  <% end %>
 </div>

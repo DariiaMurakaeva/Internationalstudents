@@ -1,2 +1,44 @@
-<footer>
-</footer>
+<div class="O_Footer">
+    <div class="FooterMainContainer">
+        <div class="FooterTextLanguage">
+        <div class="A_FooterText">
+            <%= link_to "Discussions", discussions_path, class: "Tag_Text Q_PageLink" %>
+            <%= link_to "Tips&Tricks", posts_path, class: "Tag_Text Q_PageLink" %>
+            <% if user_signed_in? %>
+                <% if current_user.user_role == 'international_student' %>
+                    <%= link_to "FIND A BUDDY", application_forms_url, class: "Q_PageLink" %>
+                <% else %>
+                    <%= link_to "APPLICATIONS", application_forms_url, class: "Q_PageLink" %>
+            <% end %>
+            <% end %>
+            <%= link_to "About", home_about_path, class: "Tag_Text Q_PageLink" %>
+        </div>
+
+        <div class="M_ChooseLanguage">
+            <p class="Tag_Text">choose language</p>
+            <div class="A_Language StrokeSelect">
+                <p class="Tag_Text">en</p>
+                <div class="Q_Icon DropDownWhiteDefault"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="A_FooterText">
+            <%= link_to "@naaayana", "#", class: "Tags_Text Q_PageLink" %>
+            <%= link_to "@efpolina", "#", class: "Tags_Text Q_PageLink" %>
+            <%= link_to "@dariyonok", "#", class: "Tags_Text Q_PageLink" %>
+        </div>
+    </div>
+
+    <div class="A_SocialMedia">
+        <%= link_to "#", class: "Q_SocialMedia SocialMediaWhite VKWhite", target: "_blank" do %>
+    <% end %>
+    
+    <%= link_to "#", class: "Q_SocialMedia SocialMediaWhite TelegramWhite", target: "_blank" do %>
+    <% end %>
+    
+    <%= link_to "#", class: "Q_SocialMedia SocialMediaWhite ChatWhite", target: "_blank" do %>
+    <% end %>
+</div>
+<div class="Chillguy_Desktop"></div>
+</div>

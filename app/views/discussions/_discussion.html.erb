@@ -1,55 +1,48 @@
-<div class="discussion">
-
-  <div id="<%= dom_id discussion %>">
-
-    <div class="dis_tag_fav_container">
+<div class="O_DiscussionCard">
+  <div class="DiscussionHeadContainer">
+    <div class="M_DiscussionHead">
+      <div class="A_ProfileInfo">
+        <div class="Q_ProfileIcon">
+          <% if discussion.user.profile&.profile_photo&.attached? %>
+            <%= image_tag discussion.user.profile.profile_photo, 
+                          class: "ProfileImage",
+                          alt: "Profile photo" %>
+          <% end %>
+        </div>
+        <p class="PrimaryButton_Text"><%= discussion.user.profile&.name || 'Anonymous' %></p>
+      </div>
       
-      <p class="edu_tag">
-        <%= discussion.tag %>
-        </p>
-
+      <div class="A_ContentTag <%= tag_color_class(discussion.tag) %>">
+        <p class="Tag_Text"><%= discussion.tag %></p>
+      </div>
+    </div>
+    
+    <h5>
+      <%= link_to discussion.title, discussion_path(discussion), class: "discussion_header" %>
+    </h5>
+  </div>
+  
+  <div class="M_DiscussionBottom">
+    <p class="Caption_Text"><%= discussion.created_at.strftime("%d %B %Y, %l%p") %></p>
+    
+    <div class="DiscussionBottom_Icons">
+      <div class="A_CommentCount">
+        <div class="Q_Icon CommentBlack"></div>
+        <p class="Tag_Text"><%= discussion.comments.count %></p>
+      </div>
+      
       <% if current_user %>
-      <div>
         <% 
           is_bookmarked = discussion.bookmarks.where(user_id: current_user.id).exists?
           bookmark_icon = is_bookmarked ? "Icon_BookmarkActive.svg" : "Icon_BookmarkDefault.svg"
           bookmark_alt_text = is_bookmarked ? "Remove bookmark" : "Save to bookmarks"
         %>
-
-        <%= link_to bookmark_discussion_path(discussion), method: :post, remote: true do %>
-          <%= image_tag bookmark_icon, alt: bookmark_alt_text, class: "bookmark-icon" %>
-          <span><%= discussion.bookmarks.count %></span>
-          <% end %>
-        </div>
+        <%= link_to bookmark_discussion_path(discussion), method: :post, remote: true, class: "bookmark-link" do %>
+          <div class="Q_Icon <%= is_bookmarked ? 'BookmarkBlackActive' : 'BookmarkBlack' %>"></div>
+        <% end %>
+      <% else %>
+        <div class="Q_Icon BookmarkBlack"></div>
       <% end %>
     </div>
-
-    <div class="dis_icon_title_wrapper">
-      <div class="discussion_icon">А</div>
-
-      <h2>
-        <%= link_to discussion.title, discussion_path(discussion), class: "discussion_header" %>
-      </h2>
-
-    </div>
-
-
-    <div class="user_comments">
-      <div class="avatar_username">
-        <div class="dis_avatar"></div>
-
-        <p class="caption_text">
-          <%= discussion.user.profile&.name %>
-        </p>
-      </div>
-
-      <div class="comment_count">
-        <%= image_tag "Icon_comment.svg", class: "comment-icon" %>
-        <p class="caption_text"><%= discussion.comments.count %></p>
-      </div>
-    </div>
-
-
   </div>
-
 </div>

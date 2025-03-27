@@ -1,66 +1,73 @@
 <%
   set_meta_tags(
     title: "Обсуждения",
-    description: "В обсуждениях можно задать интересующий вопрос о студенческой жизни в России и получить на него ответ от бадди и других студентов.",
+    description: "В обсуждениях можно задать интересующий вопрос о студенческой жизни в России и получить на него ответ от бадди и других студентов.",
     keywords: "статьи, документы, учёба, иностранные студенты, культура, быт"
   )
 %>
 
-<% content_for :title, "Discussions" %>
-
-<h1 class="page_header_yunglas">ОБСУжДЕНия</h1>
-
-<div class="girl"></div>
-
-<div>
-  <% if current_user %> 
-    <div id="new-discussion-form">
-      <%= render "form", discussion: @discussion %>
-    </div>
-  <% end %>
-</div>
-
-<div class="filters_container">
-  <div class="edu_tag black_tag" data-filter="all">ВСЕ</div>
-  <div class="edu_tag" data-filter="БЫТ" >БЫТ</div>
-  <div class="edu_tag" data-filter="ДОКУМЕНТЫ" >ДОКУМЕНТЫ</div>
-  <div class="edu_tag" data-filter="ОБУЧЕНИЕ" >ОБУЧЕНИЕ</div>
-  <div class="edu_tag" data-filter="КУЛЬТУРА" >КУЛЬТУРА</div>
-
-</div>
-
-<div class="column_discussions">
-  <% @discussions.each do |discussion| %>
-    <%= render discussion %>
-
-    <% if current_user && current_user.admin? %> 
-      <p>
-        <%= link_to "Show this discussion", new_admin_discussion_path %>
-      </p>
+<div class="S_DiscussionCards">
+  <div class="O_PageHeader2">
+    <div class="HeaderIconsWhat"></div>
+    <h1>what's on your mind?</h1>
+    <% if current_user %>
+      <div data-controller="discussions-modal">
+        <button class="A_Button PrimaryButton" 
+          data-action="click->discussions-modal#showModal">
+          <p class="PrimaryButton_Text">ask a question</p>
+        </button>
+        <%= render 'modal' %>
+      </div>
     <% end %>
-  <% end %>
-</div>
-
-<div class="footer whitetext">
-  <div class="ft_1">
-    <div class="text-logo">юНГлАс</div>
-    <div class="socials"></div>
-    <p class="ft_text">HSE ADC 2024</p>
   </div>
 
-  <div class="ft_wrapper">
-    <div class="ft_2">
-      <p class="ft_text text_opacity">кураторы</p>
-      <p class="ft_text">Захар День</p>
-      <p class="ft_text">Вадим Булгаков</p>
+  <div class="O_FilterAndSearch">
+    <div class="M_TagsToggle">
+      <div class="A_ToggleOption <%= params[:filter].blank? ? 'Toggled' : '' %>">
+        <div></div>
+        <%= link_to 'все', discussions_path, class: 'PrimaryButton_Text' %>
+      </div>
+      <div class="A_ToggleOption <%= params[:filter] == 'ДОКУМЕНТЫ' ? 'Toggled' : '' %>">
+        <div></div>
+        <%= link_to 'документы', discussions_path(filter: 'ДОКУМЕНТЫ'), class: 'PrimaryButton_Text' %>
+      </div>
+      <div class="A_ToggleOption <%= params[:filter] == 'БЫТ' ? 'Toggled' : '' %>">
+        <div></div>
+        <%= link_to 'быт', discussions_path(filter: 'БЫТ'), class: 'PrimaryButton_Text' %>
+      </div>
+      <div class="A_ToggleOption <%= params[:filter] == 'КУЛЬТУРА' ? 'Toggled' : '' %>">
+        <div></div>
+        <%= link_to 'культура', discussions_path(filter: 'КУЛЬТУРА'), class: 'PrimaryButton_Text' %>
+      </div>
+      <div class="A_ToggleOption <%= params[:filter] == 'ОБУЧЕНИЕ' ? 'Toggled' : '' %>">
+        <div></div>
+        <%= link_to 'обучение', discussions_path(filter: 'ОБУЧЕНИЕ'), class: 'PrimaryButton_Text' %>
+      </div>
     </div>
-    <div class="ft_3">
-      <p class="ft_text text_opacity">улучшатели бадди системы</p>
-      <p class="ft_text">Нарыйаана Парникова</p>
-      <p class="ft_text">Дария Муракаева</p>
-      <p class="ft_text">Полина Ефимова</p>
-      <p class="ft_text">Мадина Утемисова (иллюстратор-вдохновитель)</p>
+    
+    <div class="A_Input InputSearch">
+      <div class="Q_Icon SearchGrey"></div>
+      <%= form_tag discussions_path, method: :get do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Поиск" %>
+      <% end %>
     </div>
   </div>
-</div>
 
+  <div class="C_DiscussionCards">
+    <% if @discussions.any? %>
+      <% @discussions.each do |discussion| %>
+        <div class="O_DiscussionCardIndex">
+          <%= render discussion %>
+          
+          <% if current_user&.admin? %>
+            <div class="admin-actions">
+              <%= link_to "Show this discussion", new_admin_discussion_path %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="no-discussions">Нет обсуждений по выбранному фильтру</p>
+    <% end %>
+  </div>
+</div>

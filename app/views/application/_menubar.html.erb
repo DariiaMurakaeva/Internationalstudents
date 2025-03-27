@@ -1,29 +1,43 @@
-<nav class="A_MenuBar">
-
-    <%= link_to "главная", root_url %>
-    <%= link_to "статьи", posts_url %>
-    <%= link_to "обсуждения", discussions_url %>
-    <%= link_to "о нас", home_about_url %>
-
-    <% if user_signed_in? %>
-        <% if current_user.user_role == 'international_student' %>
-            <%= link_to "заявка на бадди", application_forms_url, style: "color: black;" %>
-        <% elsif current_user.user_role == 'buddy' %>
-            <%= link_to "анкеты студентов", application_forms_url, style: "color: black;" %>
-        <% elsif current_user.admin? %>
-            <%= link_to "Подписки", admin_subscriptions_url, style: "color: black;" %>
-            <%= link_to "Управление пользователями", admin_users_url, style: "color: black;" %>
+<div class="O_Header_Main">
+    <div class="M_HeaderNavigation">
+        <%= link_to root_url, class: "Q_Logo" do %>
+            <!-- Logo image would go here -->
         <% end %>
-    <% end %>
+    
+    <div class="A_Header">
+        <%= link_to "DISCUSSIONS", discussions_url, class: "Q_PageLink" %>
+        <%= link_to "TIPS&TRICKS", posts_url, class: "Q_PageLink" %>
+        <%= link_to "ABOUT", home_about_url, class: "Q_PageLink" %>
 
-    <div class="userlogin">
         <% if user_signed_in? %>
-            <%= link_to profile_path(current_user.profile) do %>
-                <%= image_tag "Q_ProfileIcon.svg", alt: "Profile", class: "menu_icon" %>
+            <% if current_user.user_role == 'international_student' %>
+                <%= link_to "FIND A BUDDY", application_forms_url, class: "Q_PageLink" %>
+            <% elsif current_user.user_role == 'buddy' %>
+                <%= link_to "APPLICATIONS", application_forms_url, class: "Q_PageLink" %>
+            <% elsif current_user.admin? %>
+                <%= link_to "SUBSCRIPTIONS", admin_subscriptions_url, class: "Q_PageLink" %>
+                <%= link_to "USER MANAGEMENT", admin_users_url, class: "Q_PageLink" %>
             <% end %>
-        <% else %>
-            <%= link_to "войти", new_user_session_path %>
-            <%= link_to "зарегистрироваться", new_user_registration_path %>
         <% end %>
+        </div>
     </div>
-</nav>
+
+    <div class="M_HeaderSettings">
+        <div class="A_Language BlackSelect">
+            <p class="Tag_Text">en</p>
+            <div class="Q_Icon DropDownWhiteDefault"></div>
+        </div>
+    
+        <div class="A_Profile">
+            <% if user_signed_in? %>
+                <%= link_to profile_path(current_user.profile) do %>
+                    <div class="Q_Icon ProfileWhite"></div>
+                <% end %>
+            <% else %>
+                <%= link_to new_user_registration_path do %>
+                    <div class="Q_Icon ProfileWhite"></div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>

@@ -7,6 +7,11 @@ class DiscussionsController < ApplicationController
     def index
         @discussion = Discussion.new
         @discussions = Discussion.order(created_at: :desc)
+
+        respond_to do |format|
+            format.html
+            format.js
+        end
     end
 
     # GET /discussions/1 or /discussions/1.json
@@ -16,6 +21,11 @@ class DiscussionsController < ApplicationController
 
     def new
         @discussion = Discussion.new
+
+        respond_to do |format|
+            format.html
+            format.js
+        end
     end
     
     def edit
@@ -23,13 +33,15 @@ class DiscussionsController < ApplicationController
     
     def create
         @discussion = current_user.discussions.new(discussion_params)
-    
+
         respond_to do |format|
             if @discussion.save
-                format.html { redirect_to discussion_path(@discussion), notice: "Discussion was successfully created." }
+                format.html { redirect_to @discussion }
                 format.json { render :show, status: :created, location: @discussion }
+                format.js   # This will look for `create.js.erb`
             else
-                format.html { render :new, status: :unprocessable_entity }
+                format.js { render :errors } # Ensure you handle errors properly
+                format.html { render :new }
                 format.json { render json: @discussion.errors, status: :unprocessable_entity }
             end
         end

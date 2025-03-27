@@ -1,22 +1,76 @@
-<div>
-    <h3>Персональные данные</h3>
+<div class="O_StudentProfileCard">
+  <div class="M_StudentCardPhoto">
     <% if application_form.student.profile.profile_photo.attached? %>
-        <div>
-    <%= image_tag application_form.student.profile.profile_photo.variant(resize_to_limit: [200, 200]), alt: "Profile Photo", class: "A_ProfilePhoto" %>
+      <%= image_tag application_form.student.profile.profile_photo.variant(resize_to_limit: [200, 200]), class: "Q_ApplicationFormImage" %>
+    <% else %>
+      <div class="Q_ApplicationFormImage"></div>
+    <% end %>
+    
+    <% if current_user.buddy? %>
+      <% if application_form.buddy_id.nil? %>
+        <%= button_to take_student_application_form_path(application_form), method: :patch, class: "A_Button PrimaryButton", form_class: "button_to" do %>
+          <p class="PrimaryButton_Text">Take student</p>
+        <% end %>
+      <% else %>
+        <div class="A_Button PrimaryButton Disabled">
+          <p class="PrimaryButton_Text">Assigned</p>
         </div>
-<% end %>
-    <p><strong>Student Имя:</strong> <%= application_form.student.profile.name %><br></p>
-    <p><strong>Дата рождения:</strong> <%= application_form.student.profile.date_of_birth %><br></p>
-    <p><strong>Страна гражданства:</strong> <%= application_form.student.profile.country %><br></p>
-    <p><strong>Языки:</strong> <%= application_form.student.profile.formatted_languages %><br></p>
-    <p><strong>Факультет:</strong> <%= application_form.student.profile.faculty %><br></p>
-    <p><strong>Тип студента:</strong> <%= application_form.student.profile.program_type %><br></p>
-    <p><strong>О себе:</strong> <%= application_form.about %><br></p>
-    <hr>
-    <h3>Прибытие</h3>
-    <p><strong>Дата:</strong> <%= application_form.date_of_arrival %><br></p>
-    <p><strong>Время:</strong> <%= application_form.time_of_arrival %><br></p>
-    <p><strong>Аэропорт:</strong> <%= application_form.place_of_arrival %><br></p>
-    <%= button_to "Выбрать студента", take_student_application_form_path(application_form), method: :patch if current_user.buddy? && application_form.buddy_id.nil? %>
-</div>
+      <% end %>
+    <% else %>
+      <div class="A_Button PrimaryButton">
+        <p class="PrimaryButton_Text">Log in</p>
+      </div>
+    <% end %>
+  </div>  
 
+  <div class="ProfileCardContainer">
+    <div class="M_StudentInfoTags">
+      <div class="A_StudentInfoTag TagWithFlag">
+        <div class="Q_FlagIcon"></div>
+        <h6><%= application_form.student.profile.country %></h6>
+      </div>
+      <div class="A_StudentInfoTag TagNoFlag">
+        <h6><%= application_form.student.profile.program_type %></h6>
+      </div>
+      <div class="A_StudentInfoTag TagNoFlag">
+        <h6><%= application_form.student.profile.faculty %></h6>
+      </div>
+    </div>
+
+    <div class="M_StudentPersonalInfo">
+      <h4><%= application_form.student.profile.name %></h4>
+      <p class="PrimaryButton_Text"><%= application_form.student.profile.formatted_languages %></p>
+    </div>
+
+    <div class="M_StudentArrivalInfo">
+      <h6>Arrival Info</h6>
+      <div class="ArrivalInfo_Container">
+        <div class="A_ArrivalInfo">
+          <div class="Q_Icon PlaneBlack"></div>
+          <p>
+            <% if application_form.date_of_arrival && application_form.time_of_arrival %>
+              <%= application_form.date_of_arrival.strftime("%d.%m.%Y") %>, <%= application_form.time_of_arrival.strftime("%H:%M") %>
+            <% else %>
+              Not specified
+            <% end %>
+          </p>
+        </div>
+        <div class="A_ArrivalInfo">
+          <div class="Q_Icon LocationBlack"></div>
+          <p><%= application_form.place_of_arrival || 'Not specified' %></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="M_StudentAdditionalInfo" data-controller="read-more">
+      <div class="A_ReadMoreButton" data-action="click->read-more#toggle">
+        <div class="Q_Icon DropDownGreyDefault" data-read-more-target="icon"></div>
+        <p class="PrimaryButton_Text">read more</p>
+      </div>
+      <div class="AdditionalInfo_Container None" data-read-more-target="container">
+        <h6>About</h6>
+        <p><%= application_form.about %></p>
+      </div>
+    </div>
+  </div>
+</div>

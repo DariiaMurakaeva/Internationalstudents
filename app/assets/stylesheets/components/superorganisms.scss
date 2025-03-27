@@ -1,0 +1,22 @@
+// Desktop
+.S_ApplicationForms {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.38vw;
+
+    .ApplicationFilterContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6vw;
+    }
+}
+
+.S_DiscussionCards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.38vw;
+}
