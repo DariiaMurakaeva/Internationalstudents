@@ -7,7 +7,7 @@
     <div class="A_Header">
         <%= link_to "DISCUSSIONS", discussions_url, class: "Q_PageLink" %>
         <%= link_to "TIPS&TRICKS", posts_url, class: "Q_PageLink" %>
-        <%= link_to "ABOUT", home_about_url, class: "Q_PageLink" %>
+        <%= link_to "ABOUT", posts_url, class: "Q_PageLink" %>
 
         <% if user_signed_in? %>
             <% if current_user.user_role == 'international_student' %>

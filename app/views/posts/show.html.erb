@@ -1,4 +1,4 @@
-<%
+<% 
   set_meta_tags(
     title: @post.title,
     description: @post.content,
@@ -6,35 +6,28 @@
   )
 %>
 
-<%= @post.bookmarks.count %>
-
-<%
-  bookmarks_count = @post.bookmarks.count
-  bookmark_text = "Save to bookmarks (#{bookmarks_count})"
-
-  if current_user && @post.bookmarks.where(user_id: current_user.id).count > 0
-    bookmark_text = "Delete from bookmarks (#{bookmarks_count})"
-  end
-%>
-
-<%= render 'posts/post', post: @post %>
-
-<div>
-  <% if current_user && current_user.admin? %>
-    <%= link_to "Edit this post", edit_admin_post_path(@post) %> |
-    <%= button_to "Destroy this post", [:admin, @post], method: :delete %>
-  <% end %>
-
-  <%= link_to "Back to posts", posts_path %>
-
+<div class="O_ArticleHeader">
+  <div class="M_ArticleHeader">
+    <div class="A_ContentTag <%= tag_color_class(@post.tag) %>">
+      <p class="Tag_Text"><%= @post.tag %></p>
+    </div>
+    <div class="A_ArticleHeader">
+      <h2><%= @post.title %></h2>
+      <p><%= @post.content %></p> 
+    </div>
+  </div>
+  <div class="Q_ArticleHeaderImage">
+    <%= image_tag @post.post_image.url, alt: @post.title, class: "article-image" %>
+  </div>
 </div>
 
 
-<h2>Add a comment:</h2>
-<%= render "admin/comments/form", commentable: @post, parent_comment_id: nil %>
-
-<h2>Comments</h2>
-<%= render @post.comments.not_replies, commentable: @post %>
-
-
-
+<div>
+  <% if current_user && current_user.admin? %>
+    <%= link_to edit_admin_post_path(@post), class: 'A_Button SecondaryButton' do %>
+      Edit this post
+    <% end %> |
+  
+    <%= button_to "Destroy this post", [:admin, @post], method: :delete, class: 'A_Button TertiaryButton', data: { confirm: 'Are you sure you want to destroy this post?' } %>
+  <% end %>
+</div>

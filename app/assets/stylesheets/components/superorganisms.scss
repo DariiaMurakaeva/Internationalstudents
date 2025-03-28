@@ -14,7 +14,42 @@
 }
 
 .S_DiscussionCards {
-    width: 94%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.38vw;
+
+    .SavedHeading {
+        width: 100%;
+        padding-left: 4.76vw;
+    }
+}
+
+.S_DiscussionShow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.38vw;
+    padding: 1.59vw;
+}
+
+.S_Articles {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.59vw;
+
+    .SavedHeading {
+        width: 100%;
+        padding-left: 4.76vw;
+    }
+}
+
+.S_Profile {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

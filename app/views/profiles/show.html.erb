@@ -1,14 +1,22 @@
-<p style="color: green"><%= notice %></p>
+<div class="S_Profile">
+  <%= render @profile %>
 
-<%= render @profile %>
+  <div class="S_DiscussionCards">
+    <div class="SavedHeading">
+      <h3>Saved Discussions</h3>
+    </div>
+    .<div class="C_DiscussionCards">
+        <p>You haven't yet saved anything</p>
+    </div>
+  </div>
 
-<div>
-  <%= link_to "Редактировать профиль", edit_profile_path(@profile) %> 
-
-  <% if user_signed_in? %>
-    <%= link_to "выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>
-  <% end %>
-
-  <%= button_to "Destroy this profile", @profile, method: :delete %>
+    <div class="S_Articles">
+    <div class="SavedHeading">
+      <h3>Saved Articles</h3>
+    </div>
+    <div class="C_ArticleCards">
+      <p>You haven't yet saved anything</p>
+    </div>
+  </div>
 </div>
 

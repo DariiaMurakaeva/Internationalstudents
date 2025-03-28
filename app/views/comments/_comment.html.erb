@@ -1,19 +1,49 @@
 <% comment_level = nested_level(comment) %>
 
-<div class="comment <%= 'reply' if comment.parent_comment_id != nil && comment_level < 4 %>">
+<div class="O_Comment <%= 'reply' if comment.parent_comment_id && comment_level < 4 %>" id="comment_<%= comment.id %>">
+    <div class="M_CommentHead">
+        <div class="A_ProfileInfo">
+            <div class="Q_ProfileIcon">
+                <% if comment.user.profile&.profile_photo&.attached? %>
+                    <%= image_tag comment.user.profile.profile_photo, 
+                        class: "ProfileImage",
+                        alt: "Profile photo" %>
+                <% end %>
+            </div>
+            <p class="PrimaryButton_Text"><%= comment.user.profile&.name || 'Anonymous' %></p>
+        </div>
+        <p class="Caption_Text"><%= comment.created_at.strftime("%d %B %Y, %l%p") %></p>
+    </div>
 
-    <%= comment.user.profile&.name %>
-
-    <p> 
-    <%= comment.body %>
-    </p>
-
-    <% if current_user && current_user.admin? %> 
-        <p>
-            <%= link_to 'Destroy Comment', [:admin, comment.commentable, comment], data: { turbo_stream: false, turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-        </p>
+    <div class="M_CommentBottom">
+        <p><%= comment.body %></p>
+    
+        <div class="A_CommentCount">
+            <div class="Q_Icon CommentGrey"></div>
+            <p>reply</p>
+        </div>
+    
+    <% if current_user && current_user.admin? %>
+        <div class="AdminActions">
+            <%= link_to 'Delete', [:admin, comment.commentable, comment], 
+                    class: "DeleteLink",
+                    data: { 
+                        turbo_stream: false, 
+                        turbo_method: :delete, 
+                        turbo_confirm: "Are you sure?" 
+                    } %>
+        </div>
     <% end %>
+</div>
 
-    <%= render 'admin/comments/form', commentable: comment.commentable, parent_comment_id: comment.id %>
-    <%= render comment.replies, commentable: comment.commentable %>
+
+    <div class="ReplyForm" style="display: none;">
+        <%= render 'admin/comments/form', 
+                    commentable: comment.commentable, 
+                    parent_comment_id: comment.id %>
+    </div>
+
+    <div class="Replies">
+        <%= render comment.replies, commentable: comment.commentable %>
+    </div>
 </div>

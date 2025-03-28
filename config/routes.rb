@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       get :content
     end
   end
-  
+
   resources :posts do
     resources :comments
 

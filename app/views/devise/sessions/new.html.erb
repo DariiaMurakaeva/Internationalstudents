@@ -1,26 +1,35 @@
-<h2>Log in</h2>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  
+  <div class="O_Form">
+    <div class="FormContainer">
+      
+      <div class="A_RegistrationHeader">
+        <div class="RegistrationHeaderTitle">
+          <h3>Welcome back! First things first...</h3>
+        </div>
+        <p class="Caption_Text">
+          Please, enter your details.
+        </p>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+      <div class="InputLegend">
+        <legend>E-mail</legend>
+        <%= f.email_field :email, class: "A_Input", placeholder: "Type your e-mail" %>
+      </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <div class="InputLegend">
+        <legend>Password</legend>
+        <%= f.password_field :password, class: "A_Input", placeholder: "At least 6 characters" %>
+      </div>
+      
+      <div class="M_TwoButtons Prim_Tert">
+        <button type="submit" class="A_Button PrimaryButton">
+          <p class="PrimaryButton_Text">Log in</p>
+        </button>
+
+        <%= link_to "Sign up", new_registration_path(resource_name), class: "A_Button SecondaryButton" %>
+      </div>
+
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>

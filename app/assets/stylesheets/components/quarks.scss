@@ -111,8 +111,12 @@
   background-image: asset-url('BookmarkWhite.svg');
 }
 
-.BookmarkBlack {
-  background-image: asset-url('BookmarkBlack.svg');
+.BookmarkBlackDefault {
+  background-image: asset-url('BookmarkBlackDefault.svg');
+}
+
+.BookmarkBlackActive {
+  background-image: asset-url('BookmarkBlackActive.svg');
 }
 
 .CommentGrey {
@@ -241,13 +245,28 @@
 .Q_ArticleHeaderImage {
   width: 27.19vw;
   height: 23.48vw;
-  background-color: red;
+  overflow: hidden;
+
+  .article-image {
+    width: 100%; 
+    height: auto;
+    object-fit: cover;
+  }
 }
 
 .Q_ArticleCardImage {
-  width: 16.14vw;
-  height: 16.14vw;
-  background-image: asset-url('Q_IndianGirl.svg');
+  width: 14vw;
+  height: 14vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .article-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
 }
 
 .BlackBoy {
@@ -258,14 +277,33 @@
   width: 12.9vw;
   height: 12.9vw;
   border-radius: 0.53vw;
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .Q_ApplicationFormImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 .Q_ProfileIcon {
   width: 2.912vw;
   height: 2.912vw;
   border-radius: 100%;
-  background-color: var(--red_main);
   overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .Q_FlagIcon {

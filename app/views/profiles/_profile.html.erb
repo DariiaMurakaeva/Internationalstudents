@@ -1,36 +1,57 @@
-<div id="<%= dom_id profile %>">
-  <p>
-    <strong>Name:</strong>
-    <%= profile.name %>
-  </p>
-
-  <p>
-    <strong>Date of birth:</strong>
-    <%= profile.date_of_birth %>
-  </p>
-
-  <p>
-    <strong>Faculty:</strong>
-    <%= profile.faculty %>
-  </p>
-
-  <p>
-    <strong>Country:</strong>
-    <%= profile.country %>
-  </p>
-
-  <p>
-    <strong>Languages:</strong>
-    <%= profile.languages %>
-  </p>
-
-  <p>
-    <strong>Program type:</strong>
-    <%= profile.program_type %>
-  </p>
-
-  <div>
-    <strong>Profile Photo:</strong><br />
-      <%= image_tag profile.profile_photo, alt: "Profile photo" %>
+<div class="O_ProfileCard">
+  <div class="ProfileContainer">
+    <h3>Student Profile</h3>
+    <div class="M_TwoButtons Sec_Tert">
+      <div class="A_Button SecondaryButton">
+        <%= link_to "Edit", edit_profile_path(@profile), class: "SecondaryButton_Text" %>
+      </div>
+      <% if user_signed_in? %>
+        <div class="A_Button TertiaryButton">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { "turbo-method": :delete }, class: "SecondaryButton_Text" %>
+        </div>
+      <% end %>
+</div>
+  </div>
+  <div class="ProfilePhotoInfoContainer">
+    <div class="M_StudentCardPhoto">
+      <div class="Q_ApplicationFormImage">
+        <%= image_tag profile.profile_photo, alt: "Profile photo" %>
+      </div>
+    </div>
+    <div class="ProfileCardContainer">
+      <div class="M_StudentInfoTags">
+        <% if profile.country.present? %>
+          <div class="A_StudentInfoTag TagWithFlag">
+            <div class="Q_FlagIcon"></div>
+            <h6><%= profile.country %></h6>
+          </div>
+        <% end %>
+        
+        <% if profile.program_type.present? %>
+          <div class="A_StudentInfoTag TagNoFlag">
+            <h6><%= profile.program_type %></h6>
+          </div>
+        <% end %>
+        
+        <% if profile.faculty.present? %>
+          <div class="A_StudentInfoTag TagNoFlag">
+            <h6><%= profile.faculty %></h6>
+          </div>
+        <% end %>
+      </div>
+      <div class="M_StudentPersonalInfo">
+        <% if profile.name.present? %>
+          <h4><%= profile.name %></h4>
+        <% end %>
+        
+        <% if profile.user.email.present? %>
+          <p><%= profile.user.email %></p>
+        <% end %>
+        
+        <% if profile.languages.present? %>
+          <p class="PrimaryButton_Text"><%= profile.languages %></p>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

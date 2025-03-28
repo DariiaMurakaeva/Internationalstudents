@@ -341,6 +341,7 @@ textarea.A_Input {
 
 .PrimaryButton {
   background-color: var(--black);
+  color: white !important;
 
   p {
     color: var(--white);
@@ -518,6 +519,7 @@ textarea.A_Input {
   p {
     width: 59.2%;
     color: var(--grey500);
+    text-align: left;
   }
 }
 
