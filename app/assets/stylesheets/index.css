@@ -1,245 +1,290 @@
+/* Desktop */
+
 body {
-    background: linear-gradient(to bottom, #F6F7F8, #DEFBFF); /* Градиент сверху вниз */
+  background: linear-gradient(
+    to bottom,
+    #f6f7f8,
+    #defbff
+  ); /* Градиент сверху вниз */
 }
 .Mobile {
-    display: none;
+  display: none;
 }
 .MainScreen {
-    
+  width: 100%;
+  height: 67.6vw;
+  position: relative;
+  padding: 0 1.6vw 0vw 1.6vw;
+  h1:nth-of-type(1) {
+    width: 34.53vw;
+    position: absolute;
+    top: 6%;
+    left: 2%;
+    z-index: -1;
+  }
+
+  h4 {
+    transform: rotate(7deg);
+    position: absolute;
+    top: 10%;
+    right: 12%;
+  }
+  .A_SocialMedia {
+    position: absolute;
+    left: 2%;
+    bottom: 31%;
+  }
+  h1:nth-of-type(3) {
+    width: 42.2vw;
+    text-align: right;
+    position: absolute;
+    right: 2%;
+    bottom: 27%;
+    z-index: -1;
+  }
+  .ChillGuyIndex {
+    background-image: url(/assets/Background_Index.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
     width: 100%;
-    height: 67.6vw;
-    position: relative;
-    padding: 0 1.6vw 0vw 1.6vw;
-    h1:nth-of-type(1) {
-        width: 34.53vw;
-        position: absolute;
-        top: 6%;
-        left: 2%;
-        z-index: -1;
-    }
-    
-    h4 {
-        transform: rotate(7deg);
-        position: absolute;
-        top: 10%;
-        right: 12%;
-    }
-    .A_SocialMedia {
-        position: absolute;
-        left: 2%;
-        bottom: 31%;
-    }
-    h1:nth-of-type(3) {
-        width: 42.2vw;
-        text-align: right;
-        position: absolute;
-        right: 2%;
-        bottom: 27%;
-        z-index: -1;
-    }
-    .ChillGuyIndex {
-        background-image: url(/assets/Background_Index.svg);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        width: 100%;
-        height: 100%;
-    }
+    height: 100%;
+  }
 }
 
 .MainDiscussions {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 52vw;
-    position: relative;
-    margin: 4vw 0 4vw 0;
-    .O_PageHeader2 {
-        z-index: 1;
-    }
-    .O_DiscussionCardIndex {
-        scale: 0.75;
-        position:absolute;
-    }
-    .DCI1 {
-        top: 5%;
-        left: 6%;
-    }
-    .DCI2 {
-        bottom: 4%;
-        left: 0%;
-    }
-    .DCI3 {
-        bottom: 0%;
-        right: 5%;
-    }
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 52vw;
+  position: relative;
+  margin: 4vw 0 4vw 0;
+  .O_PageHeader2 {
+    z-index: 1;
+  }
+  .O_DiscussionCardIndex {
+    scale: 0.75;
+    position: absolute;
+  }
+  .DCI1 {
+    top: 5%;
+    left: 6%;
+  }
+  .DCI2 {
+    bottom: 4%;
+    left: 0%;
+  }
+  .DCI3 {
+    bottom: 0%;
+    right: 5%;
+  }
 }
 
 .MainSteps {
-    width: 100%;
-    height: 71.9vw;
-    position: relative;
-    margin: 9vw 0 9vw 0;
-    h4 {
-        width: 36.12vw;
-        transform: rotate(9deg);
-        text-align: center;
-        position: absolute;
-        top: 8%;
-        right: 10%;
-    }
-    .Step1 {
-        position: absolute;
-        background-image: url(/assets/Step1.svg);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        width: 31.8vw;
-        height: 44.9vw;
-        top: 0;
-        left: 0;
-    }
-    .Step2 {
-        background-image: url(/assets/Step2.svg);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        width: 34.33vw;
-        height: 40.43vw;
-        position: absolute;
-        top: 10%;
-        left: 19%;
-    }
-    .Step3 {
-        background-image: url(/assets/Step3.svg);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        width: 35.92vw;
-        height: 41.7vw;
-        position: absolute;
-        bottom: 20%;
-        right: 19%;
-    }
-    .Step4 {
-        background-image: url(/assets/Step4.svg);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        width: 32.1vw;
-        height: 41.34vw;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-    }
+  width: 100%;
+  height: 71.9vw;
+  position: relative;
+  margin: 9vw 0 9vw 0;
+  h4 {
+    width: 36.12vw;
+    transform: rotate(9deg);
+    text-align: center;
+    position: absolute;
+    top: 8%;
+    right: 10%;
+  }
+  .Step1 {
+    position: absolute;
+    background-image: url(/assets/Step1.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 31.8vw;
+    height: 44.9vw;
+    top: 0;
+    left: 0;
+  }
+  .Step2 {
+    background-image: url(/assets/Step2.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 34.33vw;
+    height: 40.43vw;
+    position: absolute;
+    top: 10%;
+    left: 19%;
+  }
+  .Step3 {
+    background-image: url(/assets/Step3.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 35.92vw;
+    height: 41.7vw;
+    position: absolute;
+    bottom: 20%;
+    right: 19%;
+  }
+  .Step4 {
+    background-image: url(/assets/Step4.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 32.1vw;
+    height: 41.34vw;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 }
 
 .MainBuddy {
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    background-image: url(/assets/glist.svg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 99.75vw;
-    height: 49.67vw;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  background-image: url(/assets/glist.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 99.75vw;
+  height: 49.67vw;
 }
 .BuddyContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Ipad Landscape */
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-    .MainDiscussions {
-        height: 62vw;
-    }
-
+  .MainDiscussions {
+    height: 62vw;
+  }
 }
+
+/* Ipad Portrait */
 
 @media only screen and (min-device-width: 490px) and (max-device-width: 1024px) and (orientation: portrait) {
-    .MainScreen {
-        h1:nth-of-type(2) {
-            width: 35vw;
-        }
+  .MainScreen {
+    h1:nth-of-type(2) {
+      width: 35vw;
     }
-    
-    .MainDiscussions {
-        height: 64vw;
-    }
+  }
+
+  .MainDiscussions {
+    height: 64vw;
+  }
+
+  .C_ArticleCards {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 4vw;
+  }
 }
 
+/* Mobile */
+
 @media only screen and (max-width: 490px) {
-    .Mobile {
-        display: block;
+  .S_Articles {
+    gap: 4vw;
+  }
+  .Mobile {
+    display: block;
+  }
+  .Desktop {
+    display: none;
+  }
+  .MainScreen {
+    height: 170.6vw;
+    margin: 0 2.6vw 0 2.6vw;
+    .ChillGuyIndex {
+      scale: 1.8;
+      margin-top: 70vw;
+      margin-left: 15vw;
     }
-    .Desktop {
-        display: none;
+    .A_SocialMedia {
+      bottom: 4%;
+      display: flex;
+      flex-direction: column;
     }
-    .MainScreen {
-        height: 170.6vw;
-        margin: 0 2.6vw 0 2.6vw;
-        .ChillGuyIndex {
-            scale: 1.8;
-            margin-top: 70vw;
-            margin-left: 15vw;
-        }
-        .A_SocialMedia {
-            bottom: 4%;
-        }
-    }
+  }
 
-    .MainSteps {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        height: 380vw;
-        margin-bottom: 30vw;
-        h4 {
-            width: 55vw;
-            transform: rotate(0);
-        }
-        h4, .Step1, .Step2, .Step3, .Step4 {
-            position: static; /* Возвращаем элемент в обычный поток */
-            top: auto;
-            left: auto;
-        }
-        .Step1, .Step2, .Step3, .Step4 {
-            width: 58.3vw;
-            scale: 1.2;
-        }
-        .Step2, .Step3, .Step4 {
-            height: 70.4vw
-        }
-        .Step1 {
-            background-image: url(/assets/StepMobile1.svg);
-            background-repeat: no-repeat;
-            background-size: 100%;
-            height: 73.1vw;
-        }
-        .Step2 {
-            background-image: url(/assets/StepMobile2.svg);
-            background-repeat: no-repeat;
-            background-size: 100%;
-        }
-        .Step3 {
-            background-image: url(/assets/StepMobile3.svg);
-            background-repeat: no-repeat;
-            background-size: 100%;  
-        }
-        .Step4 {
-            background-image: url(/assets/StepMobile4.svg);
-            background-repeat: no-repeat;
-            background-size: 100%;
-        }
+  .MainSteps {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 380vw;
+    margin-bottom: 30vw;
+    h4 {
+      width: 55vw;
+      transform: rotate(0);
     }
+    h4,
+    .Step1,
+    .Step2,
+    .Step3,
+    .Step4 {
+      position: static; /* Возвращаем элемент в обычный поток */
+      top: auto;
+      left: auto;
+    }
+    .Step1,
+    .Step2,
+    .Step3,
+    .Step4 {
+      width: 58.3vw;
+      scale: 1.2;
+    }
+    .Step2,
+    .Step3,
+    .Step4 {
+      height: 70.4vw;
+    }
+    .Step1 {
+      background-image: url(/assets/StepMobile1.svg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      height: 73.1vw;
+    }
+    .Step2 {
+      background-image: url(/assets/StepMobile2.svg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+    .Step3 {
+      background-image: url(/assets/StepMobile3.svg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+    .Step4 {
+      background-image: url(/assets/StepMobile4.svg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
 
-    .MainBuddy {
-        background-size: 160%;
-        background-position: center;
-        height: 75.7vw;
-        margin-bottom: 24vw;
-        .BuddyContainer {
-            h1 {
-                font-size: 12.3vw;
-            }
-        }
+  .MainDiscussions {
+    height: 80vw;
+    .O_PageHeader2 {
+      z-index: 1;
+      margin: 0 auto;
     }
+  }
+
+  .C_ArticleCards {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 4vw;
+  }
+
+  .MainBuddy {
+    background-size: 160%;
+    background-position: center;
+    height: 75.7vw;
+    margin-bottom: 24vw;
+    .BuddyContainer {
+      h1 {
+        font-size: 12.3vw;
+      }
+    }
+  }
 }

@@ -769,7 +769,7 @@ textarea.A_Input {
   }
 
   .A_RegistrationHeader {
-    width: fit-content;
+    width: 100%;
     gap: 0.53vw;
 
     .RegistrationHeaderTitle {
@@ -933,11 +933,11 @@ textarea.A_Input {
   }
 
   .TagWithFlag {
-    padding: 0.52vw 0.71vw;
+    padding: 0.8vw 1vw;
   }
 
   .TagNoFlag {
-    padding: 0.52vw 0.71vw;
+    padding: 0.8vw 1vw;
     border: 0.13vw solid var(--grey300);
   }
 
@@ -1108,6 +1108,7 @@ textarea.A_Input {
   }
 
   // Inputs
+
   .A_Input {
     height: 9.2vw;
     padding: 1vw 3vw;
@@ -1115,6 +1116,21 @@ textarea.A_Input {
     border: solid 0.2vw var(--grey100);
     font-size: 4vw;
     gap: 0.5vw;
+  }
+
+  .InputSearch {
+    input {
+      font-size: 3.5vw;
+    }
+
+    input::placeholder {
+      font-size: 3.5vw;
+    }
+
+    .Q_Icon {
+      width: 5svw;
+      height: 5svw;
+    }
   }
 
   input::placeholder,
@@ -1284,5 +1300,20 @@ textarea.A_Input {
   input[type='radio'] {
     width: 5vw;
     height: 5vw;
+  }
+
+  // Tags
+  .A_StudentInfoTag {
+    gap: 1vw;
+    border-radius: 1.2vw;
+  }
+
+  .TagWithFlag {
+    padding: 1.3vw 2.5vw;
+  }
+
+  .TagNoFlag {
+    padding: 1.3vw 2.5vw;
+    border: 0.13vw solid var(--grey300);
   }
 }

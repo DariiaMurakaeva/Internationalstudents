@@ -54,6 +54,7 @@ h5 {
   font-size: 1.6vw;
   font-weight: 500;
   color: var(--black);
+  line-height: 130%;
 }
 
 h6 {
@@ -169,7 +170,7 @@ a {
   }
 
   h5 {
-    font-size: 2.2vw;
+    font-size: 2vw;
   }
 
   h6 {
@@ -242,6 +243,7 @@ a {
 @media only screen and (max-width: 490px) {
   h1 {
     font-size: 16.4vw;
+    line-height: 85%;
   }
 
   h2 {

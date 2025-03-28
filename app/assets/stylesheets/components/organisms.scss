@@ -159,7 +159,18 @@
   gap: 1.5vw;
 }
 
-.O_ProfileCard {
+.O_ProfileCardDefault {
+  width: 96.8vw;
+  height: fit-content;
+  display: flex;
+  gap: 2.3vw;
+  flex-direction: column;
+  padding: 3vw 3.7vw;
+  background-color: var(--white);
+  border-radius: 0.7vw;
+}
+
+.O_ProfileCardEdit {
   width: 96.8vw;
   height: fit-content;
   display: flex;
@@ -218,8 +229,15 @@
   border-radius: 0.7vw;
 }
 
-.DiscussionHeadContainer {
+.DiscussionHeadContainer2 {
   width: 47vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2.3vw;
+}
+
+.DiscussionHeadContainer1 {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2.3vw;
@@ -227,10 +245,9 @@
 
 .O_DiscussionCardShow {
   width: 96.8vw;
-  height: 20.6vw;
+  height: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 2.3vw;
   padding: 1.5vw;
   background-color: var(--white);
   border-radius: 0.7vw;
@@ -376,6 +393,98 @@
 
 // Ipad Landscape
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .O_Comment {
+    width: 62.8vw;
+    gap: 0.7vw;
+  }
+
+  .Reply1 {
+    width: 54.7vw;
+  }
+
+  .Reply2 {
+    width: 46.6vw;
+  }
+
+  .O_ProfileCardDefault {
+    width: 95.3vw;
+    gap: 2.3vw;
+    padding: 2.3vw 3vw;
+    border-radius: 1vw;
+
+    .M_StudentPersonalInfo {
+      gap: 0.8vw;
+    }
+  }
+
+  .O_ProfileCardEdit {
+    width: 95.3vw;
+    gap: 2.3vw;
+    padding: 2.3vw 3vw;
+    border-radius: 1vw;
+
+    .M_StudentPersonalInfo {
+      gap: 0.8vw;
+    }
+
+    .SecondaryButton {
+      width: 7.813vw;
+    }
+  }
+
+  .O_BigArticleCard {
+    width: 95.3vw;
+  }
+
+  .O_ArticleHeader {
+    width: 95.3vw;
+    padding: 2.3vw;
+    border-radius: 0.7vw;
+  }
+
+  .O_FilterAndSearch {
+    width: 95.3vw;
+    gap: 26vw;
+  }
+
+  .O_DiscussionCardShow {
+    width: 100%;
+    padding: 2.3vw;
+    border-radius: 0.7vw;
+  }
+
+  .DiscussionHeadContainer2 {
+    width: 62vw;
+    gap: 3vw;
+  }
+
+  .O_DiscussionCardIndex {
+    width: 46.68vw;
+    gap: 3.5vw;
+    padding: 2.3vw;
+    border-radius: 1vw;
+  }
+
+  .O_ApplicationFilters {
+    width: 95.313vw;
+    gap: 1.9vw;
+    padding: 1.9vw;
+    border-radius: 1vw;
+  }
+
+  // Profile
+  .O_StudentProfileCard {
+    width: 46.6vw;
+    gap: 3vw;
+    padding: 1.9vw;
+    border-radius: 1vw;
+  }
+
+  .ProfileCardContainer {
+    width: 26.465vw;
+    gap: 1.5vw;
+  }
+
   // Articles
   .O_ArticleCard {
     border-radius: 1vw;
@@ -405,15 +514,8 @@
 
   .O_FormCreated {
     width: 46vw;
-    height: fit-content;
-    display: flex;
     padding: 2.3vw 2.3vw;
-    background-color: var(--white);
     border-radius: 1vw;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: space-between;
-    flex-direction: row;
 
     .HeaderCaptionText {
       width: 70%;
@@ -426,6 +528,105 @@
 
 // Ipad Portrait
 @media only screen and (min-device-width: 490px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .O_Comment {
+    width: 61.7vw;
+    gap: 1vw;
+  }
+
+  .Reply1 {
+    width: 53.6vw;
+  }
+
+  .Reply2 {
+    width: 45.9vw;
+  }
+
+  .O_ProfileCardDefault {
+    width: 93.75vw;
+    gap: 3vw;
+    padding: 3vw 4vw;
+    border-radius: 1.5vw;
+
+    .M_StudentPersonalInfo {
+      gap: 1vw;
+    }
+
+    .ProfileCardContainer {
+      gap: 3vw;
+    }
+  }
+
+  .O_ProfileCardEdit {
+    width: 93.75vw;
+    gap: 3vw;
+    padding: 3vw 4vw;
+    border-radius: 1.5vw;
+
+    .M_StudentPersonalInfo {
+      gap: 1vw;
+    }
+
+    .ProfileCardContainer {
+      gap: 3vw;
+    }
+
+    .SecondaryButton {
+      width: 10.4vw;
+    }
+  }
+
+  .O_BigArticleCard {
+    width: 93.75vw;
+    border-radius: 1vw;
+  }
+  .O_ArticleHeader {
+    width: 93.75vw;
+    padding: 3.125vw;
+    border-radius: 1vw;
+  }
+
+  .O_FilterAndSearch {
+    width: 93.7vw;
+    gap: 10.9vw;
+  }
+  .O_DiscussionCardShow {
+    width: 100%;
+    padding: 2.6vw;
+    border-radius: 1vw;
+  }
+
+  .DiscussionHeadContainer2 {
+    width: 61.7vw;
+    gap: 3vw;
+  }
+
+  .O_DiscussionCardIndex {
+    width: 45.5vw;
+    gap: 4.6vw;
+    padding: 2vw;
+    border-radius: 1.5vw;
+  }
+
+  .O_ApplicationFilters {
+    width: 93.7vw;
+    gap: 2vw;
+    padding: 2vw;
+    border-radius: 1.5vw;
+  }
+
+  // Profile
+  .O_StudentProfileCard {
+    width: 93.7vw;
+    gap: 3vw;
+    padding: 3vw;
+    border-radius: 1vw;
+  }
+
+  .ProfileCardContainer {
+    width: 79vw;
+    gap: 1.5vw;
+  }
+
   // Articles
   .O_ArticleCard {
     width: 45vw;
@@ -454,10 +655,206 @@
     flex-direction: column;
     gap: 2.3vw;
   }
+
+  .O_FormCreated {
+    width: 61.7vw;
+    padding: 2.6vw 2.6vw;
+    border-radius: 1.5vw;
+
+    .HeaderCaptionText {
+      width: 100%;
+      gap: 0.5vw;
+    }
+
+    .Q_ArticleCardImage {
+      width: 29vw;
+      height: 35.8vw;
+    }
+  }
 }
 
 // Mobile
 @media only screen and (max-width: 490px) {
+  .O_Comment {
+    width: 91.7vw;
+    gap: 2vw;
+  }
+
+  .O_ProfileCardDefault {
+    width: 91.7vw;
+    gap: 6vw;
+    padding: 4vw 5vw;
+    border-radius: 3vw;
+
+    .M_StudentPersonalInfo {
+      gap: 2vw;
+    }
+
+    .ProfileCardContainer {
+      gap: 4vw;
+    }
+
+    .M_StudentCardPhoto {
+      margin-left: 0vw;
+      margin-top: 18vw;
+    }
+  }
+
+  .O_ProfileCardEdit {
+    width: 91.7vw;
+    gap: 6vw;
+    padding: 4vw 5vw;
+    border-radius: 3vw;
+
+    .M_StudentPersonalInfo {
+      gap: 2vw;
+    }
+
+    .ProfileCardContainer {
+      gap: 4vw;
+    }
+
+    .M_StudentCardPhoto {
+      display: none;
+    }
+
+    .SecondaryButton {
+      width: 20.5vw;
+    }
+  }
+
+  .O_PageHeader {
+    width: 97.4vw;
+    height: 46vw;
+    padding-top: 7.6vw;
+
+    .HeaderIconsFind {
+      width: 96.362vw;
+      height: 63vw;
+      background-image: url(/assets/Findstudent_mob.svg);
+      margin-top: -6.5vw;
+    }
+  }
+
+  .O_PageHeader2 {
+    width: 91.7vw;
+    height: 64.3vw;
+    padding-top: 9vw;
+    gap: 3vw;
+
+    .HeaderIconsWhat {
+      width: 88vw;
+      height: 63vw;
+      background-image: url(/assets/What_mob.svg);
+    }
+  }
+
+  .O_PageHeader3 {
+    width: 91.7vw;
+    height: 33.8vw;
+    padding-top: 8vw;
+
+    .HeaderIconsTips {
+      width: 90.5vw;
+      height: 32vw;
+      background-image: url(/assets/Tips_mob.svg);
+      margin-top: -8vw;
+      margin-left: 0vw;
+      z-index: -1;
+    }
+  }
+
+  .O_PageHeader4 {
+    width: 91.7vw;
+    height: 36.9vw;
+    padding-top: 8vw;
+
+    .HeaderIconsFindbuddy {
+      width: 86.4vw;
+      height: 36.2vw;
+      background-image: url(/assets/Findbuddy_mob.svg);
+      margin-top: -8vw;
+      margin-left: 3vw;
+      z-index: -1;
+    }
+  }
+
+  .O_BigArticleCard {
+    width: 91.5vw;
+    height: 44vw;
+    border-radius: 2vw;
+
+    .ArticleGirl {
+      display: none;
+    }
+
+    .ArticleBoy {
+      display: none;
+    }
+  }
+
+  .O_ArticleHeader {
+    width: 91.7vw;
+    padding: 5vw;
+    border-radius: 2vw;
+    flex-direction: column;
+    gap: 4vw;
+  }
+
+  .O_FilterAndSearch {
+    width: 91.7vw;
+    gap: 3vw;
+    flex-direction: column;
+
+    .A_Input {
+      gap: 2vw;
+    }
+  }
+
+  .O_DiscussionCardShow {
+    width: 100%;
+    padding: 4vw;
+    border-radius: 2vw;
+  }
+
+  .DiscussionHeadContainer2 {
+    width: 91.7vw;
+    gap: 8.2vw;
+  }
+
+  .O_DiscussionCardIndex {
+    width: 91.795vw;
+    gap: 9vw;
+    padding: 4vw;
+    border-radius: 2vw;
+  }
+
+  .DiscussionHeadContainer {
+    gap: 5vw;
+  }
+
+  .O_ApplicationFilters {
+    width: 100vw;
+    gap: 4vw;
+    padding: 4vw;
+    border-radius: 3vw;
+  }
+  // Profile
+  .O_StudentProfileCard {
+    width: 91.7vw;
+    position: relative;
+    gap: 4vw;
+    padding: 6vw;
+    border-radius: 5vw;
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: 2fr;
+  }
+
+  .ProfileCardContainer {
+    width: 76vw;
+    gap: 4vw;
+  }
   // Footer
   .O_Footer {
     width: 91.7vw;
@@ -501,5 +898,21 @@
     display: flex;
     flex-direction: column;
     gap: 6vw;
+  }
+
+  .O_FormCreated {
+    width: 91.7vw;
+    padding: 4vw 5vw;
+    border-radius: 3vw;
+
+    .HeaderCaptionText {
+      width: 70%;
+      gap: 0.5vw;
+    }
+
+    .Q_ArticleCardImage {
+      width: 29vw;
+      height: 35.8vw;
+    }
   }
 }
