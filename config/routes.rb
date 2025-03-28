@@ -30,13 +30,15 @@ Rails.application.routes.draw do
     resources :comments
 
     member do
-      get "bookmark"
+      post :bookmark    
+      delete :unbookmark
     end
   end
 
   resources :discussions do
     member do
-      get "bookmark"
+      post :bookmark
+      delete :unbookmark
     end
 
     resources :comments

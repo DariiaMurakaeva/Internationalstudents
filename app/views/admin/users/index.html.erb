@@ -1,0 +1,107 @@
+<% content_for :title, "User Profiles" %>
+
+<% if current_user&.admin? %>
+
+
+<div id="admin-profiles">
+    <div class="S_Profile">
+        <% @users.each do |user| %>
+            <% profile = user.profile %>
+            <% if profile %>
+            <div class="O_ProfileCard">
+                <div class="ProfileContainer">
+                <h3>Student Profile</h3>
+                <div class="M_TwoButtons Sec_Tert">
+                    <div class="A_Button SecondaryButton">
+                    <%= link_to "Edit", edit_admin_user_path(user), class: "SecondaryButton_Text" %>
+                    </div>
+                    <div class="A_Button TertiaryButton">
+                    <%= link_to "Delete", admin_user_path(user), method: :delete, 
+                        data: { "turbo-method": :delete, confirm: "Are you sure?" }, 
+                        class: "TertiaryButton_Text" %>
+                </div>
+                </div>
+            </div>
+            
+            <div class="ProfilePhotoInfoContainer">
+                <% if profile.profile_photo.attached? %>
+                <div class="M_StudentCardPhoto">
+                    <%= image_tag profile.profile_photo.variant(resize_to_limit: [200, 200]), class: "Q_ApplicationFormImage" %>
+                </div>
+            <% end %>
+
+            <div class="ProfileCardContainer">
+                <div class="M_StudentInfoTags">
+                    <% if profile.country.present? %>
+                        <div class="A_StudentInfoTag TagWithFlag">
+                        <div class="Q_FlagIcon"></div>
+                            <h6><%= profile.country %></h6>
+                        </div>
+                    <% end %>
+
+                    <% if profile.program_type.present? %>
+                        <div class="A_StudentInfoTag TagNoFlag">
+                            <h6><%= profile.program_type %></h6>
+                        </div>
+                    <% end %>
+
+                    <% if profile.faculty.present? %>
+                        <div class="A_StudentInfoTag TagNoFlag">
+                            <h6><%= profile.faculty %></h6>
+                        </div>
+                    <% end %>
+                </div>
+                
+                <div class="M_StudentPersonalInfo">
+                    <% if profile.name.present? %>
+                        <h4><%= profile.name %></h4>
+                    <% end %>
+
+                    <p><%= user.email %></p>
+
+                    <% if profile.languages.present? %>
+                        <p class="PrimaryButton_Text"><%= profile.languages %></p>
+                    <% end %>
+
+                    <p class="admin-info">
+                        <strong>Admin:</strong> <%= user.admin? ? 'Yes' : 'No' %>
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <% else %>
+            <div class="O_ProfileCard">
+                <div class="ProfileContainer">
+                <h3>User Without Profile</h3>
+                <div class="M_TwoButtons Sec_Tert">
+                    <div class="A_Button SecondaryButton">
+                    <%= link_to "Edit", edit_admin_user_path(user), class: "SecondaryButton_Text" %>
+                </div>
+                <div class="A_Button TertiaryButton">
+                    <%= link_to "Delete", admin_user_path(user), method: :delete, 
+                        data: { "turbo-method": :delete, confirm: "Are you sure?" }, 
+                        class: "TertiaryButton_Text" %>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ProfilePhotoInfoContainer">
+                <div class="ProfileCardContainer">
+                <div class="M_StudentPersonalInfo">
+                    <p><%= user.email %></p>
+                    <p class="admin-info">
+                    <strong>Admin:</strong> <%= user.admin? ? 'Yes' : 'No' %>
+                    </p>
+                </div>
+                </div>
+            </div>
+            </div>
+        <% end %>
+        <% end %>
+    </div>
+</div>
+
+<%= link_to "New User", new_admin_user_path, class: "A_Button PrimaryButton" %>
+
+<% end %>

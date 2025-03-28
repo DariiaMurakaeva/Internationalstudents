@@ -170,13 +170,6 @@ body {
   .MainDiscussions {
     height: 64vw;
   }
-
-  .C_ArticleCards {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    gap: 4vw;
-  }
 }
 
 /* Mobile */
@@ -267,13 +260,6 @@ body {
       z-index: 1;
       margin: 0 auto;
     }
-  }
-
-  .C_ArticleCards {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    gap: 4vw;
   }
 
   .MainBuddy {

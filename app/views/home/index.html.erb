@@ -20,42 +20,24 @@
     <div class="ArticleBoy"></div>
   </div>
   <div class="C_ArticleCards">
-    <div class="O_ArticleCard Card_Red">
-      <div class="ArticleSaveImage">
-        <div class="Q_Icon BookmarkBlack"></div>
-        <div class="Q_ArticleCardImage"></div>
-      </div>
-      <div class="ArticleTagHeader">
-        <div class="A_ContentTag TagRed">
-          <p class="Tag_Text">culture</p>
+    <% @posts_cards.each do |post| %>
+      <div class="O_ArticleCard <%= card_color_class(post.tag) %>">
+        <div class="ArticleSaveImage">
+          <div class="Q_Icon BookmarkBlack"></div>
+          <% if post.post_image.present? %>
+            <%= image_tag post.post_image.url, class: "Q_ArticleCardImage" %>
+          <% else %>
+            <div class="Q_ArticleCardImage"></div>
+          <% end %>
         </div>
-        <h4>Orientation session and why u shoud go</h4>
-      </div>
-    </div>
-    <div class="O_ArticleCard Card_Pink">
-      <div class="ArticleSaveImage">
-        <div class="Q_Icon BookmarkBlack"></div>
-        <div class="Q_ArticleCardImage"></div>
-      </div>
-      <div class="ArticleTagHeader">
-        <div class="A_ContentTag TagRed">
-          <p class="Tag_Text">culture</p>
+        <div class="ArticleTagHeader">
+            <div class="A_ContentTag <%= tag_color_class(post.tag) %>">
+              <p class="Tag_Text"><%= post.tag %></p>
+            </div>
+          <h4><%= post.title %></h4>
         </div>
-        <h4>Orientation session and why u shoud go</h4>
       </div>
-    </div>
-    <div class="O_ArticleCard Desktop Card_Green">
-      <div class="ArticleSaveImage">
-        <div class="Q_Icon BookmarkBlack"></div>
-        <div class="Q_ArticleCardImage"></div>
-      </div>
-      <div class="ArticleTagHeader">
-        <div class="A_ContentTag TagRed">
-          <p class="Tag_Text">culture</p>
-        </div>
-        <h4>Orientation session and why u shoud go</h4>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
 

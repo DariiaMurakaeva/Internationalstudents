@@ -14,9 +14,7 @@
   </div>
   <div class="ProfilePhotoInfoContainer">
     <div class="M_StudentCardPhoto">
-      <div class="Q_ApplicationFormImage">
-        <%= image_tag profile.profile_photo, alt: "Profile photo" %>
-      </div>
+      <%= image_tag profile.user.profile.profile_photo.variant(resize_to_limit: [200, 200]), class: "Q_ApplicationFormImage" %>
     </div>
     <div class="ProfileCardContainer">
       <div class="M_StudentInfoTags">

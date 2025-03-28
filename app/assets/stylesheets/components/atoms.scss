@@ -909,6 +909,7 @@ textarea.A_Input {
   // InputSearch
   .InputSearch {
     input {
+      width: 20vw;
       font-size: 1.8vw;
     }
 
@@ -1059,15 +1060,9 @@ textarea.A_Input {
 // Mobile
 @media only screen and (max-width: 490px) {
   // Header
+
   .A_Header {
-    width: 91.7vw;
-    height: 49vw;
-    display: flex;
-    background-color: var(--white);
-    border-radius: 3vw;
-    gap: 6vw;
-    padding-top: 5vw;
-    padding-bottom: 5vw;
+    display: none;
   }
 
   .A_Profile {

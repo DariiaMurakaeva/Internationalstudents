@@ -2,9 +2,9 @@
 .C_ArticleCards, .C_DiscussionCards, .C_ApplicationFormCards {
     width: 100%;
     height: fit-content;
-    padding: 0vw 1.58vw;
-    display: flex;
-    justify-content: space-between;
+    padding: 0vw 1.98vw;
+    display: grid;
+    row-gap: 1.32vw;
 }
 
 .C_ArticleCards {
@@ -29,4 +29,46 @@
     display: flex;
     flex-direction: column;
     gap: 2.65vw;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .C_DiscussionCards, .C_ApplicationFormCards  {
+        padding: 2.34vw;
+        gap: 1.95vw;
+    }
+
+    .C_ApplicationFormCards {
+        display: flex;
+        flex-direction: column;
+        gap: 1.95vw;
+    }
+
+    .C_ArticleCards {
+        width: 100%;
+    }
+    
+}
+
+@media only screen and (min-device-width: 490px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .C_ArticleCards {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.6vw;
+    }
+
+    .C_ApplicationFormCards {
+        display: flex;
+        flex-direction: column;
+        gap: 1.95vw;
+    }
+}
+
+@media only screen and (max-width: 490px) {
+    .C_ArticleCards, .C_DiscussionCards {
+        display: flex;
+        flex-direction: column;
+        gap: 4.1vw;
+        align-items: center;
+    }
 }

@@ -156,23 +156,13 @@
 }
 
 .ProfileCardContainer {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5vw;
 }
 
-.O_ProfileCardDefault {
-  width: 96.8vw;
-  height: fit-content;
-  display: flex;
-  gap: 2.3vw;
-  flex-direction: column;
-  padding: 3vw 3.7vw;
-  background-color: var(--white);
-  border-radius: 0.7vw;
-}
-
-.O_ProfileCardEdit {
+.O_ProfileCard {
   width: 96.8vw;
   height: fit-content;
   display: flex;
@@ -222,23 +212,25 @@
 // Discussions
 .O_DiscussionCardIndex {
   width: 47.5vw;
-  height: fit-content;
+  height: 16vw;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 2.3vw;
   padding: 1.5vw;
   background-color: var(--white);
   border-radius: 0.7vw;
 }
 
-.DiscussionHeadContainer {
+.O_DiscussionCard {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2.3vw;
+  justify-content: space-between;
 }
 
-.DiscussionHeadContainer1 {
+.DiscussionHeadContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -396,100 +388,10 @@
 
 // Ipad Landscape
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  .O_Comment {
-    width: 62.8vw;
-    gap: 0.7vw;
-  }
-
-  .Reply1 {
-    width: 54.7vw;
-  }
-
-  .Reply2 {
-    width: 46.6vw;
-  }
-
-  .O_ProfileCardDefault {
-    width: 95.3vw;
-    gap: 2.3vw;
-    padding: 2.3vw 3vw;
-    border-radius: 1vw;
-
-    .M_StudentPersonalInfo {
-      gap: 0.8vw;
-    }
-  }
-
-  .O_ProfileCardEdit {
-    width: 95.3vw;
-    gap: 2.3vw;
-    padding: 2.3vw 3vw;
-    border-radius: 1vw;
-
-    .M_StudentPersonalInfo {
-      gap: 0.8vw;
-    }
-
-    .SecondaryButton {
-      width: 7.813vw;
-    }
-  }
-
-  .O_BigArticleCard {
-    width: 95.3vw;
-  }
-
-  .O_ArticleHeader {
-    width: 95.3vw;
-    padding: 2.3vw;
-    border-radius: 0.7vw;
-  }
-
-  .O_FilterAndSearch {
-    width: 95.3vw;
-    gap: 26vw;
-  }
-
-  .O_DiscussionCardShow {
-    width: 100%;
-    padding: 2.3vw;
-    border-radius: 0.7vw;
-  }
-
-  .DiscussionHeadContainer2 {
-    width: 62vw;
-    gap: 3vw;
-  }
-
-  .O_DiscussionCardIndex {
-    width: 46.68vw;
-    gap: 3.5vw;
-    padding: 2.3vw;
-    border-radius: 1vw;
-  }
-
-  .O_ApplicationFilters {
-    width: 95.313vw;
-    gap: 1.9vw;
-    padding: 1.9vw;
-    border-radius: 1vw;
-  }
-
-  // Profile
-  .O_StudentProfileCard {
-    width: 46.6vw;
-    gap: 3vw;
-    padding: 1.9vw;
-    border-radius: 1vw;
-  }
-
-  .ProfileCardContainer {
-    width: 26.465vw;
-    gap: 1.5vw;
-  }
-
   // Articles
   .O_ArticleCard {
+    width: 30.57vw;
+    height: 30vw;
     border-radius: 1vw;
     padding: 2vw;
   }
@@ -500,6 +402,16 @@
   .ArticleTagHeader {
     width: 95%;
     gap: 0.7vw;
+  }
+
+  .O_DiscussionCardIndex {
+    width: 100%;
+    height: 15.87vw;
+  }
+
+  .O_StudentProfileCard {
+    width: 100%;
+    height: fit-content;
   }
 
   .O_Form {
@@ -517,8 +429,15 @@
 
   .O_FormCreated {
     width: 46vw;
+    height: fit-content;
+    display: flex;
     padding: 2.3vw 2.3vw;
+    background-color: var(--white);
     border-radius: 1vw;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
 
     .HeaderCaptionText {
       width: 70%;
@@ -531,115 +450,28 @@
 
 // Ipad Portrait
 @media only screen and (min-device-width: 490px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .O_Comment {
-    width: 61.7vw;
-    gap: 1vw;
-  }
-
-  .Reply1 {
-    width: 53.6vw;
-  }
-
-  .Reply2 {
-    width: 45.9vw;
-  }
-
-  .O_ProfileCardDefault {
-    width: 93.75vw;
-    gap: 3vw;
-    padding: 3vw 4vw;
-    border-radius: 1.5vw;
-
-    .M_StudentPersonalInfo {
-      gap: 1vw;
-    }
-
-    .ProfileCardContainer {
-      gap: 3vw;
-    }
-  }
-
-  .O_ProfileCardEdit {
-    width: 93.75vw;
-    gap: 3vw;
-    padding: 3vw 4vw;
-    border-radius: 1.5vw;
-
-    .M_StudentPersonalInfo {
-      gap: 1vw;
-    }
-
-    .ProfileCardContainer {
-      gap: 3vw;
-    }
-
-    .SecondaryButton {
-      width: 10.4vw;
-    }
-  }
-
-  .O_BigArticleCard {
-    width: 93.75vw;
-    border-radius: 1vw;
-  }
-  .O_ArticleHeader {
-    width: 93.75vw;
-    padding: 3.125vw;
-    border-radius: 1vw;
-  }
-
-  .O_FilterAndSearch {
-    width: 93.7vw;
-    gap: 10.9vw;
-  }
-  .O_DiscussionCardShow {
-    width: 100%;
-    padding: 2.6vw;
-    border-radius: 1vw;
-  }
-
-  .DiscussionHeadContainer2 {
-    width: 61.7vw;
-    gap: 3vw;
-  }
-
-  .O_DiscussionCardIndex {
-    width: 45.5vw;
-    gap: 4.6vw;
-    padding: 2vw;
-    border-radius: 1.5vw;
-  }
-
-  .O_ApplicationFilters {
-    width: 93.7vw;
-    gap: 2vw;
-    padding: 2vw;
-    border-radius: 1.5vw;
-  }
-
-  // Profile
-  .O_StudentProfileCard {
-    width: 93.7vw;
-    gap: 3vw;
-    padding: 3vw;
-    border-radius: 1vw;
-  }
-
-  .ProfileCardContainer {
-    width: 79vw;
-    gap: 1.5vw;
-  }
-
   // Articles
   .O_ArticleCard {
-    width: 45vw;
+    width: 100%;
     height: 37vw;
     border-radius: 1vw;
     padding: 2vw;
   }
 
+  .O_Header_Main {
+    width: 96vw;
+    height: 4vw;
+    margin-top: 3vw;
+    margin-bottom: 2.38vw;
+  }
+
+  .O_StudentProfileCard {
+    width: 100%;
+    height: fit-content;
+  }
+
   .ArticleSaveImage {
-    margin-bottom: 3vw;
+    margin-bottom: 1vw;
   }
   .ArticleTagHeader {
     width: 80%;
@@ -653,30 +485,30 @@
     padding: 3vw;
   }
 
+  .O_FilterAndSearch {
+    width: 96vw;
+    justify-content: space-between;
+
+    .A_Input {
+      width: 16vw;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+
+  .O_DiscussionCardIndex {
+    height: 26.04vw;
+  }
+
   .FormContainer {
     display: flex;
     flex-direction: column;
     gap: 2.3vw;
   }
-
-  .O_FormCreated {
-    width: 61.7vw;
-    padding: 2.6vw 2.6vw;
-    border-radius: 1.5vw;
-
-    .HeaderCaptionText {
-      width: 100%;
-      gap: 0.5vw;
-    }
-
-    .Q_ArticleCardImage {
-      width: 29vw;
-      height: 35.8vw;
-    }
-  }
 }
 
-// Mobile
 @media only screen and (max-width: 490px) {
   .O_Comment {
     width: 91.7vw;
@@ -811,6 +643,7 @@
 
     .A_Input {
       gap: 2vw;
+      width: 100%;
     }
   }
 
@@ -827,6 +660,7 @@
 
   .O_DiscussionCardIndex {
     width: 91.795vw;
+    height: 47.95vw;
     gap: 9vw;
     padding: 4vw;
     border-radius: 2vw;
@@ -918,4 +752,18 @@
       height: 35.8vw;
     }
   }
+
+  // Header
+  .O_Header_Main {
+    width: 91.83vw;
+    height: 11.59vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 1.59vw;
+    margin-bottom: 2.38vw;
+  }
+
 }

@@ -15,7 +15,6 @@
             <% elsif current_user.user_role == 'buddy' %>
                 <%= link_to "APPLICATIONS", application_forms_url, class: "Q_PageLink" %>
             <% elsif current_user.admin? %>
-                <%= link_to "SUBSCRIPTIONS", admin_subscriptions_url, class: "Q_PageLink" %>
                 <%= link_to "USER MANAGEMENT", admin_users_url, class: "Q_PageLink" %>
             <% end %>
         <% end %>
