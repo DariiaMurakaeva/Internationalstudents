@@ -1,44 +1,29 @@
-<div class="post">
-
-<div id="<%= dom_id post %>">
-
-<% if current_user %>
-    <div class="bookmark_block">
+<div class="O_ArticleCard <%= card_color_class(post.tag) %>">
+  <div class="ArticleSaveImage">
+    <% if current_user %>
       <% 
         is_bookmarked = post.bookmarks.where(user_id: current_user.id).exists?
         bookmark_icon = is_bookmarked ? "Icon_BookmarkActive.svg" : "Icon_BookmarkDefault.svg"
         bookmark_alt_text = is_bookmarked ? "Remove bookmark" : "Save to bookmarks"
       %>
+      <div class="Q_Icon BookmarkBlack <%= is_bookmarked ? 'BookmarkBlackActive' : 'BookmarkBlackDefault' %>">
+          <%= link_to bookmark_post_path(post), method: :post, remote: true, class: "bookmark-link" do %>
+          <% end %>
+        </div>
+    <% end %>
 
-      <%= link_to bookmark_post_path(post), method: :post, remote: true do %>
-        <%= image_tag bookmark_icon, alt: bookmark_alt_text, class: "bookmark-icon" %>
-        
-      <% end %>
+    <div class="Q_ArticleCardImage">
+      <%= image_tag post.post_image.url, alt: post.title, class: "article-image" %>
     </div>
-  <% end %>
-
-
-
-  <%= image_tag post.post_image.url, class: "image_size" %>
-
-  <div class="post_contents">
-    <div>
-      <p class="edu_tag">
-        <%= post.tag %>
-      </p>
-    </div>
-
-    <h2>
-      <%= link_to post.title, post_path(post), class: "post_header" %>
-    </h2>
-
-    <p class="text_article_desc">
-      <%= post.content %>
-    </p>
   </div>
 
+  <div class="ArticleTagHeader">
+    <div class="A_ContentTag <%= tag_color_class(post.tag) %>">
+      <p class="Tag_Text"><%= post.tag %></p>
+    </div>
 
-
-  
+    <h4>
+      <%= link_to post.title, post_path(post) %>
+    </h4>
   </div>
 </div>

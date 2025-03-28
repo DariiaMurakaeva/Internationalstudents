@@ -3,7 +3,7 @@
     <div class="A_RegistrationHeader">
       <div class="RegistrationHeaderTitle">
         <h3>Ask anything</h3>
-        <div class="Q_Icon CrossBlack" id="closeForm"></div>
+        <div class="Q_Icon CrossBlack" id="closeForm" data-action="click->discussions-modal#closeForm"></div>
       </div>
       <p class="Caption_Text">
         Hi! This is a space for students to share insights, ask questions,
@@ -11,18 +11,21 @@
       </p>
     </div>
     <%= form_with model: @discussion, class: "M_FormDiscussion", id: "discussionForm", remote: true do |f| %>
-      <div class="InputLegend">
-        <%= f.label :title, "Type of discussion" %>
-        <%= f.text_field :title, class: "A_Input", placeholder: "What is it about?" %>
-      </div>
-      <div class="InputLegend">
-        <%= f.label :category, "Category" %>
-        <%= f.text_field :category, class: "A_Input", placeholder: "Select category" %>
-      </div>
-      <div class="InputLegendLong">
-        <%= f.label :content, "Question" %>
-        <%= f.text_area :content, class: "A_Input ExpandedField", placeholder: "Type it here..." %>
-      </div>
+        <div class="InputLegend">
+          <legend>Type of discussion</legend>
+          <%= f.text_field :title, class: "A_Input", placeholder: "What is it about?" %>
+        </div>
+
+        <div class="InputLegend">
+          <%= f.label :tag, "Category" %>
+          <%= f.select :tag, options_for_select([['Обучение', 'обучение'], ['Культура', 'культура'], ['Быт', 'быт'], ['Документы', 'документы']], @discussion.tag), {}, class: 'A_Input' %>
+        </div>
+
+        <div class="InputLegendLong">
+          <legend>Question</legend>
+          <%= f.text_area :content, class: "A_Input ExpandedField", placeholder: "Type it here..." %>
+        </div>
+
       <%= f.button type: "submit", class: "A_Button PrimaryButton" do %>
         <p class="PrimaryButton_Text">create discussion</p>
       <% end %>

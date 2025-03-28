@@ -1,4 +1,4 @@
-class :CommentsController < ApplicationController
+class CommentsController < ApplicationController
     before_action :set_commentable
 
     def create
@@ -28,6 +28,6 @@ class :CommentsController < ApplicationController
     end
 
     def comment_params
-        params.require(:comment).permit(:user_id, :body, :parent_comment_id)
+        params.require(:comment).permit(:body, :parent_comment_id)
     end
 end

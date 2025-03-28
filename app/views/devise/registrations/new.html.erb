@@ -1,74 +1,92 @@
-<h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <div class="O_Form">
+    <div class="FormContainer">
+      
+      <div class="A_RegistrationHeader">
+        <div class="RegistrationHeaderTitle">
+          <h3>Welcome! First things first...</h3>
+        </div>
+        <p class="Caption_Text">
+          This will allow you to ask questions, participate in discussions, and
+          apply for a buddy
+        </p>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+      <%= f.fields_for :profile do |profile_form| %>
+        <div class="InputLegend">
+          <legend>First Name</legend>
+          <%= profile_form.text_field :first_name, class: "A_Input", placeholder: "Type your name" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+        <div class="InputLegend">
+          <legend>Last Name</legend>
+          <%= profile_form.text_field :last_name, class: "A_Input", placeholder: "Type your last name" %>
+        </div>
 
-  
+        <div class="field">
+          <%= profile_form.label :date_of_birth, "Укажи дату рождения" %><br />
+          .<div class="dateofbirth">
+            <%= profile_form.date_select :date_of_birth, start_year: 1900, end_year: Time.current.year %>
+          </div>
+        </div>
 
-  <%= f.fields_for :profile do |profile_form| %>
+        <div class="InputLegend">
+          <legend>E-mail</legend>
+          <%= f.email_field :email, class: "A_Input", placeholder: "Type your e-mail" %>
+        </div>
 
-  <div class="field">
-    <%= profile_form.label :first_name, "Введи имя" %><br />
-    <%= profile_form.text_field :first_name %>
-  </div>
+        <div class="InputLegend">
+          <legend>Password</legend>
+          <%= f.password_field :password, class: "A_Input", placeholder: "At least 6 characters" %>
+        </div>
 
-  <div class="field">
-    <%= profile_form.label :last_name, "Введи фамилию" %><br />
-    <%= profile_form.text_field :last_name %>
-  </div>
+        <div class="InputLegend">
+          <legend>Confirm Password</legend>
+          <%= f.password_field :password_confirmation, class: "A_Input", placeholder: "Type your password again" %>
+        </div>
 
-  <div class="field">
-    <%= profile_form.label :date_of_birth, "Укажи дату рождения" %><br />
-    <%= profile_form.date_select :date_of_birth, start_year: 1900, end_year: Time.current.year %>
-  </div>
+        <div class="InputDropdown">
+          <%= profile_form.label :program_type, "Select your Program Type" %><br />
+          <%= profile_form.select :program_type, 
+              ["Full time student", "Exchange student", "Prep Year Student"], 
+              prompt: "Select your program type", class: "InputDropdown" %>
+        </div>
 
-  <div class="field">
-      <%= profile_form.label :country, "Укажи страну гражданства" %><br />
-      <%= profile_form.text_field :country %>
-  </div>
-  
-    <div class="InputDropdown">
-      <%= profile_form.label :faculty, "Укажи факультет" %><br />
-      <%= profile_form.select :faculty, ["Факультет математики", "Факультет экономических наук", "Московский институт электроники и математики им. А.Н. Тихонова", "Факультет компьютерных наук", "Высшая школа бизнеса", "Высшая школа юриспруденции и администрирования", "Факультет гуманитарных наук", "Факультет социальных наук", "Факультет креативных индустрий", "Факультет мировой экономики и мировой политики", "Факультет физики", "Международный институт экономики и финансов", "Факультет городского и регионального развития", "Факультет химии", "Факультет биологии и биотехнологии", "Факультет географии и геоинформационных технологий", "Школа иностранных языков", "Институт статистических исследований и экономики знаний", "Банковский институт", "Школа инноватики и предпринимательства"], prompt: "Выбери факультет",  class: "InputDropdown"%>
+        <div class="InputDropdown">
+          <%= profile_form.label :country, "Select your Country" %><br />
+          <%= profile_form.select :country, 
+              ["🇷🇺 Russian Federation", "🇺🇸 USA", "🇩🇪 Germany", "🇫🇷 France", "🇮🇹 Italy", "🇨🇳 China", "🇯🇵 Japan", "🇮🇳 India", "🇧🇷 Brazil", "🇰🇷 South Korea", 
+              "🇬🇧 United Kingdom", "🇨🇦 Canada", "🇦🇺 Australia", "🇪🇦 Spain", "🇸🇪 Sweden", "🇰🇬 Kyrgyzstan", "🇰🇿 Kazakhstan", "🇹🇷 Turkey", "🇲🇽 Mexico", "🇺🇿 Uzbekistan"], 
+              prompt: "Select your country", class: "InputDropdown" %>
+        </div>
+
+        <div class="InputDropdown">
+          <%= profile_form.label :faculty, "Select your Faculty" %><br />
+          <%= profile_form.select :faculty, 
+            ["Faculty of Mathematics", "Faculty of Economics", "MIEM named after A.N.Tikhonov", "Faculty of Computer Science", "Graduate School of Business", "Graduate School of Law and Administration", "Faculty of Humanities", "Faculty of Social Sciences", "Faculty of Creative Industries", "Faculty of World Economy and World Politics", "Faculty of Physics", "International Institute of Economics and Finance", "Faculty of Urban and Regional Development", "Faculty of Chemistry", "Faculty of Biology and Biotechnology", "Faculty of Geography", "School of Foreign Languages", "Institute of Statistical Research", "Banking Institute", "School of Innovation and Entrepreneurship"], 
+          prompt: "Select your faculty", class: "InputDropdown" %>
+        </div>
+
+        <div class="InputLegendLong">
+          <legend>Languages</legend>
+          <%= profile_form.text_field :languages, class: "A_Input", placeholder: "Type your languages" %>
+        </div>
+
+        <div class="field">
+          <%= profile_form.label :profile_photo, "Upload your profile photo" %><br />
+          <%= profile_form.file_field :profile_photo %>
+        </div>
+      <% end %>
     </div>
 
-    <div class="field">
-      <%= profile_form.label :languages, "Укажи языки, на которых ты говоришь (через запятую и пробел)" %><br />
-      <%= profile_form.text_field :languages %>
-    </div>
+    <div class="M_TwoButtons Prim_Tert">
+      <%= f.submit "CREATE ACCOUNT", class: "A_Button PrimaryButton" %>
 
-    <div class="InputDropdown">
-      <%= profile_form.label :program_type, "Укажи тип программы" %><br />
-      <%= profile_form.select :program_type, ["Студент полной степени обучения", "Студент по обмену", "Студент программы подготовки"], prompt: "Выбери тип программы", class: "InputDropdown" %>
-    </div>
+      <%= link_to "Sign in", new_session_path(resource_name), class: "A_Button SecondaryButton" %>
 
-    <div class="field">
-      <%= profile_form.label :profile_photo, "Upload your profile photo" %><br />
-      <%= profile_form.file_field :profile_photo %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Зарегистрироваться" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>

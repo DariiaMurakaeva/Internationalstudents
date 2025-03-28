@@ -2,7 +2,6 @@
     <% if application_form.errors.any? %>
         <div style="color: red">
             <h2><%= pluralize(application_form.errors.count, "error") %> prohibited this form from being saved:</h2>
-
             <ul>
                 <% application_form.errors.each do |error| %>
                     <li><%= error.full_message %></li>
@@ -11,37 +10,37 @@
         </div>
     <% end %>
 
-    <div>
-        <%= form.label :about, "Расскажи о себе: чем ты увлекаешься, что тебе нравится?" %>
-        <%= form.text_area :about %>
-    </div>
+    <div class="O_Form">
+        <div class="InputLegend">
+            <legend>Tell us about your interests and hobbies</legend>
+            <%= form.text_area :about, class: "A_Input", placeholder: "Tell about yourself" %>
+        </div>
 
-    <div>
-        <%= form.label :date_of_arrival, "Укажи дату своего прибытия в Россию" %>
-        <%= form.date_field :date_of_arrival %>
-    </div>
+        <div class="InputLegend">
+            <legend>When is your arrival date?</legend>
+            <%= form.date_field :date_of_arrival, class: "A_Input"%>
+        </div>
 
-    <div>
-        <%= form.label :time_of_arrival, "Укажи время своего прибытия в Россию" %>
-        <%= form.time_field :time_of_arrival %>
-    </div>
+        <div class="InputLegend">
+            <legend>What is the estimated time of arrival?</legend>
+            <%= form.time_field :time_of_arrival, class: "A_Input", placeholder: "hh:mm" %>
+        </div>
 
-    <div>
-        <%= form.label :place_of_arrival, "В какой вокзал/аэропорт ты приезжаешь?" %>
-        <%= form.select :place_of_arrival, ['Аэропорт Шереметьево', 'Аэропорт Домодедово', 'Аэропорт Внуково', 'Казанский вокзал', 'Ленинградский вокзал', 'Курский вокзал', 'Киевский вокзал', 'Савёловский вокзал', 'Ярославский вокзал', 'Белорусский вокзал', 'Павелецкий вокзал', 'Рижский вокзал', 'Восточный вокзал'], class: "form-select" %>
-    </div>
+        <div class="InputLegend">
+            <legend>What is your place of arrival?</legend>
+            <%= form.select :place_of_arrival, 
+                ['Sheremetyevo International Airport', 'Domodedovo International Airport', 'Vnukovo International Airport', 
+                'Kazanskiy Railway Terminal', 'Leningradskiy Railway Terminal', 'Kurskiy Railway Terminal', 
+                'Kievskiy Railway Terminal', 'Savyolovsky Railway Terminal', 'Yaroslavskiy Railway Terminal', 
+                'Belorusskiy Railway Terminal', 'Paveletskiy Railway Terminal', 'Rizhskiy Railway Terminal', 
+                'Eastern Railway Terminal'], 
+                { prompt: "Not selected" }, 
+                { class: "A_Input" } %>
+        </div>
 
-    <div>
-        <%= form.label :place_of_residence, "Где ты планируешь жить?" %>
-        <%= form.select :place_of_residence, ['Общежитие №1', 'Общежитие №2', 'Общежитие №3', 'Общежитие №4', 'Общежитие №5', 'Общежитие №6', 'Общежитие №7', 'Общежитие №8', 'Общежитие №9', 'Общежитие №10', 'Другое'], class: "form-select" %>
-    </div>
-
-    <div>
-        <%= form.label :note, "Если у тебя есть какая-то дополнительная информация для бадди, можешь поделиться ей здесь." %>
-        <%= form.text_area :note %>
-    </div>
-
-    <div>
-        <%= form.submit "Отправить заявку" %>
+        <div class="M_TwoButtons Prim_Tert">
+            <%= form.submit "NEXT", class: "A_Button PrimaryButton" %>
+            <%= link_to "Sign in", "#", class: "A_Button SecondaryButton" %>
+        </div>
     </div>
 <% end %>

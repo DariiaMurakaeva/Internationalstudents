@@ -6,21 +6,43 @@
   )
 %>
 
-<%= render @discussion %>
+<div class="S_DiscussionShow">
+  <div class="O_DiscussionCardShow">
+    <div class="DiscussionHeadContainer">
+      <div class="M_DiscussionHead">
+        <div class="A_ProfileInfo">
+          <div class="Q_ProfileIcon">
+            <% if @discussion.user.profile&.profile_photo&.attached? %>
+              <%= image_tag @discussion.user.profile.profile_photo, 
+                class: "ProfileImage",
+                alt: "Profile photo" %>
+              <% end %>
+          </div>
+          <p class="PrimaryButton_Text"><%= @discussion.user.profile.name %></p>
+        </div>
+        <div class="A_ContentTag TagGreen">
+          <p class="Tag_Text"><%= @discussion.tag %></p>
+        </div>
+      </div>
+      <div class="DiscussionShowContainer">
+        <h5><%= @discussion.title %></h5>
+        <p class="Grey700"><%= @discussion.content %></p>
+      </div>
+      <div class="M_DiscussionBottom">
+        <p class="Caption_Text"><%= @discussion.created_at.strftime("%d %B %Y, %l%p") %></p>
+        <div class="DiscussionBottom_Icons">
+          <div class="A_CommentCount">
+            <div class="Q_Icon CommentBlack"></div>
+            <p class="Tag_Text"><%= @discussion.comments.count %></p>
+          </div>
+          <div class="Q_Icon BookmarkBlack"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div>
-  <% if current_user && current_user.admin? %>
-  <%= link_to "Edit this discussion", edit_admin_discussion_path(@discussion) %> |
-    <%= button_to "Destroy this discussion", admin_discussion_path(@discussion), method: :delete %>
-  <% elsif can? :edit, @discussion %>
-    <%= link_to "Edit this discussion", edit_discussion_path(@discussion) %> |
-    <%= button_to "Destroy this discussion", discussion_path(@discussion), method: :delete %>
-  <% end %>
-
+  <%= render "comments/form", commentable: @discussion %>
+  <div class="C_Comments">
+    <%= render @discussion.comments.not_replies %>
+  </div>
 </div>
-
-<h2>Add a comment:</h2>
-<%= render "admin/comments/form", commentable: @discussion, parent_comment_id: nil %>
-
-<h2>Comments</h2>
-<%= render @discussion.comments.not_replies, commentable: @discussion %>

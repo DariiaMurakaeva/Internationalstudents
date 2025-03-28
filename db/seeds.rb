@@ -29,6 +29,14 @@ def create_sentence
 	sentence = sentence_words.join(' ').capitalize + '.'
 end
 
+def create_sentences(quantity)
+  sentences = []
+  quantity.times do
+    sentences << create_sentence
+  end
+  sentences.join(' ')
+end
+
 def upload_random_image(record, attachment_field)
 	uploader = PostImageUploader.new(record, attachment_field)
 	uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/autoupload', record.class.to_s.downcase.pluralize, '*')).sample))
@@ -64,7 +72,8 @@ def create_users(quantity)
     "Институт статистических исследований и экономики знаний", "Банковский институт", "Школа инноватики и предпринимательства"
 	]
 
-	countries = ["China", "USA", "South Korea", "Spain", "Germany", "Japan", "France", "Equador", "Turkey", "Kazakhstan", "Kyrgyzstan", "Argentina", "Uzbekistan", "Belgium", "Poland"]
+	countries = ["🇷🇺 Russian Federation", "🇺🇸 USA", "🇩🇪 Germany", "🇫🇷 France", "🇮🇹 Italy", "🇨🇳 China", "🇯🇵 Japan", "🇮🇳 India", "🇧🇷 Brazil", "🇰🇷 South Korea", 
+	"🇬🇧 United Kingdom", "🇨🇦 Canada", "🇦🇺 Australia", "🇪🇦 Spain", "🇸🇪 Sweden", "🇰🇬 Kyrgyzstan", "🇰🇿 Kazakhstan", "🇹🇷 Turkey", "🇲🇽 Mexico", "🇺🇿 Uzbekistan"]
 
 	first_name = names.keys.sample
 	last_name = names[first_name]
@@ -196,10 +205,11 @@ def create_posts(quantity)
 		user = User.all.sample
 		title = headlines.sample
 		content, tag = all_info[title]
-		description_content = content.length > 50 ? "#{content[0...50]}..." : content
+		full_content = "#{content} #{create_sentences(rand(3..5))}" 
+    
 		post = Post.create(
 			title: title, 
-			content: description_content,
+			content: full_content,
 			user: user,
 			tag: tag
 		)
@@ -229,7 +239,7 @@ def create_discussions(quantity)
 		user = User.all.sample
 		title = headlines.sample
 		content, tag = all_info[title]
-		description_content = content.length > 50 ? "#{content[0...50]}..." : content
+		description_content = content
 		discussion = Discussion.create(
 			title: title, 
 			content: description_content,

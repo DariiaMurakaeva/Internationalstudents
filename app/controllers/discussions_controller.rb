@@ -17,6 +17,10 @@ class DiscussionsController < ApplicationController
     # GET /discussions/1 or /discussions/1.json
     def show
         @discussion = Discussion.find(params[:id])
+
+        if @discussion.nil?
+            redirect_to discussions_path, alert: 'Discussion not found.'
+        end
     end
 
     def new
@@ -33,6 +37,19 @@ class DiscussionsController < ApplicationController
     
     def create
         @discussion = current_user.discussions.new(discussion_params)
+
+        @discussion.tag = case @discussion.tag
+        when 'обучение'
+            'обучение'
+        when 'культура'
+            'культура'
+        when 'быт'
+            'быт'
+        when 'документы'
+            'документы'
+        else
+            nil
+        end
 
         respond_to do |format|
             if @discussion.save
@@ -62,8 +79,10 @@ class DiscussionsController < ApplicationController
     def destroy
         @discussion.destroy!
     
+        @discussion.destroy
+        redirect_to discussions_path
         respond_to do |format|
-            format.html { redirect_to discussion_path(@discussion), status: :see_other, notice: "Discussion was successfully destroyed." }
+            format.html { redirect_to discussions_path, status: :see_other, notice: "Discussion was successfully destroyed." }
             format.json { head :no_content }
         end
     end

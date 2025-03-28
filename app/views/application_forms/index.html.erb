@@ -64,18 +64,62 @@
 
   <% elsif current_user.international_student? %>
     <div class="anketa">
-      <h1 class="anketa_text">АнКета</h1>
       <% form = @application_forms.find { |form| form.student_id == current_user.id } %>
       <% if form %>
         <p class="post_header textleft anketa_container">
           <% if form.buddy_id.nil? %>
-            Заявка отправлена! Твой бадди свяжется с тобой, как только сможет.
+            <div class="O_FormCreated">
+              <div class="HeaderCaptionText">
+                <div class="A_RegistrationHeader">
+                  <div class="RegistrationHeaderTitle">
+                    <h2>YOUR application <br />has been sent</h2>
+                    <div class="Q_Icon CrossBlack"></div>
+                  </div>
+                </div>
+                <p class="Caption_Text Grey">Hi! This is a space for students to share insights, ask questions, and discuss university life. Feel free to ask anything!</p>
+                </div>
+              <div class="Q_ArticleCardImage BlackBoy"></div>
+            </div>
           <% else %>
-            Поздравляем! Теперь <%= form.buddy.profile.name %> — твой бадди!
+            <div class="O_PageHeader4">
+              <div class="HeaderIconsFindbuddy"></div>
+              <h1>FIND YOUR BUDDY</h1>
+            </div>
+
+            <div class="O_StudentProfileCard">
+              <div class="M_StudentCardPhoto">
+                <% if form.buddy && form.buddy.profile && form.buddy.profile.profile_photo.attached? %>
+                  <%= image_tag form.buddy.profile.profile_photo, class: "Q_ApplicationFormImage" %>
+                <% end %>
+              </div>
+              <div class="ProfileCardContainer">
+                <div class="M_StudentInfoTags">
+                  <div class="A_StudentInfoTag TagNoFlag">
+                    <h6><%= form.buddy.profile.country %></h6>
+                  </div>
+                  <div class="A_StudentInfoTag TagNoFlag">
+                    <h6><%= form.buddy.profile.faculty %></h6>
+                  </div>
+                </div>
+                <div class="M_StudentPersonalInfo">
+                  <h4><%= form.buddy.profile.name %></h4>
+                  <p class="PrimaryButton_Text"><%= form.buddy.profile.languages %></p>
+                </div>
+                <div class="M_StudentAdditionalInfo">
+                  <div class="BuddyContactContainer">
+                    <h6>Contact e-mail</h6>
+                    <p><%= form.buddy.email %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
           <% end %>
         </p>
       <% else %>
-        <p>You have not submitted an application yet.</p>
+        <div class="O_PageHeader4">
+          <div class="HeaderIconsFindbuddy"></div>
+          <h1>FIND YOUR BUDDY</h1>
+        </div>
         <%= render "form", application_form: @application_form %>
       <% end %>
     </div>

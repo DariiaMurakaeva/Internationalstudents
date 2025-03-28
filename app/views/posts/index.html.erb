@@ -1,57 +1,60 @@
-<div class="page_header_yunglas">СТАтЬи</div>
-
-<div class="big_article">
-  <div class="big_article_content">
-    <div class="big_article_text_container">
-      <div class="edu_tag">БЫТ</div>
-      <h2>Как справиться с культурным шоком?</h2>
-      <p>
-        Переезд в другую страну для учёбы — это захватывающий и увлекательный
-        опыт. Однако, чтобы этот процесс прошёл гладко, важно тщательно
-        подготовиться
-      </p>
-    </div>
-    <div class="button_fav">
-      <button>ПРОЧИТАТЬ</button>
-      <div>
-        <img
-          src="/assets/big_Icon_BookmarkDefault.svg"
-          alt=""
-          class="big_icon_size"
-        />
-      </div>
-    </div>
-  </div>
-  <div class="big_article_img"></div>
-</div>
-
-<div class="filters_container">
-  <div class="edu_tag black_tag" data-filter="all">ВСЕ</div>
-  <div class="edu_tag" data-filter="БЫТ" >БЫТ</div>
-  <div class="edu_tag" data-filter="ДОКУМЕНТЫ" >ДОКУМЕНТЫ</div>
-  <div class="edu_tag" data-filter="ОБУЧЕНИЕ" >ОБУЧЕНИЕ</div>
-  <div class="edu_tag" data-filter="КУЛЬТУРА" >КУЛЬТУРА</div>
-
-</div>
-
-
 <%
   set_meta_tags(
     title: "Статьи",
-    description: "В статьях собрана самая актуальная информация обо всем, что может понадобиться вам для жизни и учёбы в России.",
+    description: "В статьях собрана самая актуальная информация обо всем, что может понадобиться вам для жизни и учёбы в России.",
     keywords: "статьи, документы, учёба, иностранные студенты, культура, быт"
   )
 %>
 
-<% content_for :title, "Posts" %>
+<div class="S_Articles">
+  <div class="O_PageHeader3">
+    <div class="HeaderIconsTips"></div>
+    <h1>Tips & Tricks</h1>
+  </div>
+  
+  <div class="O_FilterAndSearch">
+    <div class="M_TagsToggle">
+      <div class="A_ToggleOption <%= params[:filter].blank? ? 'Toggled' : '' %>">
+        <div></div>
+        <%= link_to 'ВСЕ', posts_path, class: 'PrimaryButton_Text' %>
+      </div>
+      <div class="A_ToggleOption <%= params[:filter] == 'документы' ? 'Toggled' : '' %>">
+        <div></div>
+        <%= link_to 'ДОКУМЕНТЫ', posts_path(filter: 'документы'), class: 'PrimaryButton_Text' %>
+      </div>
+      <div class="A_ToggleOption <%= params[:filter] == 'быт' ? 'Toggled' : '' %>">
+        <div></div>
+        <%= link_to 'БЫТ', posts_path(filter: 'быт'), class: 'PrimaryButton_Text' %>
+      </div>
+      <div class="A_ToggleOption <%= params[:filter] == 'культура' ? 'Toggled' : '' %>">
+        <div></div>
+        <%= link_to 'КУЛЬТУРА', posts_path(filter: 'культура'), class: 'PrimaryButton_Text' %>
+      </div>
+      <div class="A_ToggleOption <%= params[:filter] == 'обучение' ? 'Toggled' : '' %>">
+        <div></div>
+        <%= link_to 'ОБУЧЕНИЕ', posts_path(filter: 'обучение'), class: 'PrimaryButton_Text' %>
+      </div>
+    </div>
 
+    <div class="A_Input InputSearch">
+      <div class="Q_Icon SearchGrey"></div>
+      <%= form_tag posts_path, method: :get do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Поиск" %>
+      <% end %>
+    </div>
+  </div>
 
-<% if current_user && current_user.admin? %> 
-  <%= link_to "New post", new_admin_post_path %>
-<% end %>
+  <div class="O_BigArticleCard">
+      <h2>All the important <br />info in our articles</h2>
+      <div class="ArticleGirl"></div>
+      <div class="ArticleBoy"></div>
+  </div>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render collection: @posts, partial: "posts/post" %>
+  <% if current_user && current_user.admin? %> 
+    <%= link_to "New post", new_admin_post_path, class: "PrimaryButton" %>
   <% end %>
+
+  <div class="C_ArticleCards">
+    <%= render partial: "posts/post", collection: @posts, as: :post %>
+  </div>
 </div>
